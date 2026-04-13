@@ -65,6 +65,11 @@
       margin: 0 auto;
     }
 
+    .flush-bar {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
     .section {
       padding: 28px 0;
       position: relative;
@@ -82,6 +87,7 @@
       border-top: 1px solid rgba(0,0,0,0.55);
       border-bottom: 1px solid rgba(0,0,0,0.55);
       box-shadow: inset 0 1px 0 rgba(255,255,255,0.16), inset 0 -1px 0 rgba(255,255,255,0.06);
+      border-radius: 4px;
     }
 
     .eyebrow {
@@ -140,24 +146,16 @@
     }
 
     .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(239, 52, 52, 0.34);
-      background: rgba(239, 52, 52, 0.10);
-      color: #ffb3b3;
-      font-size: 12px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
+      display: none;
     }
 
     .logo-shell {
       position: relative;
-      margin: 18px 0 22px;
+      margin: 6px 0 22px;
       max-width: 720px;
+      width: 100%;
+      display: flex;
+      justify-content: center;
     }
 
     .logo-shell::before {
@@ -174,7 +172,7 @@
       position: relative;
       z-index: 1;
       width: 100%;
-      max-width: 620px;
+      max-width: 500px;
       height: auto;
       object-fit: contain;
       filter: drop-shadow(0 0 18px rgba(239,52,52,0.22));
@@ -182,6 +180,11 @@
 
     .hero-copy {
       max-width: 760px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin: 0 auto;
     }
 
     .actions {
@@ -374,6 +377,58 @@
       align-items: stretch;
     }
 
+    .guest-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .guest-card {
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 20px;
+      align-items: center;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .guest-media {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 140px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 14px;
+    }
+
+    .guest-media img {
+      max-width: 100%;
+      max-height: 110px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .guest-meta h3 {
+      margin-bottom: 8px;
+    }
+
+    .guest-meta p {
+      margin-bottom: 10px;
+    }
+
+    .guest-note {
+      color: #ececec;
+      font-size: 0.92rem;
+      line-height: 1.7;
+    }
+
     .thanks-card,
     .link-card {
       background: var(--panel);
@@ -442,6 +497,19 @@
         grid-template-columns: 1fr;
       }
 
+      .guest-card {
+        grid-template-columns: 120px 1fr;
+      }
+
+      .topic-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .logo {
+        max-width: 520px;
+      }
+    }
+
       .topic-grid {
         grid-template-columns: 1fr 1fr;
       }
@@ -452,9 +520,41 @@
     }
 
     @media (max-width: 760px) {
-      .wrap {
+      .wrap,
+      .flush-bar {
         width: min(var(--max), calc(100% - 20px));
       }
+
+      .pill-grid,
+      .topic-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .guest-card {
+        grid-template-columns: 1fr;
+      }
+
+      .panel-body,
+      .card,
+      .lead-card,
+      .thanks-card,
+      .link-card,
+      .cta {
+        padding: 20px;
+      }
+
+      .logo {
+        max-width: 100%;
+      }
+    }
 
       .pill-grid,
       .topic-grid {
@@ -489,7 +589,6 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <div class="badge">👻 A Ghostbusters Podcast</div>
           <div class="logo-shell">
             <img class="logo" src="bench-tested-logo.png" alt="Bench Tested Podcast logo" />
           </div>
@@ -521,7 +620,7 @@
       </div>
     </section>
 
-    <div class="caution-bar" aria-hidden="true"></div>
+    <div class="flush-bar"><div class="caution-bar" aria-hidden="true"></div></div>
 
     <section class="section" id="about">
       <div class="wrap">
@@ -551,7 +650,7 @@
       </div>
     </section>
 
-    <div class="caution-bar" aria-hidden="true"></div>
+    <div class="flush-bar"><div class="caution-bar" aria-hidden="true"></div></div>
 
     <section class="section">
       <div class="wrap split-grid">
@@ -572,7 +671,7 @@
       </div>
     </section>
 
-    <div class="caution-bar" aria-hidden="true"></div>
+    <div class="flush-bar"><div class="caution-bar" aria-hidden="true"></div></div>
 
     <section class="section">
       <div class="wrap thanks-grid">
@@ -580,18 +679,74 @@
           <div class="eyebrow">Special thanks</div>
           <h2>Support from the community</h2>
           <p>Bench Tested is built in the same spirit as the best Ghostbusters fan work, collaborative, detail-driven, and fueled by people who actually care about making cool things the right way.</p>
-          <p>A special thanks goes to Moby Sign Co. for support and craftsmanship.</p>
+          <p>A special thanks goes to the makers and supporters helping keep the passion side of this fandom alive.</p>
         </div>
         <div class="link-card">
-          <div class="eyebrow">Featured supporter</div>
-          <h3>Moby Sign Co.</h3>
-          <p>Check out their Etsy shop here.</p>
-          <p><a href="https://www.etsy.com/shop/MobySignCo?ref=shop-header-name&listing_id=4446164006&from_page=listing" target="_blank" rel="noreferrer">Visit Moby Sign Co. on Etsy</a></p>
+          <div class="eyebrow">Featured supporters</div>
+          <div style="display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: center;">
+            <a href="https://www.etsy.com/shop/MobySignCo?ref=shop-header-name&listing_id=4446164006&from_page=listing" target="_blank" rel="noreferrer" style="display:flex; align-items:center; justify-content:center; min-height:120px; border:1px solid rgba(255,255,255,0.08); border-radius:16px; background:rgba(255,255,255,0.03); padding:16px;">
+              <img src="moby sign co.png" alt="Moby Sign Co. logo" style="max-width:100%; max-height:72px; width:auto; height:auto; object-fit:contain;" />
+            </a>
+            <a href="https://www.ghostworkslab.com" target="_blank" rel="noreferrer" style="display:flex; align-items:center; justify-content:center; min-height:120px; border:1px solid rgba(255,255,255,0.08); border-radius:16px; background:rgba(255,255,255,0.03); padding:16px;">
+              <img src="ghostworks lab.png" alt="Ghostworks Lab logo" style="max-width:100%; max-height:72px; width:auto; height:auto; object-fit:contain;" />
+            </a>
+          </div>
+          <p style="margin-top:16px;">Support the shops behind the work. Click either logo to visit.</p>
         </div>
       </div>
     </section>
 
-    <div class="caution-bar" aria-hidden="true"></div>
+    <div class="flush-bar"><div class="caution-bar" aria-hidden="true"></div></div>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Upcoming guests</div>
+          <h2>Who is coming up on Bench Tested</h2>
+          <p>More than just guest announcements, this is where the next round of deep-dive conversations starts. Expect talk around electronics, prop design, engineering choices, workflow, screen accuracy, fandom history, and what actually separates solid work from average builds.</p>
+        </div>
+
+        <div class="guest-grid">
+          <article class="guest-card">
+            <div class="guest-media">
+              <img src="nomake.png" alt="Nomake Wan" />
+            </div>
+            <div class="guest-meta">
+              <div class="eyebrow">Featured guest</div>
+              <h3>Nomake Wan</h3>
+              <p>One of the programmers behind the driving force of GPStar's pack electronics, Nomake Wan helped shape one of the most respected electronic ecosystems in the hobby.</p>
+              <div class="guest-note">We will get into pack logic, feature design, how electronics choices impact the overall user experience, what makes a system reliable in the field, and the broader philosophy behind building gear that fans actually want to use.</div>
+            </div>
+          </article>
+
+          <article class="guest-card">
+            <div class="guest-media">
+              <img src="caprop.png" alt="C&A Prop Design" />
+            </div>
+            <div class="guest-meta">
+              <div class="eyebrow">Featured guests</div>
+              <h3>Chris and Andrew, C&amp;A Prop Design</h3>
+              <p>Chris and Andrew from C&amp;A Prop Design will join the show to talk through prop development, fabrication choices, aesthetics, practical problem-solving, and what it takes to balance clean design with real-world functionality.</p>
+              <div class="guest-note">Expect conversation around build process, materials, finishing, what collectors and builders get wrong, and how design decisions shift when you are making pieces meant to be both impressive and usable.</div>
+            </div>
+          </article>
+
+          <article class="guest-card">
+            <div class="guest-media">
+              <img src="ben.png" alt="Ben Eadie" />
+            </div>
+            <div class="guest-meta">
+              <div class="eyebrow">Featured guest</div>
+              <h3>Ben Eadie</h3>
+              <p>Prop master and curator for Ghostbusters: Afterlife, Ben Eadie brings a film-side perspective that goes beyond fandom and into the real mechanics of how iconic equipment gets brought to life.</p>
+              <div class="guest-note">We will touch on screen-used prop considerations, storytelling through design, franchise legacy, restoration, curation, and what fans should understand about the difference between movie-ready and convention-ready gear.</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="flush-bar"><div class="caution-bar" aria-hidden="true"></div></div>
 
     <section class="section">
       <div class="wrap cta">
