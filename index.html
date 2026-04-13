@@ -263,6 +263,50 @@
       margin-top: 16px;
     }
 
+    .platform-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .platform-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-height: 48px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #f0f0f0;
+      transition: 0.2s ease;
+    }
+
+    .platform-link:hover {
+      border-color: rgba(239, 52, 52, 0.32);
+      background: rgba(255,255,255,0.05);
+      transform: translateY(-1px);
+    }
+
+    .platform-icon {
+      width: 28px;
+      height: 28px;
+      min-width: 28px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(239, 52, 52, 0.12);
+      border: 1px solid rgba(239, 52, 52, 0.24);
+      color: #ffb3b3;
+      font-size: 0.82rem;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
     .pill {
       background: rgba(255,255,255,0.03);
       border: 1px solid var(--line);
@@ -461,6 +505,14 @@
       padding: 28px;
     }
 
+    .listen-everywhere {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 24px;
+    }
+
     footer {
       padding: 20px 0 40px;
     }
@@ -526,6 +578,7 @@
       }
 
       .pill-grid,
+      .platform-grid,
       .topic-grid {
         grid-template-columns: 1fr;
       }
@@ -617,6 +670,30 @@
             </div>
           </div>
         </aside>
+      </div>
+    </section>
+
+    <div class="flush-bar"><div class="caution-bar" aria-hidden="true"></div></div>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="listen-everywhere">
+          <div class="eyebrow">Listen everywhere</div>
+          <h2>Find Bench Tested on your platform of choice</h2>
+          <p>You are not locked into one app. Subscribe wherever you already listen and keep up with new episodes across the major podcast platforms.</p>
+          <div class="platform-grid">
+            <a class="platform-link" href="https://podcasts.apple.com/us/podcast/bench-tested-a-ghostbusters-podcast/id1886335915" target="_blank" rel="noreferrer"><span class="platform-icon"></span><span>Apple Podcasts</span></a>
+            <a class="platform-link" href="https://castbox.fm/vh/7134959" target="_blank" rel="noreferrer"><span class="platform-icon">CB</span><span>Castbox</span></a>
+            <a class="platform-link" href="https://goodpods.com/podcasts/bench-tested-a-ghostbusters-podcast-728553" target="_blank" rel="noreferrer"><span class="platform-icon">GP</span><span>Goodpods</span></a>
+            <a class="platform-link" href="https://iheart.com/podcast/327389824/" target="_blank" rel="noreferrer"><span class="platform-icon">IH</span><span>iHeartRadio</span></a>
+            <a class="platform-link" href="https://pca.st/nbbf75tk" target="_blank" rel="noreferrer"><span class="platform-icon">PC</span><span>Pocket Casts</span></a>
+            <a class="platform-link" href="https://open.spotify.com/show/7xth7akhzUCkKaY6e5sexj" target="_blank" rel="noreferrer"><span class="platform-icon">SP</span><span>Spotify</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="flush-bar"><div class="caution-bar" aria-hidden="true"></div></div>
       </div>
     </section>
 
