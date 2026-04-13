@@ -1,1 +1,236 @@
-<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/show/7xth7akhzUCkKaY6e5sexj?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+import React from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Mic, Radio, Wrench, Zap, Ghost, PlayCircle, Headphones } from "lucide-react";
+
+const logo = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAB1AAAAOECAYAAADatFsuAAAACXBIWXMAAAsSAAALEgHS3X78AAAgAElEQVR4nO3dS47jSJaF0QGq//+y9wMZo4VnM1gVt5qS5E2mSg0D1Jz1m8c8iA1yV8a5b0m8eJ7vAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+
+const features = [
+  {
+    icon: Mic,
+    title: "Built for prop nerds",
+    text: "Deep dives into Ghostbusters props, design decisions, engineering choices, and the details most people miss.",
+  },
+  {
+    icon: Wrench,
+    title: "Builder-first conversations",
+    text: "Film tech, fan builds, fabrication, electronics, and the practical reality of making gear that looks right and works.",
+  },
+  {
+    icon: Radio,
+    title: "Straight from the field",
+    text: "Interviews, breakdowns, and real talk from the makers, artists, and fans pushing the hobby forward.",
+  },
+];
+
+const episodes = [
+  "Movie prop breakdowns",
+  "Builder interviews",
+  "Pack, trap, and wand tech",
+  "Behind-the-scenes design talk",
+  "Fandom, gear, and franchise discussion",
+  "What makes a build feel screen-worthy",
+];
+
+export default function BenchTestedLandingPage() {
+  return (
+    <div className="min-h-screen bg-black text-zinc-100 overflow-x-hidden">
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(239,68,68,0.18),transparent_35%),radial-gradient(circle_at_bottom,rgba(220,38,38,0.18),transparent_30%)]" />
+        <div className="absolute inset-0 opacity-[0.07] bg-[linear-gradient(to_bottom,transparent_0%,rgba(255,255,255,0.25)_1px,transparent_1px)] bg-[size:100%_26px]" />
+        <div className="absolute inset-y-0 left-1/2 w-px bg-red-500/20 blur-sm" />
+      </div>
+
+      <section className="relative px-6 py-10 md:px-10 lg:px-16">
+        <div className="mx-auto max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="grid items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]"
+          >
+            <div className="space-y-8">
+              <div className="inline-flex items-center gap-2 rounded-full border border-red-500/40 bg-red-500/10 px-4 py-2 text-sm uppercase tracking-[0.2em] text-red-300">
+                <Ghost className="h-4 w-4" />
+                A Ghostbusters Podcast
+              </div>
+
+              <div className="space-y-5">
+                <div className="relative inline-block">
+                  <div className="absolute -inset-4 rounded-[2rem] bg-red-600/20 blur-2xl" />
+                  <img
+                    src={logo}
+                    alt="Bench Tested Podcast logo"
+                    className="relative w-full max-w-3xl drop-shadow-[0_0_30px_rgba(239,68,68,0.35)]"
+                  />
+                </div>
+
+                <h1 className="max-w-4xl text-4xl font-black uppercase leading-none tracking-tight text-white md:text-6xl lg:text-7xl">
+                  Where Ghostbusters gear gets torn down, talked through, and put to the test.
+                </h1>
+
+                <p className="max-w-2xl text-base leading-7 text-zinc-300 md:text-lg">
+                  Bench Tested is for the builders, collectors, and franchise diehards who care about more than surface-level nostalgia. This is where props, engineering, design choices, and fandom all collide.
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-4">
+                <Button asChild size="lg" className="rounded-2xl bg-red-600 px-6 py-6 text-base font-bold uppercase tracking-wide text-white hover:bg-red-500">
+                  <a href="#listen">
+                    <PlayCircle className="mr-2 h-5 w-5" />
+                    Listen Now
+                  </a>
+                </Button>
+                <Button asChild size="lg" variant="outline" className="rounded-2xl border-zinc-700 bg-zinc-950/60 px-6 py-6 text-base font-bold uppercase tracking-wide text-zinc-100 hover:bg-zinc-900">
+                  <a href="#about">
+                    <Headphones className="mr-2 h-5 w-5" />
+                    Explore the Show
+                  </a>
+                </Button>
+              </div>
+            </div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.7, delay: 0.1 }}
+              className="relative"
+            >
+              <div className="absolute inset-0 rounded-[2rem] bg-red-600/20 blur-3xl" />
+              <Card className="relative overflow-hidden rounded-[2rem] border border-red-500/30 bg-zinc-950/90 shadow-2xl shadow-red-900/20">
+                <div className="h-2 w-full bg-gradient-to-r from-red-700 via-red-400 to-red-700" />
+                <CardContent className="space-y-6 p-6 md:p-8">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-xs uppercase tracking-[0.35em] text-red-300">Current Feed</p>
+                      <h2 className="mt-2 text-2xl font-black uppercase text-white">Bench Tested</h2>
+                    </div>
+                    <Zap className="h-8 w-8 text-red-400" />
+                  </div>
+
+                  <div className="rounded-2xl border border-zinc-800 bg-black/70 p-2">
+                    <iframe
+                      data-testid="embed-iframe"
+                      style={{ borderRadius: 12 }}
+                      src="https://open.spotify.com/embed/show/7xth7akhzUCkKaY6e5sexj?utm_source=generator"
+                      width="100%"
+                      height="352"
+                      frameBorder="0"
+                      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                      loading="lazy"
+                      title="Bench Tested Spotify player"
+                    />
+                  </div>
+
+                  <div className="grid gap-3 sm:grid-cols-2">
+                    {[
+                      "Prop-first episodes",
+                      "Builder insight",
+                      "Screen-inspired design talk",
+                      "No fluff, just substance",
+                    ].map((item) => (
+                      <div
+                        key={item}
+                        className="rounded-2xl border border-zinc-800 bg-zinc-900/70 px-4 py-3 text-sm font-medium text-zinc-200"
+                      >
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section id="about" className="relative px-6 py-8 md:px-10 lg:px-16 lg:py-12">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-8 flex items-end justify-between gap-6">
+            <div>
+              <p className="text-sm uppercase tracking-[0.3em] text-red-300">Why it hits</p>
+              <h2 className="mt-2 text-3xl font-black uppercase text-white md:text-5xl">Not just another fandom podcast</h2>
+            </div>
+          </div>
+
+          <div className="grid gap-6 lg:grid-cols-3">
+            {features.map((feature, idx) => {
+              const Icon = feature.icon;
+              return (
+                <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                >
+                  <Card className="h-full rounded-[2rem] border border-zinc-800 bg-zinc-950/80 shadow-lg shadow-black/40 transition duration-300 hover:-translate-y-1 hover:border-red-500/40 hover:shadow-red-950/20">
+                    <CardContent className="p-7">
+                      <div className="mb-5 inline-flex rounded-2xl border border-red-500/30 bg-red-500/10 p-3 text-red-300">
+                        <Icon className="h-6 w-6" />
+                      </div>
+                      <h3 className="text-2xl font-black uppercase text-white">{feature.title}</h3>
+                      <p className="mt-4 text-sm leading-7 text-zinc-300 md:text-base">{feature.text}</p>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="relative px-6 py-10 md:px-10 lg:px-16 lg:py-14">
+        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+          <Card className="rounded-[2rem] border border-red-500/25 bg-zinc-950/85 overflow-hidden">
+            <div className="h-2 w-full bg-gradient-to-r from-red-500 via-zinc-200 to-red-500" />
+            <CardContent className="p-7 md:p-9">
+              <p className="text-sm uppercase tracking-[0.3em] text-red-300">Inside the containment unit</p>
+              <h2 className="mt-3 text-3xl font-black uppercase text-white md:text-5xl">What you get</h2>
+              <p className="mt-4 max-w-xl text-base leading-7 text-zinc-300">
+                This show lives in the overlap between fandom obsession and actual craft. It is for people who want to know why a prop works, why a build fails, what makes something screen-accurate, and how to push their own projects further.
+              </p>
+            </CardContent>
+          </Card>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            {episodes.map((item, idx) => (
+              <motion.div
+                key={item}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: idx * 0.06 }}
+                className="rounded-[1.5rem] border border-zinc-800 bg-zinc-900/70 p-5 text-zinc-100 shadow-lg shadow-black/30"
+              >
+                <div className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-red-300">0{idx + 1}</div>
+                <div className="text-lg font-bold uppercase leading-tight">{item}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="listen" className="relative px-6 pb-14 pt-6 md:px-10 lg:px-16 lg:pb-20">
+        <div className="mx-auto max-w-7xl">
+          <Card className="overflow-hidden rounded-[2rem] border border-red-500/30 bg-[linear-gradient(135deg,rgba(127,29,29,0.55),rgba(9,9,11,0.96),rgba(0,0,0,1))]">
+            <CardContent className="grid gap-8 p-8 md:p-10 lg:grid-cols-[1fr_auto] lg:items-center">
+              <div>
+                <p className="text-sm uppercase tracking-[0.3em] text-red-300">Ready to drop in</p>
+                <h2 className="mt-3 text-3xl font-black uppercase text-white md:text-5xl">Queue it up and get into the weeds.</h2>
+                <p className="mt-4 max-w-2xl text-base leading-7 text-zinc-200">
+                  Hit play and dig into the builds, the gear, the franchise, and the details that actually matter.
+                </p>
+              </div>
+
+              <Button asChild size="lg" className="rounded-2xl bg-white px-8 py-6 text-base font-black uppercase tracking-wide text-black hover:bg-zinc-200">
+                <a href="https://open.spotify.com/show/7xth7akhzUCkKaY6e5sexj" target="_blank" rel="noreferrer">
+                  Open on Spotify
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+    </div>
+  );
+}
