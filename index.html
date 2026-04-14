@@ -421,6 +421,64 @@
       align-items: stretch;
     }
 
+    .cause-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .cause-card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .cause-logo-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 110px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .cause-logo-wrap img {
+      max-width: 100%;
+      max-height: 78px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .cause-copy h3 {
+      margin-bottom: 8px;
+    }
+
+    .cause-copy p {
+      margin-bottom: 10px;
+    }
+
+    .cause-link {
+      color: #fff;
+      border-bottom: 1px solid rgba(255,255,255,0.28);
+      padding-bottom: 2px;
+      font-weight: 700;
+    }
+
+    .cause-link:hover {
+      color: #ffbdbd;
+      border-color: rgba(239,52,52,0.6);
+    }
+
     .guest-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -544,6 +602,7 @@
       .hero-grid,
       .split-grid,
       .thanks-grid,
+      .cause-grid,
       .cta,
       .grid-3 {
         grid-template-columns: 1fr;
@@ -551,6 +610,10 @@
 
       .guest-card {
         grid-template-columns: 120px 1fr;
+      }
+
+      .cause-card {
+        grid-template-columns: 110px 1fr;
       }
 
       .topic-grid {
@@ -592,6 +655,10 @@
       }
 
       .guest-card {
+        grid-template-columns: 1fr;
+      }
+
+      .cause-card {
         grid-template-columns: 1fr;
       }
 
@@ -767,6 +834,41 @@
             </a>
           </div>
           <p style="margin-top:16px;">Support the shops behind the work. Click either logo to visit.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="flush-bar"><div class="caution-bar" aria-hidden="true"></div></div>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Community spotlight</div>
+          <h2>Learn more about the causes behind the community</h2>
+          <p>Ghostbusters fandom is at its best when it does more than build props and quote lines. These organizations reflect the part of the community that shows up, gives back, and does real good for real people.</p>
+        </div>
+
+        <div class="cause-grid">
+          <article class="cause-card">
+            <a class="cause-logo-wrap" href="https://www.ghostbustersgiveback.com" target="_blank" rel="noreferrer">
+              <img src="ggb.png" alt="Ghostbusters Give Back logo" />
+            </a>
+            <div class="cause-copy">
+              <h3>Ghostbusters Give Back</h3>
+              <p>Ghostbusters Give Back highlights the charity and outreach side of the fandom, bringing fans together to support meaningful causes and community efforts.</p>
+              <a class="cause-link" href="https://www.ghostbustersgiveback.com" target="_blank" rel="noreferrer">Visit Ghostbusters Give Back</a>
+            </div>
+          </article>
+
+          <article class="cause-card">
+            <div class="cause-logo-wrap">
+              <img src="starlight.png" alt="Starlight Children's Foundation logo" />
+            </div>
+            <div class="cause-copy">
+              <h3>Starlight Children&apos;s Foundation</h3>
+              <p>Starlight Children&apos;s Foundation works to bring joy, comfort, and support to hospitalized kids and their families through programs and experiences that make a hard situation more bearable.</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
