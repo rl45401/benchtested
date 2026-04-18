@@ -485,6 +485,106 @@
       gap: 18px;
     }
 
+    .contrib-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .contrib-spotlight {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .contrib-photo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 170px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      padding: 12px;
+      overflow: hidden;
+    }
+
+    .contrib-photo img {
+      width: 100%;
+      max-height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .contrib-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .contrib-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #f0f0f0;
+      transition: 0.2s ease;
+      text-align: center;
+    }
+
+    .contrib-link:hover {
+      border-color: rgba(239, 52, 52, 0.32);
+      background: rgba(255,255,255,0.05);
+      transform: translateY(-1px);
+    }
+
+    .contrib-gallery {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .contrib-item {
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .contrib-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .contrib-item-body {
+      padding: 16px 18px 18px;
+    }
+
+    .contrib-item-body h3 {
+      margin-bottom: 8px;
+    }
+
+    .contrib-item-body p {
+      margin-bottom: 0;
+    }
+
     .guest-card {
       display: grid;
       grid-template-columns: 140px 1fr;
@@ -603,6 +703,7 @@
       .split-grid,
       .thanks-grid,
       .cause-grid,
+      .contrib-grid,
       .cta,
       .grid-3 {
         grid-template-columns: 1fr;
@@ -610,6 +711,10 @@
 
       .guest-card {
         grid-template-columns: 120px 1fr;
+      }
+
+      .contrib-spotlight {
+        grid-template-columns: 150px 1fr;
       }
 
       .cause-card {
@@ -642,7 +747,8 @@
 
       .pill-grid,
       .platform-grid,
-      .topic-grid {
+      .topic-grid,
+      .contrib-links {
         grid-template-columns: 1fr;
       }
 
@@ -655,6 +761,14 @@
       }
 
       .guest-card {
+        grid-template-columns: 1fr;
+      }
+
+      .contrib-spotlight {
+        grid-template-columns: 1fr;
+      }
+
+      .contrib-links {
         grid-template-columns: 1fr;
       }
 
@@ -869,6 +983,63 @@
               <p>Starlight Children&apos;s Foundation works to bring joy, comfort, and support to hospitalized kids and their families through programs and experiences that make a hard situation more bearable.</p>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <div class="flush-bar"><div class="caution-bar" aria-hidden="true"></div></div>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Guest contributions</div>
+          <h2>Spotlight on Sean Charlesworth</h2>
+          <p>Sean Charlesworth represents the exact kind of craftsmanship Bench Tested exists to celebrate, thoughtful design, practical engineering, film-aware aesthetics, and builds that actually function in the real world.</p>
+        </div>
+
+        <div class="contrib-grid">
+          <article class="contrib-spotlight">
+            <div class="contrib-photo">
+              <img src="seanheadshot.jpg" alt="Sean Charlesworth with Adam Savage" />
+            </div>
+            <div>
+              <div class="eyebrow">Featured contributor</div>
+              <h3>Sean Charlesworth</h3>
+              <p>From working alongside Adam Savage to creating highly detailed functional Ghostbusters builds, Sean sits at the intersection of fan passion and serious fabrication skill. His work is not just visually strong, it is engineered with intent.</p>
+              <div class="contrib-links">
+                <a class="contrib-link" href="https://charlesworthdynamics.etsy.com" target="_blank" rel="noreferrer">Charlesworth Dynamics Shop</a>
+                <a class="contrib-link" href="https://www.printables.com/model/1547160" target="_blank" rel="noreferrer">Free Trap Files</a>
+                <a class="contrib-link" href="https://youtu.be/z6KmX_poEV8?si=d5zdOLNxbqln-Unh" target="_blank" rel="noreferrer">Ghost Trap Build</a>
+                <a class="contrib-link" href="https://youtu.be/oPxqXW4zh2U?si=_SV5yqX2L5NwrcUI" target="_blank" rel="noreferrer">RTV Build</a>
+                <a class="contrib-link" href="https://youtu.be/d5MTFw9gUc8?si=RJMYUxQqQcYXv-ST" target="_blank" rel="noreferrer">ESP Unit</a>
+                <a class="contrib-link" href="https://youtu.be/d5MTFw9gUc8?si=RJMYUxQqQcYXv-ST" target="_blank" rel="noreferrer">Adam's Pack Build</a>
+              </div>
+            </div>
+          </article>
+
+          <div class="contrib-gallery">
+            <article class="contrib-item">
+              <img src="helmet.jpg" alt="Keymaster helmet by Sean Charlesworth" />
+              <div class="contrib-item-body">
+                <h3>Keymaster Helmet</h3>
+                <p>A standout example of character-driven fabrication, executed with the kind of detail and finish that elevates a replica into something memorable.</p>
+              </div>
+            </article>
+            <article class="contrib-item">
+              <img src="caddy shack.jpg" alt="Murray Bros. Caddyshack Tournament Ghost Trap" />
+              <div class="contrib-item-body">
+                <h3>Murray Bros. Caddyshack Tournament</h3>
+                <p>Functional Ghostbusters tech built for a real event environment, where presentation, durability, and usability all matter at the same time.</p>
+              </div>
+            </article>
+            <article class="contrib-item">
+              <img src="rtvtrap.jpg" alt="RTV Trap from Ghostbusters Afterlife" />
+              <div class="contrib-item-body">
+                <h3>RTV Trap from Ghostbusters: Afterlife</h3>
+                <p>A sharp look at practical build execution, film-inspired detailing, and the kind of engineering decisions that make a hero prop feel alive.</p>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
