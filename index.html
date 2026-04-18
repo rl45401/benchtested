@@ -499,8 +499,8 @@
       box-shadow: var(--shadow);
       padding: 24px;
       display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 20px;
+      grid-template-columns: 220px 1fr;
+      gap: 22px;
       align-items: center;
     }
 
@@ -508,19 +508,23 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      min-height: 170px;
+      min-height: 220px;
       background: rgba(255,255,255,0.03);
       border: 1px solid rgba(255,255,255,0.08);
       border-radius: 18px;
-      padding: 12px;
+      padding: 14px;
       overflow: hidden;
     }
 
     .contrib-photo img {
       width: 100%;
-      max-height: 150px;
-      object-fit: cover;
+      max-width: 190px;
+      max-height: 190px;
+      object-fit: contain;
+      object-position: center;
       border-radius: 12px;
+      display: block;
+      margin: 0 auto;
     }
 
     .contrib-links {
@@ -559,6 +563,17 @@
     }
 
     .contrib-item {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 14px;
+      align-items: center;
+      background: var(--panel-soft);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      padding: 14px;
+    }
       background: var(--panel-soft);
       border: 1px solid var(--line);
       border-radius: 20px;
@@ -568,13 +583,18 @@
 
     .contrib-item img {
       width: 100%;
-      height: 220px;
-      object-fit: cover;
+      height: 110px;
+      object-fit: contain;
+      object-position: center;
       display: block;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 8px;
     }
 
     .contrib-item-body {
-      padding: 16px 18px 18px;
+      padding: 4px 6px 4px 0;
     }
 
     .contrib-item-body h3 {
@@ -714,7 +734,11 @@
       }
 
       .contrib-spotlight {
-        grid-template-columns: 150px 1fr;
+        grid-template-columns: 180px 1fr;
+      }
+
+      .contrib-item {
+        grid-template-columns: 130px 1fr;
       }
 
       .cause-card {
@@ -765,6 +789,10 @@
       }
 
       .contrib-spotlight {
+        grid-template-columns: 1fr;
+      }
+
+      .contrib-item {
         grid-template-columns: 1fr;
       }
 
@@ -1000,7 +1028,9 @@
         <div class="contrib-grid">
           <article class="contrib-spotlight">
             <div class="contrib-photo">
-              <img src="seanheadshot.jpg" alt="Sean Charlesworth with Adam Savage" />
+              <a href="seanheadshot.jpg" target="_blank" rel="noreferrer" aria-label="Open full-size Sean Charlesworth image">
+                <img src="seanheadshot.jpg" alt="Sean Charlesworth with Adam Savage" />
+              </a>
             </div>
             <div>
               <div class="eyebrow">Featured contributor</div>
@@ -1019,21 +1049,27 @@
 
           <div class="contrib-gallery">
             <article class="contrib-item">
-              <img src="helmet.jpg" alt="Keymaster helmet by Sean Charlesworth" />
+              <a href="helmet.jpg" target="_blank" rel="noreferrer" aria-label="Open full-size Keymaster helmet image">
+                <img src="helmet.jpg" alt="Keymaster helmet by Sean Charlesworth" />
+              </a>
               <div class="contrib-item-body">
                 <h3>Keymaster Helmet</h3>
                 <p>A standout example of character-driven fabrication, executed with the kind of detail and finish that elevates a replica into something memorable.</p>
               </div>
             </article>
             <article class="contrib-item">
-              <img src="caddy shack.jpg" alt="Murray Bros. Caddyshack Tournament Ghost Trap" />
+              <a href="caddyshack.jpg" target="_blank" rel="noreferrer" aria-label="Open full-size Caddyshack Tournament image">
+                <img src="caddyshack.jpg" alt="Murray Bros. Caddyshack Tournament Ghost Trap" />
+              </a>
               <div class="contrib-item-body">
                 <h3>Murray Bros. Caddyshack Tournament</h3>
                 <p>Functional Ghostbusters tech built for a real event environment, where presentation, durability, and usability all matter at the same time.</p>
               </div>
             </article>
             <article class="contrib-item">
-              <img src="rtvtrap.jpg" alt="RTV Trap from Ghostbusters Afterlife" />
+              <a href="rtvtrap.jpg" target="_blank" rel="noreferrer" aria-label="Open full-size RTV Trap image">
+                <img src="rtvtrap.jpg" alt="RTV Trap from Ghostbusters Afterlife" />
+              </a>
               <div class="contrib-item-body">
                 <h3>RTV Trap from Ghostbusters: Afterlife</h3>
                 <p>A sharp look at practical build execution, film-inspired detailing, and the kind of engineering decisions that make a hero prop feel alive.</p>
