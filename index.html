@@ -780,6 +780,28 @@
         width: min(var(--max), calc(100% - 20px));
       }
 
+      .hero {
+        padding: 18px 0 18px;
+      }
+
+      .section {
+        padding: 22px 0;
+      }
+
+      .hero-grid,
+      .split-grid,
+      .thanks-grid,
+      .cause-grid,
+      .contrib-grid,
+      .cta,
+      .grid-3,
+      .guest-card,
+      .contrib-spotlight,
+      .contrib-item,
+      .cause-card {
+        grid-template-columns: 1fr;
+      }
+
       .pill-grid,
       .platform-grid,
       .topic-grid,
@@ -787,45 +809,101 @@
         grid-template-columns: 1fr;
       }
 
+      .hero-copy {
+        max-width: 100%;
+      }
+
+      h1 {
+        font-size: clamp(2rem, 9vw, 2.8rem);
+        line-height: 1;
+        max-width: 100%;
+      }
+
+      h2 {
+        font-size: clamp(1.55rem, 7vw, 2.2rem);
+        line-height: 1.05;
+      }
+
+      h3 {
+        font-size: 1rem;
+      }
+
+      p,
+      .guest-note,
+      .footer-copy {
+        font-size: 0.95rem;
+        line-height: 1.7;
+      }
+
       .actions {
         flex-direction: column;
       }
 
-      .btn {
+      .btn,
+      .platform-link,
+      .contrib-link {
         width: 100%;
       }
 
-      .guest-card {
-        grid-template-columns: 1fr;
-      }
-
-      .contrib-spotlight {
-        grid-template-columns: 1fr;
-      }
-
-      .contrib-item {
-        grid-template-columns: 1fr;
-      }
-
-      .contrib-links {
-        grid-template-columns: 1fr;
-      }
-
-      .cause-card {
-        grid-template-columns: 1fr;
+      .btn {
+        min-height: 52px;
       }
 
       .panel-body,
+      .listen-everywhere,
       .card,
       .lead-card,
       .thanks-card,
       .link-card,
-      .cta {
-        padding: 20px;
+      .cta,
+      .guest-card,
+      .contrib-spotlight,
+      .contrib-item,
+      .cause-card {
+        padding: 18px;
       }
 
       .logo {
-        max-width: 100%;
+        max-width: min(100%, 360px);
+      }
+
+      .logo-shell {
+        margin: 6px 0 18px;
+      }
+
+      .embed-shell {
+        padding: 8px;
+      }
+
+      .guest-media,
+      .contrib-photo,
+      .cause-logo-wrap {
+        min-height: auto;
+      }
+
+      .guest-media img,
+      .contrib-photo img,
+      .cause-logo-wrap img,
+      .contrib-item img {
+        max-height: 180px;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .contrib-item {
+        gap: 12px;
+      }
+
+      .contrib-item-body {
+        padding: 2px 0 0;
+      }
+
+      .cta {
+        gap: 14px;
+      }
+
+      iframe[data-testid="embed-iframe"] {
+        height: 320px;
       }
     }
 
