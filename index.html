@@ -933,6 +933,42 @@
         max-width: 100%;
       }
     }
+  
+    @media (max-width: 900px) {
+      .platform-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+      }
+
+      .platform-link {
+        min-width: 0;
+        padding: 12px;
+      }
+
+      .platform-link span:last-child {
+        font-size: 0.86rem;
+        line-height: 1.2;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .platform-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .listen-everywhere {
+        padding: 18px;
+      }
+
+      .platform-link {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .platform-link span:last-child {
+        white-space: normal;
+        overflow-wrap: anywhere;
+      }
+    }
   </style>
 </head>
 <body>
