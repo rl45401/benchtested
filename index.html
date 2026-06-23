@@ -3,1341 +3,553 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bench Tested | A Ghostbusters Podcast</title>
-  <meta name="description" content="A Ghostbusters podcast for builders, collectors, and franchise diehards. Props, gear, engineering, design, and fandom, put to the test." />
+  <title>Bench Tested | Season 2 Drops June 24</title>
+  <meta name="description" content="Bench Tested Season 2 drops Wednesday, June 24, 2026. A Ghostbusters podcast for builders, collectors, and fans who care how the gear gets made." />
+  <meta name="theme-color" content="#08090a" />
   <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2" />
   <style>
     :root {
-      --bg: #060606;
-      --bg-2: #0c0c0d;
-      --panel: rgba(18, 18, 20, 0.94);
-      --panel-soft: rgba(23, 23, 26, 0.92);
-      --text: #f4f4f4;
-      --muted: #c8c8cc;
-      --red: #ef3434;
-      --red-dark: #8f1818;
-      --line: rgba(255, 255, 255, 0.08);
-      --glow: rgba(239, 52, 52, 0.22);
-      --yellow: #f3c623;
-      --yellow-dark: #b88900;
-      --shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
-      --radius-xl: 28px;
-      --radius-lg: 20px;
-      --radius-md: 14px;
+      --bg: #070809;
+      --bg-lift: #0c0e10;
+      --panel: #111315;
+      --panel-2: #17191c;
+      --text: #f5f3ed;
+      --muted: #b7b8ba;
+      --dim: #7f8286;
+      --red: #f0443e;
+      --red-deep: #8d1f1c;
+      --yellow: #f4cc32;
+      --line: rgba(255, 255, 255, 0.11);
       --max: 1180px;
+      --radius: 22px;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.38);
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top, rgba(239, 52, 52, 0.14), transparent 26%),
-        radial-gradient(circle at bottom right, rgba(239, 52, 52, 0.08), transparent 30%),
-        linear-gradient(180deg, var(--bg) 0%, var(--bg-2) 100%);
+        radial-gradient(circle at 12% 5%, rgba(240, 68, 62, 0.18), transparent 25rem),
+        radial-gradient(circle at 92% 34%, rgba(244, 204, 50, 0.07), transparent 26rem),
+        var(--bg);
       overflow-x: hidden;
     }
-
     body::before {
       content: "";
       position: fixed;
       inset: 0;
       pointer-events: none;
-      opacity: 0.06;
-      background-image: linear-gradient(to bottom, transparent 0, rgba(255,255,255,0.22) 1px, transparent 1px);
-      background-size: 100% 24px;
+      z-index: -1;
+      opacity: 0.035;
+      background-image: linear-gradient(rgba(255,255,255,.8) 1px, transparent 1px);
+      background-size: 100% 32px;
     }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+    button, input, textarea { font: inherit; }
+    :focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .section { position: relative; padding: 92px 0; }
+    .section-tight { padding: 64px 0; }
+    .surface {
+      background: linear-gradient(145deg, rgba(23,25,28,.97), rgba(12,14,16,.98));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
     }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .wrap {
-      width: min(var(--max), calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    .flush-bar {
-      width: min(var(--max), calc(100% - 32px));
-      margin: 0 auto;
-    }
-
-    .section {
-      padding: 28px 0;
-      position: relative;
-    }
-
-    .caution-bar {
-      width: 100%;
-      height: 18px;
-      background:
-        repeating-linear-gradient(
-          -45deg,
-          var(--yellow) 0 18px,
-          #111 18px 36px
-        );
-      border-top: 1px solid rgba(0,0,0,0.55);
-      border-bottom: 1px solid rgba(0,0,0,0.55);
-      box-shadow: inset 0 1px 0 rgba(255,255,255,0.16), inset 0 -1px 0 rgba(255,255,255,0.06);
-      border-radius: 4px;
-    }
-
     .eyebrow {
-      color: #ffb3b3;
+      margin: 0 0 14px;
+      color: #ff9b96;
+      font-size: .74rem;
+      font-weight: 900;
+      letter-spacing: .19em;
       text-transform: uppercase;
-      letter-spacing: 0.24em;
-      font-size: 11px;
-      font-weight: 800;
-      margin-bottom: 10px;
     }
-
-    h1, h2, h3, p {
-      margin-top: 0;
-    }
-
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { text-wrap: balance; }
     h1 {
-      font-size: clamp(2.2rem, 4.8vw, 4.8rem);
-      line-height: 0.96;
-      letter-spacing: -0.04em;
+      margin-bottom: 20px;
+      font-size: clamp(3.15rem, 8vw, 7.2rem);
+      line-height: .86;
+      letter-spacing: -.065em;
       text-transform: uppercase;
-      margin-bottom: 18px;
-      max-width: 780px;
     }
-
     h2 {
-      font-size: clamp(1.8rem, 3vw, 3rem);
-      line-height: 1;
-      letter-spacing: -0.03em;
+      margin-bottom: 18px;
+      font-size: clamp(2.1rem, 5vw, 4.35rem);
+      line-height: .95;
+      letter-spacing: -.045em;
       text-transform: uppercase;
-      margin-bottom: 14px;
     }
-
     h3 {
-      font-size: 1.15rem;
-      line-height: 1.2;
-      letter-spacing: -0.02em;
-      text-transform: uppercase;
       margin-bottom: 10px;
+      font-size: 1.15rem;
+      line-height: 1.15;
+      letter-spacing: -.02em;
+      text-transform: uppercase;
     }
+    p { margin-bottom: 0; color: var(--muted); font-size: 1rem; line-height: 1.72; }
+    .lede { max-width: 680px; font-size: clamp(1.05rem, 1.8vw, 1.24rem); }
+    .section-head { max-width: 760px; margin-bottom: 34px; }
 
-    p {
-      color: var(--muted);
-      font-size: 1rem;
-      line-height: 1.75;
-    }
-
-    .hero {
-      padding: 26px 0 22px;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
-      gap: 28px;
-      align-items: center;
-    }
-
-    .badge {
-      display: none;
-    }
-
-    .logo-shell {
+    .site-header {
       position: relative;
-      margin: 6px 0 22px;
-      max-width: 720px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
+      z-index: 5;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(255,255,255,.07);
     }
-
-    .logo-shell::before {
-      content: "";
-      position: absolute;
-      inset: -12px;
-      background: var(--glow);
-      filter: blur(34px);
-      z-index: 0;
-      border-radius: 30px;
-    }
-
-    .logo {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      max-width: 500px;
-      height: auto;
-      object-fit: contain;
-      filter: drop-shadow(0 0 18px rgba(239,52,52,0.22));
-    }
-
-    .hero-copy {
-      max-width: 760px;
-      display: flex;
-      flex-direction: column;
+    .nav { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .nav-brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .nav-brand img { width: 142px; height: auto; }
+    .nav-status {
+      display: inline-flex;
       align-items: center;
-      text-align: center;
-      margin: 0 auto;
+      gap: 8px;
+      color: #dedede;
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
     }
+    .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red); box-shadow: 0 0 14px var(--red); }
+    .nav-links { display: flex; align-items: center; gap: 22px; color: #d4d4d4; font-size: .8rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
+    .nav-links a:hover { color: #fff; }
 
-    .actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-top: 26px;
-    }
-
+    .hero { min-height: 760px; display: grid; align-items: center; padding: 70px 0 82px; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.17fr) minmax(340px, .83fr); gap: 64px; align-items: center; }
+    .hero-logo { width: min(540px, 88%); margin-bottom: 44px; filter: drop-shadow(0 16px 32px rgba(0,0,0,.35)); }
+    .launch-line { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; color: var(--yellow); font-weight: 900; letter-spacing: .18em; text-transform: uppercase; font-size: .76rem; }
+    .launch-line::before { content: ""; width: 42px; height: 2px; background: var(--yellow); }
+    .hero h1 span { color: var(--red); }
+    .hero-copy .lede { max-width: 650px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
     .btn {
       display: inline-flex;
+      min-height: 52px;
       align-items: center;
       justify-content: center;
-      min-height: 50px;
-      padding: 0 20px;
-      border-radius: 14px;
-      font-size: 0.92rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      transition: 0.2s ease;
+      gap: 10px;
+      padding: 0 22px;
       border: 1px solid transparent;
-    }
-
-    .btn-primary {
-      background: var(--red);
-      color: white;
-      box-shadow: 0 12px 26px rgba(239, 52, 52, 0.20);
-    }
-
-    .btn-primary:hover {
-      background: #ff4343;
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      background: rgba(255,255,255,0.025);
-      border-color: rgba(255,255,255,0.12);
-      color: #f2f2f2;
-    }
-
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.05);
-      transform: translateY(-1px);
-    }
-
-    .panel {
-      background: linear-gradient(180deg, rgba(18,18,20,0.97), rgba(10,10,11,0.95));
-      border: 1px solid rgba(239, 52, 52, 0.18);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .panel-topline {
-      height: 5px;
-      background: linear-gradient(90deg, var(--red-dark), var(--red), var(--red-dark));
-    }
-
-    .panel-body {
-      padding: 24px;
-    }
-
-    .embed-shell {
-      background: #000;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 10px;
-      margin-top: 14px;
-    }
-
-    .pill-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .platform-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 18px;
-    }
-
-    .platform-link {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      min-height: 48px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 12px 14px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #f0f0f0;
-      transition: 0.2s ease;
-    }
-
-    .platform-link:hover {
-      border-color: rgba(239, 52, 52, 0.32);
-      background: rgba(255,255,255,0.05);
-      transform: translateY(-1px);
-    }
-
-    .platform-icon {
-      width: 28px;
-      height: 28px;
-      min-width: 28px;
-      border-radius: 999px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(239, 52, 52, 0.12);
-      border: 1px solid rgba(239, 52, 52, 0.24);
-      color: #ffb3b3;
-      font-size: 0.82rem;
+      border-radius: 12px;
+      font-size: .78rem;
       font-weight: 900;
+      letter-spacing: .1em;
       text-transform: uppercase;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
     }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--red); color: #fff; box-shadow: 0 12px 30px rgba(240,68,62,.22); }
+    .btn-primary:hover { background: #ff5049; }
+    .btn-secondary { border-color: rgba(255,255,255,.18); background: rgba(255,255,255,.035); }
+    .btn-secondary:hover { border-color: rgba(255,255,255,.35); background: rgba(255,255,255,.07); }
+    .btn-dark { color: #0b0c0d; background: var(--yellow); }
+    .btn-dark:hover { background: #ffe05d; }
 
-    .pill {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 12px 14px;
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: #efefef;
-    }
-
-    .section-head {
-      margin-bottom: 18px;
-      max-width: 720px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-lg);
-      padding: 22px;
-      box-shadow: var(--shadow);
-      transition: transform 0.2s ease, border-color 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(239, 52, 52, 0.28);
-    }
-
-    .icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      background: rgba(239, 52, 52, 0.10);
-      border: 1px solid rgba(239, 52, 52, 0.24);
-      color: #ffb3b3;
-      font-size: 1.45rem;
-      margin-bottom: 16px;
-    }
-
-    .split-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .lead-card {
-      position: relative;
-      background: linear-gradient(180deg, rgba(22,22,24,0.98), rgba(10,10,11,0.95));
-      border: 1px solid rgba(239, 52, 52, 0.18);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow);
-      padding: 26px;
-      overflow: hidden;
-    }
-
-    .lead-card::before {
+    .launch-card { position: relative; padding: 34px; overflow: hidden; }
+    .launch-card::before {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 5px;
-      background: linear-gradient(90deg, var(--red), #f4f4f4, var(--red));
+      width: 230px;
+      height: 230px;
+      right: -90px;
+      top: -90px;
+      border: 34px solid rgba(240,68,62,.10);
+      border-radius: 50%;
+    }
+    .launch-card > * { position: relative; }
+    .date-block { padding: 24px 0 26px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .date-day { display: block; color: var(--red); font-size: clamp(4.6rem, 9vw, 7rem); line-height: .78; letter-spacing: -.07em; font-weight: 950; }
+    .date-month { display: block; margin-top: 16px; font-weight: 900; letter-spacing: .11em; text-transform: uppercase; }
+    .date-year { color: var(--dim); }
+    .countdown { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 24px; }
+    .countdown-unit { padding: 13px 8px; text-align: center; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.025); }
+    .countdown-unit strong { display: block; color: #fff; font-size: 1.4rem; line-height: 1; }
+    .countdown-unit span { display: block; margin-top: 6px; color: var(--dim); font-size: .59rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .launch-note { margin-top: 20px; color: #e0e0e0; font-size: .86rem; line-height: 1.5; }
+
+    .caution-wrap { position: relative; height: 18px; overflow: hidden; border-top: 1px solid #000; border-bottom: 1px solid #000; }
+    .caution-wrap::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(-45deg, var(--yellow) 0 18px, #171717 18px 36px); }
+    .caution-wrap.slim { width: min(var(--max), calc(100% - 40px)); height: 10px; margin: 0 auto; border-radius: 4px; opacity: .8; }
+
+    .feature { padding-top: 104px; }
+    .feature-grid { display: grid; grid-template-columns: minmax(300px, .78fr) minmax(0, 1.22fr); gap: 0; overflow: hidden; }
+    .feature-visual { min-height: 520px; padding: 56px; display: grid; place-items: center; background:
+      radial-gradient(circle at 72% 28%, rgba(255,255,255,.4), transparent 38%),
+      repeating-linear-gradient(0deg, rgba(31,25,18,.045) 0 1px, transparent 1px 7px),
+      linear-gradient(135deg, #d9d0c0, #aca08e); }
+    .feature-visual img { width: min(100%, 410px); filter: drop-shadow(0 24px 28px rgba(20,16,12,.25)); }
+    .feature-copy { padding: clamp(34px, 6vw, 68px); display: flex; flex-direction: column; justify-content: center; }
+    .feature-copy h2 { font-size: clamp(2.35rem, 5vw, 4.6rem); }
+    .feature-copy .lede { max-width: 620px; }
+    .signal-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+    .signal { padding: 8px 11px; border: 1px solid var(--line); border-radius: 999px; color: #d6d6d6; font-size: .67rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+
+    .listen-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(280px, .7fr); gap: 24px; align-items: stretch; }
+    .player-card { padding: 30px; }
+    .player-card iframe { display: block; width: 100%; height: 352px; border: 0; border-radius: 14px; background: #000; }
+    .listen-side { padding: 30px; display: flex; flex-direction: column; }
+    .listen-side .platforms { margin-top: auto; }
+    .platforms { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; padding-top: 26px; }
+    .platform-link { min-height: 54px; display: flex; align-items: center; gap: 10px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 11px; color: #ececec; background: rgba(255,255,255,.025); font-size: .76rem; font-weight: 800; }
+    .platform-link:hover { border-color: rgba(240,68,62,.55); background: rgba(240,68,62,.07); }
+    .platform-icon { width: 26px; height: 26px; display: grid; place-items: center; border-radius: 7px; background: rgba(255,255,255,.08); color: #fff; font-size: .66rem; }
+
+    .guest-section { background: linear-gradient(180deg, transparent, rgba(255,255,255,.025), transparent); }
+    .guest-intro { display: flex; justify-content: space-between; align-items: end; gap: 40px; margin-bottom: 38px; }
+    .guest-intro .section-head { margin: 0; }
+    .guest-intro > p { max-width: 380px; padding-bottom: 8px; }
+    .guest-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .guest-card { min-width: 0; overflow: hidden; }
+    .guest-media { position: relative; aspect-ratio: 4 / 4.4; overflow: hidden; background: #17191b; }
+    .guest-media::after { content: ""; position: absolute; inset: auto 0 0; height: 40%; background: linear-gradient(transparent, rgba(0,0,0,.8)); }
+    .guest-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
+    .guest-card:hover .guest-media img { transform: scale(1.025); }
+    .guest-card.logo-card .guest-media { display: grid; place-items: center; padding: 50px; background: radial-gradient(circle, #343434, #151515 70%); }
+    .guest-card.logo-card .guest-media img { object-fit: contain; }
+    .guest-body { padding: 24px; }
+    .guest-body p { font-size: .92rem; }
+    .guest-credit { display: inline-block; margin-bottom: 10px; color: var(--red); font-size: .66rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+
+    .about-grid { display: grid; grid-template-columns: minmax(0, .83fr) minmax(0, 1.17fr); gap: 24px; align-items: start; }
+    .about-lead { padding: clamp(30px, 5vw, 52px); }
+    .topic-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+    .topic { min-height: 152px; padding: 24px; border: 1px solid var(--line); border-radius: 16px; background: rgba(255,255,255,.025); }
+    .topic-num { margin-bottom: 28px; color: var(--red); font-size: .69rem; font-weight: 900; letter-spacing: .15em; }
+    .topic h3 { margin-bottom: 6px; }
+    .topic p { font-size: .88rem; line-height: 1.55; }
+
+    .community-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .community-card { padding: 34px; }
+    .support-logos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 26px; }
+    .support-logo { min-height: 112px; display: grid; place-items: center; padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.025); }
+    .support-logo:hover { border-color: rgba(255,255,255,.25); }
+    .support-logo img { max-height: 68px; width: auto; object-fit: contain; }
+    .cause-list { display: grid; gap: 12px; margin-top: 26px; }
+    .cause { display: grid; grid-template-columns: 88px 1fr; align-items: center; gap: 18px; padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.025); }
+    .cause img { width: 76px; height: 76px; object-fit: contain; border-radius: 10px; }
+    .cause h3 { margin: 0 0 4px; font-size: .94rem; }
+    .cause p { font-size: .79rem; line-height: 1.45; }
+
+    .guest-cta { display: grid; grid-template-columns: .72fr 1.28fr; gap: 24px; align-items: start; }
+    .guest-cta-copy { padding: 38px; position: sticky; top: 24px; }
+    .form-card { padding: 18px; }
+    .form-card iframe { display: block; width: 100%; min-width: 100%; max-width: 100%; height: 539px; border: 0; border-radius: 14px; background: #fff; }
+
+    .final-cta { padding: 42px; display: flex; align-items: center; justify-content: space-between; gap: 32px; }
+    .final-cta h2 { margin-bottom: 10px; font-size: clamp(1.8rem, 4vw, 3.3rem); }
+
+    footer { padding: 28px 0 44px; }
+    .footer-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 36px; padding-top: 26px; border-top: 1px solid var(--line); }
+    .footer-mark { width: 150px; opacity: .8; }
+    .footer-copy { max-width: 780px; color: #777a7e; font-size: .68rem; line-height: 1.6; }
+
+    @media (max-width: 960px) {
+      .nav-links { display: none; }
+      .hero { min-height: auto; }
+      .hero-grid, .feature-grid, .listen-grid, .about-grid, .guest-cta { grid-template-columns: 1fr; }
+      .hero-grid { gap: 38px; }
+      .hero-logo { margin-bottom: 34px; }
+      .launch-card { max-width: 620px; }
+      .feature-visual { min-height: 400px; }
+      .guest-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .guest-card:last-child { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; }
+      .guest-card:last-child .guest-media { aspect-ratio: auto; min-height: 340px; }
+      .guest-cta-copy { position: static; }
     }
 
-    .topic-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
+    @media (max-width: 700px) {
+      .wrap { width: min(100% - 28px, var(--max)); }
+      .section { padding: 70px 0; }
+      .section-tight { padding: 50px 0; }
+      .site-header { padding: 15px 0; }
+      .nav-brand img { width: 118px; }
+      .nav-status { font-size: .61rem; }
+      .hero { padding: 54px 0 62px; }
+      .hero-logo { width: 100%; margin-bottom: 32px; }
+      .hero-grid { gap: 34px; }
+      .launch-card, .feature-copy, .player-card, .listen-side, .community-card, .guest-cta-copy { padding: 24px; }
+      .feature-visual { min-height: 320px; padding: 34px; }
+      .feature-visual img { width: min(90%, 310px); }
+      .player-card iframe { height: 352px; }
+      .guest-intro { align-items: start; flex-direction: column; gap: 10px; }
+      .guest-grid, .community-grid, .topic-list { grid-template-columns: 1fr; }
+      .guest-card:last-child { grid-column: auto; display: block; }
+      .guest-card:last-child .guest-media { aspect-ratio: 4 / 4.4; min-height: 0; }
+      .guest-media { aspect-ratio: 4 / 4; }
+      .platforms { grid-template-columns: 1fr; }
+      .actions { flex-direction: column; }
+      .btn { width: 100%; }
+      .final-cta, .footer-row { align-items: stretch; flex-direction: column; }
+      .final-cta { padding: 28px; }
+      .caution-wrap.slim { width: calc(100% - 28px); }
     }
 
-    .topic {
-      background: var(--panel-soft);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px;
-      box-shadow: var(--shadow);
-    }
-
-    .topic-num {
-      color: #ffb3b3;
-      font-size: 11px;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 0.24em;
-      margin-bottom: 10px;
-    }
-
-    .topic-title {
-      font-size: 1rem;
-      line-height: 1.35;
-      font-weight: 800;
-      text-transform: uppercase;
-      color: #f1f1f1;
-    }
-
-    .thanks-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .cause-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .cause-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow);
-      padding: 24px;
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 18px;
-      align-items: center;
-    }
-
-    .cause-logo-wrap {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 110px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 16px;
-      padding: 14px;
-    }
-
-    .cause-logo-wrap img {
-      max-width: 100%;
-      max-height: 78px;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .cause-copy h3 {
-      margin-bottom: 8px;
-    }
-
-    .cause-copy p {
-      margin-bottom: 10px;
-    }
-
-    .cause-link {
-      color: #fff;
-      border-bottom: 1px solid rgba(255,255,255,0.28);
-      padding-bottom: 2px;
-      font-weight: 700;
-    }
-
-    .cause-link:hover {
-      color: #ffbdbd;
-      border-color: rgba(239,52,52,0.6);
-    }
-
-    .guest-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 18px;
-    }
-
-    .contrib-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      align-items: stretch;
-    }
-
-    .contrib-spotlight {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow);
-      padding: 24px;
-      display: grid;
-      grid-template-columns: 220px 1fr;
-      gap: 22px;
-      align-items: center;
-    }
-
-    .contrib-photo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 240px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 10px;
-      overflow: hidden;
-      text-align: center;
-    }
-
-    .contrib-photo a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-    }
-
-    .contrib-photo img {
-      width: auto;
-      max-width: 220px;
-      max-height: 220px;
-      object-fit: contain;
-      object-position: center center;
-      border-radius: 12px;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .contrib-links {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-      margin-top: 14px;
-    }
-
-    .contrib-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 10px 12px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #f0f0f0;
-      transition: 0.2s ease;
-      text-align: center;
-    }
-
-    .contrib-link:hover {
-      border-color: rgba(239, 52, 52, 0.32);
-      background: rgba(255,255,255,0.05);
-      transform: translateY(-1px);
-    }
-
-    .contrib-gallery {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-    }
-
-    .contrib-item {
-      display: grid;
-      grid-template-columns: 150px 1fr;
-      gap: 14px;
-      align-items: center;
-      background: var(--panel-soft);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      padding: 14px;
-    }
-      background: var(--panel-soft);
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      box-shadow: var(--shadow);
-      overflow: hidden;
-    }
-
-    .contrib-item img {
-      width: 100%;
-      height: 110px;
-      object-fit: contain;
-      object-position: center;
-      display: block;
-      border-radius: 12px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      padding: 8px;
-    }
-
-    .contrib-item-body {
-      padding: 4px 6px 4px 0;
-    }
-
-    .contrib-item-body h3 {
-      margin-bottom: 8px;
-    }
-
-    .contrib-item-body p {
-      margin-bottom: 0;
-    }
-
-    .guest-card {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 20px;
-      align-items: center;
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow);
-      padding: 22px;
-    }
-
-    .guest-media {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 140px;
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 18px;
-      padding: 14px;
-    }
-
-    .guest-media img {
-      max-width: 100%;
-      max-height: 110px;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      border-radius: 10px;
-    }
-
-    .guest-meta h3 {
-      margin-bottom: 8px;
-    }
-
-    .guest-meta p {
-      margin-bottom: 10px;
-    }
-
-    .guest-note {
-      color: #ececec;
-      font-size: 0.92rem;
-      line-height: 1.7;
-    }
-
-    .thanks-card,
-    .link-card {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow);
-      padding: 24px;
-    }
-
-    .link-card a {
-      color: #fff;
-      border-bottom: 1px solid rgba(255,255,255,0.28);
-      padding-bottom: 2px;
-    }
-
-    .link-card a:hover {
-      color: #ffbdbd;
-      border-color: rgba(239,52,52,0.6);
-    }
-
-    .cta {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 18px;
-      align-items: center;
-      background: linear-gradient(135deg, rgba(116, 13, 13, 0.72), rgba(12,12,13,0.96), rgba(4,4,4,1));
-      border: 1px solid rgba(239, 52, 52, 0.24);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow);
-      padding: 28px;
-    }
-
-    .listen-everywhere {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: var(--radius-xl);
-      box-shadow: var(--shadow);
-      padding: 24px;
-    }
-
-    footer {
-      padding: 20px 0 40px;
-    }
-
-    .footer-box {
-      background: rgba(255,255,255,0.025);
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      padding: 18px;
-    }
-
-    .footer-title {
-      margin-bottom: 8px;
-      color: #f1f1f1;
-      font-size: 0.92rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-    }
-
-    .footer-copy {
-      color: rgba(255,255,255,0.64);
-      font-size: 0.84rem;
-      line-height: 1.75;
-      margin: 0;
-    }
-
-    @media (max-width: 1080px) {
-      .hero-grid,
-      .split-grid,
-      .thanks-grid,
-      .cause-grid,
-      .contrib-grid,
-      .cta,
-      .grid-3 {
-        grid-template-columns: 1fr;
-      }
-
-      .guest-card {
-        grid-template-columns: 120px 1fr;
-      }
-
-      .contrib-spotlight {
-        grid-template-columns: 180px 1fr;
-      }
-
-      .contrib-item {
-        grid-template-columns: 130px 1fr;
-      }
-
-      .cause-card {
-        grid-template-columns: 110px 1fr;
-      }
-
-      .topic-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .logo {
-        max-width: 520px;
-      }
-    }
-
-      .topic-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .logo {
-        max-width: 520px;
-      }
-    }
-
-    @media (max-width: 760px) {
-      .wrap,
-      .flush-bar {
-        width: min(var(--max), calc(100% - 20px));
-      }
-
-      .hero {
-        padding: 18px 0 18px;
-      }
-
-      .section {
-        padding: 22px 0;
-      }
-
-      .hero-grid,
-      .split-grid,
-      .thanks-grid,
-      .cause-grid,
-      .contrib-grid,
-      .cta,
-      .grid-3,
-      .guest-card,
-      .contrib-spotlight,
-      .contrib-item,
-      .cause-card {
-        grid-template-columns: 1fr;
-      }
-
-      .pill-grid,
-      .platform-grid,
-      .topic-grid,
-      .contrib-links {
-        grid-template-columns: 1fr;
-      }
-
-      .hero-copy {
-        max-width: 100%;
-      }
-
-      h1 {
-        font-size: clamp(2rem, 9vw, 2.8rem);
-        line-height: 1;
-        max-width: 100%;
-      }
-
-      h2 {
-        font-size: clamp(1.55rem, 7vw, 2.2rem);
-        line-height: 1.05;
-      }
-
-      h3 {
-        font-size: 1rem;
-      }
-
-      p,
-      .guest-note,
-      .footer-copy {
-        font-size: 0.95rem;
-        line-height: 1.7;
-      }
-
-      .actions {
-        flex-direction: column;
-      }
-
-      .btn,
-      .platform-link,
-      .contrib-link {
-        width: 100%;
-      }
-
-      .btn {
-        min-height: 52px;
-      }
-
-      .panel-body,
-      .listen-everywhere,
-      .card,
-      .lead-card,
-      .thanks-card,
-      .link-card,
-      .cta,
-      .guest-card,
-      .contrib-spotlight,
-      .contrib-item,
-      .cause-card {
-        padding: 18px;
-      }
-
-      .logo {
-        max-width: min(100%, 360px);
-      }
-
-      .logo-shell {
-        margin: 6px 0 18px;
-      }
-
-      .embed-shell {
-        padding: 8px;
-      }
-
-      .guest-media,
-      .contrib-photo,
-      .cause-logo-wrap {
-        min-height: auto;
-      }
-
-      .guest-media img,
-      .contrib-photo img,
-      .cause-logo-wrap img,
-      .contrib-item img {
-        max-height: 180px;
-        height: auto;
-        object-fit: contain;
-      }
-
-      .contrib-item {
-        gap: 12px;
-      }
-
-      .contrib-item-body {
-        padding: 2px 0 0;
-      }
-
-      .cta {
-        gap: 14px;
-      }
-
-      iframe[data-testid="embed-iframe"] {
-        height: 320px;
-      }
-    }
-
-      .pill-grid,
-      .topic-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .actions {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      .panel-body,
-      .card,
-      .lead-card,
-      .thanks-card,
-      .link-card,
-      .cta {
-        padding: 20px;
-      }
-
-      .logo {
-        max-width: 100%;
-      }
-    }
-  
-    @media (max-width: 900px) {
-      .platform-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-      }
-
-      .platform-link {
-        min-width: 0;
-        padding: 12px;
-      }
-
-      .platform-link span:last-child {
-        font-size: 0.86rem;
-        line-height: 1.2;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .platform-grid {
-        grid-template-columns: 1fr !important;
-      }
-
-      .listen-everywhere {
-        padding: 18px;
-      }
-
-      .platform-link {
-        width: 100%;
-        justify-content: flex-start;
-      }
-
-      .platform-link span:last-child {
-        white-space: normal;
-        overflow-wrap: anywhere;
-      }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
     }
   </style>
 </head>
 <body>
-  <main>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="nav-brand" href="#top" aria-label="Bench Tested home">
+        <img src="bench-tested-logo.png" alt="Bench Tested: A Ghostbusters Podcast" />
+        <span class="nav-status"><span class="status-dot" aria-hidden="true"></span> Season 2 incoming</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#featured">Featured episode</a>
+        <a href="#listen">Listen</a>
+        <a href="#guests">Guests</a>
+        <a href="#community">Community</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <div class="logo-shell">
-            <img class="logo" src="bench-tested-logo.png" alt="Bench Tested Podcast logo" />
-          </div>
-          <h1>Where Ghostbusters gear gets torn down, talked through, and put to the test.</h1>
-          <p>Bench Tested is for builders, collectors, and franchise diehards who care about more than nostalgia. This is where props, engineering, design choices, and fandom all collide, without the fluff.</p>
+          <img class="hero-logo" src="bench-tested-logo.png" alt="Bench Tested: A Ghostbusters Podcast" />
+          <div class="launch-line">The containment grid is cycling up</div>
+          <h1>Season 2<br /><span>drops June 24.</span></h1>
+          <p class="lede">Fresh builds. Sharper questions. More time at the bench with the people making Ghostbusters gear, props, and fandom worth paying attention to.</p>
           <div class="actions">
-            <a class="btn btn-primary" href="#listen">Listen Now</a>
-            <a class="btn btn-secondary" href="#about">Explore the Show</a>
+            <a class="btn btn-primary" href="#listen">Listen to Bench Tested <span aria-hidden="true">→</span></a>
+            <a class="btn btn-secondary" href="#featured">Meet the latest guest</a>
           </div>
         </div>
 
-        <aside class="panel" id="listen">
-          <div class="panel-topline"></div>
-          <div class="panel-body">
-            <div class="eyebrow">Current feed</div>
-            <h2>Bench Tested</h2>
-            <p>Interviews, prop breakdowns, builder insight, and real discussion around what makes Ghostbusters gear feel right.</p>
-            <div class="embed-shell">
-              <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/show/7xth7akhzUCkKaY6e5sexj?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        <aside class="launch-card surface" aria-label="Season 2 launch date">
+          <p class="eyebrow">Season 2 premiere</p>
+          <div class="date-block">
+            <span class="date-day">24</span>
+            <span class="date-month">Wednesday / June <span class="date-year">2026</span></span>
+          </div>
+          <div class="countdown" aria-label="Countdown to Season 2">
+            <div class="countdown-unit"><strong id="count-days">00</strong><span>Days</span></div>
+            <div class="countdown-unit"><strong id="count-hours">00</strong><span>Hours</span></div>
+            <div class="countdown-unit"><strong id="count-minutes">00</strong><span>Minutes</span></div>
+          </div>
+          <p class="launch-note" id="launch-note">New conversations. New shop stories. Same obsession with getting the details right.</p>
+        </aside>
+      </div>
+    </section>
+
+    <div class="caution-wrap" aria-hidden="true"></div>
+
+    <section class="section feature" id="featured">
+      <div class="wrap">
+        <div class="feature-grid surface">
+          <div class="feature-visual">
+            <img src="dfi-logo.png" alt="Dirt Farmer Industries" />
+          </div>
+          <div class="feature-copy">
+            <p class="eyebrow">Latest episode / Guest spotlight</p>
+            <h2>Sepp gets dirt under the fingernails.</h2>
+            <p class="lede">A shop-floor conversation with Sepp from Dirt Farmer Industries about practical builds, problem-solving, and the decisions that separate a prop that looks the part from one that holds up in the field.</p>
+            <div class="signal-row" aria-label="Episode topics">
+              <span class="signal">Builder insight</span>
+              <span class="signal">Practical fabrication</span>
+              <span class="signal">Ghostbusters gear</span>
             </div>
-            <div class="pill-grid">
-              <div class="pill">Prop-first episodes</div>
-              <div class="pill">Builder interviews</div>
-              <div class="pill">Screen-inspired design talk</div>
-              <div class="pill">No filler, just substance</div>
+            <div class="actions">
+              <a class="btn btn-dark" href="https://www.dirtfarmerindustries.com" target="_blank" rel="noreferrer">Visit Dirt Farmer Industries <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-secondary" href="#listen">Play the episode</a>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight" id="listen">
+      <div class="wrap listen-grid">
+        <div class="player-card surface">
+          <p class="eyebrow">Now transmitting</p>
+          <iframe data-testid="embed-iframe" src="https://open.spotify.com/embed/show/7xth7akhzUCkKaY6e5sexj?utm_source=generator" title="Bench Tested on Spotify" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        <aside class="listen-side surface">
+          <div>
+            <p class="eyebrow">Subscribe for Season 2</p>
+            <h2>Pick your frequency.</h2>
+            <p>Follow Bench Tested wherever you already listen and be ready when the new season hits the feed.</p>
+          </div>
+          <div class="platforms">
+            <a class="platform-link" href="https://podcasts.apple.com/us/podcast/bench-tested-a-ghostbusters-podcast/id1886335915" target="_blank" rel="noreferrer"><span class="platform-icon"></span><span>Apple Podcasts</span></a>
+            <a class="platform-link" href="https://open.spotify.com/show/7xth7akhzUCkKaY6e5sexj" target="_blank" rel="noreferrer"><span class="platform-icon">SP</span><span>Spotify</span></a>
+            <a class="platform-link" href="https://iheart.com/podcast/327389824/" target="_blank" rel="noreferrer"><span class="platform-icon">IH</span><span>iHeartRadio</span></a>
+            <a class="platform-link" href="https://pca.st/nbbf75tk" target="_blank" rel="noreferrer"><span class="platform-icon">PC</span><span>Pocket Casts</span></a>
+            <a class="platform-link" href="https://castbox.fm/vh/7134959" target="_blank" rel="noreferrer"><span class="platform-icon">CB</span><span>Castbox</span></a>
+            <a class="platform-link" href="https://goodpods.com/podcasts/bench-tested-a-ghostbusters-podcast-728553" target="_blank" rel="noreferrer"><span class="platform-icon">GP</span><span>Goodpods</span></a>
           </div>
         </aside>
       </div>
     </section>
 
-    <div class="flush-bar"><div class="caution-bar" aria-hidden="true"></div></div>
+    <div class="caution-wrap slim" aria-hidden="true"></div>
 
-    <section class="section">
+    <section class="section guest-section" id="guests">
       <div class="wrap">
-        <div class="listen-everywhere">
-          <div class="eyebrow">Listen everywhere</div>
-          <h2>Find Bench Tested on your platform of choice</h2>
-          <p>You are not locked into one app. Subscribe wherever you already listen and keep up with new episodes across the major podcast platforms.</p>
-          <div class="platform-grid">
-            <a class="platform-link" href="https://podcasts.apple.com/us/podcast/bench-tested-a-ghostbusters-podcast/id1886335915" target="_blank" rel="noreferrer"><span class="platform-icon"></span><span>Apple Podcasts</span></a>
-            <a class="platform-link" href="https://castbox.fm/vh/7134959" target="_blank" rel="noreferrer"><span class="platform-icon">CB</span><span>Castbox</span></a>
-            <a class="platform-link" href="https://goodpods.com/podcasts/bench-tested-a-ghostbusters-podcast-728553" target="_blank" rel="noreferrer"><span class="platform-icon">GP</span><span>Goodpods</span></a>
-            <a class="platform-link" href="https://iheart.com/podcast/327389824/" target="_blank" rel="noreferrer"><span class="platform-icon">IH</span><span>iHeartRadio</span></a>
-            <a class="platform-link" href="https://pca.st/nbbf75tk" target="_blank" rel="noreferrer"><span class="platform-icon">PC</span><span>Pocket Casts</span></a>
-            <a class="platform-link" href="https://open.spotify.com/show/7xth7akhzUCkKaY6e5sexj" target="_blank" rel="noreferrer"><span class="platform-icon">SP</span><span>Spotify</span></a>
+        <div class="guest-intro">
+          <div class="section-head">
+            <p class="eyebrow">From the Bench Tested archive</p>
+            <h2>Builders who moved the conversation forward.</h2>
           </div>
+          <p>Past episodes are a working record of the makers, designers, and film craftspeople shaping the gear and the community around it.</p>
         </div>
-      </div>
-    </section>
 
-    <div class="flush-bar"><div class="caution-bar" aria-hidden="true"></div></div>
+        <div class="guest-grid">
+          <article class="guest-card logo-card surface">
+            <div class="guest-media"><img src="caprop.png" alt="C&A Prop Design" /></div>
+            <div class="guest-body">
+              <span class="guest-credit">Fabrication / Design</span>
+              <h3>C&amp;A Prop Design</h3>
+              <p>Purpose-built props, design thinking, and the practical craft behind turning reference into something real.</p>
+            </div>
+          </article>
+
+          <article class="guest-card surface">
+            <div class="guest-media"><img src="nomake.png" alt="Nomake Wan" /></div>
+            <div class="guest-body">
+              <span class="guest-credit">Maker / Problem solver</span>
+              <h3>Nomake Wan</h3>
+              <p>Creative fabrication, fearless iteration, and the builder mindset that keeps the fandom evolving.</p>
+            </div>
+          </article>
+
+          <article class="guest-card surface">
+            <div class="guest-media"><img src="ben.png" alt="Ben Eadie, prop maker for Ghostbusters: Afterlife" /></div>
+            <div class="guest-body">
+              <span class="guest-credit">Ghostbusters: Afterlife</span>
+              <h3>Ben Eadie</h3>
+              <p>A film-maker’s perspective on design, fabrication, and bringing Ghostbusters hardware back to the screen.</p>
+            </div>
+          </article>
+        </div>
       </div>
     </section>
 
     <section class="section" id="about">
+      <div class="wrap about-grid">
+        <div class="about-lead surface">
+          <p class="eyebrow">Why Bench Tested hits different</p>
+          <h2>Fandom meets actual craft.</h2>
+          <p class="lede">This is where builders compare notes, screen-used details get examined, and the small decisions behind great gear get the time they deserve.</p>
+          <div class="actions"><a class="btn btn-primary" href="#listen">Start listening</a></div>
+        </div>
+        <div class="topic-list">
+          <article class="topic"><div class="topic-num">01 / BREAKDOWNS</div><h3>Prop-first episodes</h3><p>Packs, traps, wands, electronics, and the details most people miss.</p></article>
+          <article class="topic"><div class="topic-num">02 / SHOP TALK</div><h3>Builder interviews</h3><p>Honest conversations about process, tradeoffs, failures, and breakthroughs.</p></article>
+          <article class="topic"><div class="topic-num">03 / PRODUCTION</div><h3>Screen-informed</h3><p>Design thinking and behind-the-scenes perspective from people who know the work.</p></article>
+          <article class="topic"><div class="topic-num">04 / COMMUNITY</div><h3>No filler</h3><p>Fan-savvy discussion for listeners who care about substance over empty hype.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <div class="caution-wrap slim" aria-hidden="true"></div>
+
+    <section class="section" id="community">
       <div class="wrap">
         <div class="section-head">
-          <div class="eyebrow">Why it hits</div>
-          <h2>Not just another fandom podcast</h2>
-          <p>Bench Tested leans into the craft side of the franchise. It is built for people who actually care how the gear works, how the props were built, and what separates a cool replica from something that really feels screen-worthy.</p>
+          <p class="eyebrow">Built with the community</p>
+          <h2>Good work travels further together.</h2>
+          <p>Bench Tested is powered by the makers, shops, and organizations who build with care and show up for something bigger than themselves.</p>
         </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="icon">🎙️</div>
-            <h3>Built for prop nerds</h3>
-            <p>Deep dives into props, design decisions, engineering choices, and the small details most people never notice.</p>
-          </article>
-          <article class="card">
-            <div class="icon">🛠️</div>
-            <h3>Builder-first conversations</h3>
-            <p>Film tech, fan builds, fabrication, electronics, and the practical reality of making gear that looks right and works.</p>
-          </article>
-          <article class="card">
-            <div class="icon">📡</div>
-            <h3>Straight from the field</h3>
-            <p>Interviews, breakdowns, and real talk from builders, artists, and fans pushing the hobby forward.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <div class="flush-bar"><div class="caution-bar" aria-hidden="true"></div></div>
-
-    <section class="section">
-      <div class="wrap split-grid">
-        <div class="lead-card">
-          <div class="eyebrow">Inside the containment unit</div>
-          <h2>What you get</h2>
-          <p>This show lives where fandom obsession meets actual craft. It is for people who want to know why a prop works, why a build fails, what makes something screen-accurate, and how to push their own projects further.</p>
-        </div>
-
-        <div class="topic-grid">
-          <div class="topic"><div class="topic-num">01</div><div class="topic-title">Movie prop breakdowns</div></div>
-          <div class="topic"><div class="topic-num">02</div><div class="topic-title">Builder interviews</div></div>
-          <div class="topic"><div class="topic-num">03</div><div class="topic-title">Pack, trap, and wand tech</div></div>
-          <div class="topic"><div class="topic-num">04</div><div class="topic-title">Behind-the-scenes design talk</div></div>
-          <div class="topic"><div class="topic-num">05</div><div class="topic-title">Fandom, gear, and franchise discussion</div></div>
-          <div class="topic"><div class="topic-num">06</div><div class="topic-title">What makes a build feel screen-worthy</div></div>
-        </div>
-      </div>
-    </section>
-
-    <div class="flush-bar"><div class="caution-bar" aria-hidden="true"></div></div>
-
-    <section class="section">
-      <div class="wrap thanks-grid">
-        <div class="thanks-card">
-          <div class="eyebrow">Special thanks</div>
-          <h2>Support from the community</h2>
-          <p>Bench Tested is built in the same spirit as the best Ghostbusters fan work, collaborative, detail-driven, and fueled by people who actually care about making cool things the right way.</p>
-          <p>A special thanks goes to the makers and supporters helping keep the passion side of this fandom alive.</p>
-        </div>
-        <div class="link-card">
-          <div class="eyebrow">Featured supporters</div>
-          <div style="display:grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: center;">
-            <a href="https://www.etsy.com/shop/MobySignCo?ref=shop-header-name&listing_id=4446164006&from_page=listing" target="_blank" rel="noreferrer" style="display:flex; align-items:center; justify-content:center; min-height:120px; border:1px solid rgba(255,255,255,0.08); border-radius:16px; background:rgba(255,255,255,0.03); padding:16px;">
-              <img src="moby sign co.png" alt="Moby Sign Co. logo" style="max-width:100%; max-height:72px; width:auto; height:auto; object-fit:contain;" />
-            </a>
-            <a href="https://www.ghostworkslab.com" target="_blank" rel="noreferrer" style="display:flex; align-items:center; justify-content:center; min-height:120px; border:1px solid rgba(255,255,255,0.08); border-radius:16px; background:rgba(255,255,255,0.03); padding:16px;">
-              <img src="ghostworks lab.png" alt="Ghostworks Lab logo" style="max-width:100%; max-height:72px; width:auto; height:auto; object-fit:contain;" />
-            </a>
-          </div>
-          <p style="margin-top:16px;">Support the shops behind the work. Click either logo to visit.</p>
-        </div>
-      </div>
-    </section>
-
-    <div class="flush-bar"><div class="caution-bar" aria-hidden="true"></div></div>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="eyebrow">Community spotlight</div>
-          <h2>Learn more about the causes behind the community</h2>
-          <p>Ghostbusters fandom is at its best when it does more than build props and quote lines. These organizations reflect the part of the community that shows up, gives back, and does real good for real people.</p>
-        </div>
-
-        <div class="cause-grid">
-          <article class="cause-card">
-            <a class="cause-logo-wrap" href="https://www.ghostbustersgiveback.com" target="_blank" rel="noreferrer">
-              <img src="ggb.png" alt="Ghostbusters Give Back logo" />
-            </a>
-            <div class="cause-copy">
-              <h3>Ghostbusters Give Back</h3>
-              <p>Ghostbusters Give Back highlights the charity and outreach side of the fandom, bringing fans together to support meaningful causes and community efforts.</p>
-              <a class="cause-link" href="https://www.ghostbustersgiveback.com" target="_blank" rel="noreferrer">Visit Ghostbusters Give Back</a>
+        <div class="community-grid">
+          <article class="community-card surface">
+            <p class="eyebrow">Workshop supporters</p>
+            <h3>Back the people behind the work.</h3>
+            <p>Independent makers keep this side of the fandom inventive, useful, and wonderfully hands-on.</p>
+            <div class="support-logos">
+              <a class="support-logo" href="https://www.etsy.com/shop/MobySignCo?ref=shop-header-name&amp;listing_id=4446164006&amp;from_page=listing" target="_blank" rel="noreferrer"><img src="moby sign co.png" alt="Moby Sign Co." /></a>
+              <a class="support-logo" href="https://www.ghostworkslab.com" target="_blank" rel="noreferrer"><img src="ghostworks lab.png" alt="Ghostworks Lab" /></a>
             </div>
           </article>
 
-          <article class="cause-card">
-            <div class="cause-logo-wrap">
-              <img src="starlight.png" alt="Starlight Children's Foundation logo" />
-            </div>
-            <div class="cause-copy">
-              <h3>Starlight Children&apos;s Foundation</h3>
-              <p>Starlight Children&apos;s Foundation works to bring joy, comfort, and support to hospitalized kids and their families through programs and experiences that make a hard situation more bearable.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <div class="flush-bar"><div class="caution-bar" aria-hidden="true"></div></div>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="eyebrow">Guest contributions</div>
-          <h2>Spotlight on Sean Charlesworth</h2>
-          <p>Sean Charlesworth represents the exact kind of craftsmanship Bench Tested exists to celebrate, thoughtful design, practical engineering, film-aware aesthetics, and builds that actually function in the real world.</p>
-        </div>
-
-        <div class="contrib-grid">
-          <article class="contrib-spotlight">
-            <div class="contrib-photo">
-              <a href="seanheadshot.jpg" target="_blank" rel="noreferrer" aria-label="Open full-size Sean Charlesworth image">
-                <img src="seanheadshot.jpg" alt="Sean Charlesworth with Adam Savage" />
+          <article class="community-card surface">
+            <p class="eyebrow">Community causes</p>
+            <h3>Fandom that shows up.</h3>
+            <p>Celebrating organizations that turn shared enthusiasm into real-world good.</p>
+            <div class="cause-list">
+              <a class="cause" href="https://www.ghostbustersgiveback.com" target="_blank" rel="noreferrer">
+                <img src="ggb.png" alt="Ghostbusters Give Back" />
+                <div><h3>Ghostbusters Give Back</h3><p>Charity and outreach efforts from across the Ghostbusters community.</p></div>
               </a>
-            </div>
-            <div>
-              <div class="eyebrow">Featured contributor</div>
-              <h3>Sean Charlesworth</h3>
-              <p>From working alongside Adam Savage to creating highly detailed functional Ghostbusters builds, Sean sits at the intersection of fan passion and serious fabrication skill. His work is not just visually strong, it is engineered with intent.</p>
-              <div class="contrib-links">
-                <a class="contrib-link" href="https://charlesworthdynamics.etsy.com" target="_blank" rel="noreferrer">Charlesworth Dynamics Shop</a>
-                <a class="contrib-link" href="https://www.printables.com/model/1547160" target="_blank" rel="noreferrer">Free Trap Files</a>
-                <a class="contrib-link" href="https://youtu.be/z6KmX_poEV8?si=d5zdOLNxbqln-Unh" target="_blank" rel="noreferrer">Ghost Trap Build</a>
-                <a class="contrib-link" href="https://youtu.be/oPxqXW4zh2U?si=_SV5yqX2L5NwrcUI" target="_blank" rel="noreferrer">RTV Build</a>
-                <a class="contrib-link" href="https://youtu.be/d5MTFw9gUc8?si=RJMYUxQqQcYXv-ST" target="_blank" rel="noreferrer">ESP Unit</a>
-                <a class="contrib-link" href="https://youtu.be/d5MTFw9gUc8?si=RJMYUxQqQcYXv-ST" target="_blank" rel="noreferrer">Adam's Pack Build</a>
+              <div class="cause">
+                <img src="starlight.png" alt="Starlight Children’s Foundation" />
+                <div><h3>Starlight Children’s Foundation</h3><p>Bringing joy, comfort, and support to hospitalized kids and their families.</p></div>
               </div>
-            </div>
-          </article>
-
-          <div class="contrib-gallery">
-            <article class="contrib-item">
-              <a href="helmet.jpg" target="_blank" rel="noreferrer" aria-label="Open full-size Keymaster helmet image">
-                <img src="helmet.jpg" alt="Keymaster helmet by Sean Charlesworth" />
-              </a>
-              <div class="contrib-item-body">
-                <h3>Keymaster Helmet</h3>
-                <p>A standout example of character-driven fabrication, executed with the kind of detail and finish that elevates a replica into something memorable.</p>
-              </div>
-            </article>
-            <article class="contrib-item">
-              <a href="caddyshack.JPG" target="_blank" rel="noreferrer" aria-label="Open full-size Caddyshack Tournament image">
-                <img src="caddyshack.JPG" alt="Murray Bros. Caddyshack Tournament Ghost Trap" />
-              </a>
-              <div class="contrib-item-body">
-                <h3>Murray Bros. Caddyshack Tournament</h3>
-                <p>Functional Ghostbusters tech built for a real event environment, where presentation, durability, and usability all matter at the same time.</p>
-              </div>
-            </article>
-            <article class="contrib-item">
-              <a href="rtvtrap.jpg" target="_blank" rel="noreferrer" aria-label="Open full-size RTV Trap image">
-                <img src="rtvtrap.jpg" alt="RTV Trap from Ghostbusters Afterlife" />
-              </a>
-              <div class="contrib-item-body">
-                <h3>RTV Trap from Ghostbusters: Afterlife</h3>
-                <p>A sharp look at practical build execution, film-inspired detailing, and the kind of engineering decisions that make a hero prop feel alive.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="flush-bar"><div class="caution-bar" aria-hidden="true"></div></div>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="eyebrow">Upcoming guests</div>
-          <h2>Stay tuned!</h2>
-          <p>New episodes and guest announcements are on the way. Bench Tested is still rolling, and the next round of conversations will be worth the wait.</p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card">
-            <div class="icon">📻</div>
-            <h3>More episodes incoming</h3>
-            <p>The next guest spot is being lined up now. Keep checking back for the next announcement and release date.</p>
-          </article>
-          <article class="card">
-            <div class="icon">👻</div>
-            <h3>Past guests, real substance</h3>
-            <p>Bench Tested has already featured conversations with builders, prop masters, designers, and creators who actually bring something valuable to the hobby.</p>
-          </article>
-          <article class="card">
-            <div class="icon">🧪</div>
-            <h3>Still focused on quality</h3>
-            <p>No filler guests, no empty hype. The goal stays the same, spotlight people doing meaningful work in the Ghostbusters space.</p>
-          </article>
-        </div>
-
-        <div class="section-head" style="margin-top:28px;">
-          <div class="eyebrow">Past episodes and guests</div>
-          <h2>Recent highlights</h2>
-          <p>A few of the guests and conversations already featured on the show.</p>
-        </div>
-
-        <div class="guest-grid">
-          <article class="guest-card">
-            <div class="guest-media">
-              <img src="indy.jpg" alt="Indy Magnoli" />
-            </div>
-            <div class="guest-meta">
-              <div class="eyebrow">Past episode</div>
-              <h3>Indy Magnoli, Magnoli Clothiers</h3>
-              <p>Craftsmanship, tailoring, screen-inspired clothing, and what separates quality garment work from generic costume replicas.</p>
-              <div style="margin-top:14px; display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
-                <a href="https://www.magnoliclothiers.com" target="_blank" rel="noreferrer" aria-label="Visit Magnoli Clothiers" style="display:inline-flex; align-items:center;">
-                  <img src="magnolilogo.png" alt="Magnoli Clothiers logo" style="max-width:180px; max-height:54px; width:auto; height:auto; object-fit:contain; display:block;" />
-                </a>
-              </div>
-            </div>
-          </article>
-
-          <article class="guest-card">
-            <div class="guest-media">
-              <img src="seanheadshot.jpg" alt="Sean Charlesworth with Adam Savage" />
-            </div>
-            <div class="guest-meta">
-              <div class="eyebrow">Past episode</div>
-              <h3>Sean Charlesworth</h3>
-              <p>Practical fabrication, functional prop design, engineering tradeoffs, and the thinking behind builds that actually perform in the real world.</p>
-            </div>
-          </article>
-
-          <article class="guest-card">
-            <div class="guest-media">
-              <img src="ben.png" alt="Ben Eadie" />
-            </div>
-            <div class="guest-meta">
-              <div class="eyebrow">Past episode</div>
-              <h3>Ben Eadie</h3>
-              <p>Prop history, screen-used perspective, curation, restoration, and the difference between movie-ready and convention-ready gear.</p>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section" style="padding-top: 0; padding-bottom: 28px;">
-      <div class="wrap">
-        <div class="guest-grid">
-          </div>
-      </div>
-    </section>
-
-    <div class="flush-bar"><div class="caution-bar" aria-hidden="true"></div></div>
-
-    <section class="section">
-      <div class="wrap">
-        <div class="section-head">
-          <div class="eyebrow">Be a guest</div>
-          <h2>Want to be considered for Bench Tested?</h2>
-          <p>If you build, collect, restore, design, fabricate, document, or contribute something genuinely interesting to the Ghostbusters community, send in your info. This is for serious fits, not random self-promo with no substance.</p>
+    <section class="section section-tight">
+      <div class="wrap guest-cta">
+        <div class="guest-cta-copy surface">
+          <p class="eyebrow">Pull up to the bench</p>
+          <h2>Have work worth talking about?</h2>
+          <p>Builders, collectors, restorers, designers, fabricators, and Ghostbusters community contributors can submit their story for a future episode.</p>
         </div>
-
-        <div class="panel">
-          <div class="panel-topline"></div>
-          <div class="panel-body">
-            <iframe
-              id="JotFormIFrame-261324950226049"
-              title="Contact Us"
-              onload="window.parent.scrollTo(0,0)"
-              allowtransparency="true"
-              allow="geolocation; microphone; camera; fullscreen; payment"
-              src="https://form.jotform.com/261324950226049"
-              frameborder="0"
-              style="min-width:100%;max-width:100%;height:539px;border:none;"
-              scrolling="no"
-            ></iframe>
-            <script src='https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'></script>
-            <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-261324950226049']", "https://form.jotform.com/")</script>
-          </div>
+        <div class="form-card surface">
+          <iframe id="JotFormIFrame-261324950226049" title="Bench Tested guest submission form" onload="window.parent.scrollTo(0,0)" allowtransparency="true" allow="geolocation; microphone; camera; fullscreen; payment" src="https://form.jotform.com/261324950226049" scrolling="no"></iframe>
+          <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+          <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-261324950226049']", "https://form.jotform.com/")</script>
         </div>
       </div>
     </section>
 
-    <div class="flush-bar"><div class="caution-bar" aria-hidden="true"></div></div>
-
-    <section class="section" style="padding-top: 16px;">
-      <div class="wrap cta">
+    <section class="section section-tight">
+      <div class="wrap final-cta surface">
         <div>
-          <div class="eyebrow">Ready to drop in</div>
-          <h2>Queue it up and get into the weeds.</h2>
-          <p>Hit play and dig into the builds, the gear, the franchise, and the details that actually matter.</p>
+          <p class="eyebrow">Season 2 / June 24, 2026</p>
+          <h2>The bench lights are back on.</h2>
+          <p>Follow the show now. The next round of builds and conversations is almost here.</p>
         </div>
-        <a class="btn btn-primary" href="https://open.spotify.com/show/7xth7akhzUCkKaY6e5sexj" target="_blank" rel="noreferrer">Open on Spotify</a>
+        <a class="btn btn-primary" href="https://open.spotify.com/show/7xth7akhzUCkKaY6e5sexj" target="_blank" rel="noreferrer">Follow on Spotify <span aria-hidden="true">↗</span></a>
       </div>
     </section>
-
-    <footer>
-      <div class="wrap footer-box">
-        <div class="footer-title">Legal disclaimer</div>
-        <p class="footer-copy">Bench Tested: A Ghostbusters Podcast is an independent fan-created podcast and is not affiliated with, endorsed by, sponsored by, or associated with Ghost Corps, Sony Pictures, Columbia Pictures, or any related rights holders. Ghostbusters and related names, characters, props, logos, and elements are the property of their respective owners. Any references are used for commentary, discussion, review, and fan purposes only. No official partnership, authorization, or endorsement is claimed or implied. All third-party trademarks, copyrights, and brand names remain the property of their respective owners.</p>
-      </div>
-    </footer>
   </main>
+
+  <footer>
+    <div class="wrap footer-row">
+      <img class="footer-mark" src="bench-tested-logo.png" alt="Bench Tested" />
+      <p class="footer-copy">Bench Tested: A Ghostbusters Podcast is an independent fan-created podcast and is not affiliated with, endorsed by, sponsored by, or associated with Ghost Corps, Sony Pictures, Columbia Pictures, or any related rights holders. Ghostbusters and related names, characters, props, logos, and elements are the property of their respective owners. Any references are used for commentary, discussion, review, and fan purposes only. No official partnership, authorization, or endorsement is claimed or implied. All third-party trademarks, copyrights, and brand names remain the property of their respective owners.</p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const launch = new Date("2026-06-24T00:00:00-06:00");
+      const days = document.getElementById("count-days");
+      const hours = document.getElementById("count-hours");
+      const minutes = document.getElementById("count-minutes");
+      const note = document.getElementById("launch-note");
+
+      function updateCountdown() {
+        const distance = launch.getTime() - Date.now();
+        if (distance <= 0) {
+          days.textContent = "S2";
+          hours.textContent = "IS";
+          minutes.textContent = "LIVE";
+          note.textContent = "Season 2 is here. Open the feed and get back to the bench.";
+          return;
+        }
+        days.textContent = String(Math.floor(distance / 86400000)).padStart(2, "0");
+        hours.textContent = String(Math.floor((distance % 86400000) / 3600000)).padStart(2, "0");
+        minutes.textContent = String(Math.floor((distance % 3600000) / 60000)).padStart(2, "0");
+      }
+
+      updateCountdown();
+      window.setInterval(updateCountdown, 60000);
+    })();
+  </script>
 </body>
 </html>
