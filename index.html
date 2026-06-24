@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bench Tested | Season 2 Drops June 24</title>
-  <meta name="description" content="Bench Tested Season 2 drops Wednesday, June 24, 2026. A Ghostbusters podcast for builders, collectors, and fans who care how the gear gets made." />
+  <title>Bench Tested | A Ghostbusters Podcast</title>
+  <meta name="description" content="Bench Tested is a Ghostbusters podcast for builders, collectors, and fans who care how the gear gets made. Listen to the latest episode and meet the makers behind the work." />
   <meta name="theme-color" content="#08090a" />
   <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2" />
@@ -120,11 +120,12 @@
     .nav-links { display: flex; align-items: center; gap: 22px; color: #d4d4d4; font-size: .8rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; }
     .nav-links a:hover { color: #fff; }
 
-    .hero { min-height: 760px; display: grid; align-items: center; padding: 70px 0 82px; }
+    .hero { min-height: 700px; display: grid; align-items: center; padding: 58px 0 72px; }
     .hero-grid { display: grid; grid-template-columns: minmax(0, 1.17fr) minmax(340px, .83fr); gap: 64px; align-items: center; }
     .hero-logo { width: min(540px, 88%); margin-bottom: 44px; filter: drop-shadow(0 16px 32px rgba(0,0,0,.35)); }
     .launch-line { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; color: var(--yellow); font-weight: 900; letter-spacing: .18em; text-transform: uppercase; font-size: .76rem; }
     .launch-line::before { content: ""; width: 42px; height: 2px; background: var(--yellow); }
+    .hero h1 { font-size: clamp(2.9rem, 6.3vw, 5.7rem); }
     .hero h1 span { color: var(--red); }
     .hero-copy .lede { max-width: 650px; }
     .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
@@ -172,6 +173,8 @@
     .countdown-unit strong { display: block; color: #fff; font-size: 1.4rem; line-height: 1; }
     .countdown-unit span { display: block; margin-top: 6px; color: var(--dim); font-size: .59rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
     .launch-note { margin-top: 20px; color: #e0e0e0; font-size: .86rem; line-height: 1.5; }
+    .next-guest-link { display: inline-flex; margin-top: 18px; color: var(--yellow); font-size: .72rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+    .next-guest-link:hover { color: #ffe36a; }
 
     .caution-wrap { position: relative; height: 18px; overflow: hidden; border-top: 1px solid #000; border-bottom: 1px solid #000; }
     .caution-wrap::before { content: ""; position: absolute; inset: 0; background: repeating-linear-gradient(-45deg, var(--yellow) 0 18px, #171717 18px 36px); }
@@ -298,13 +301,13 @@
     <div class="wrap nav">
       <a class="nav-brand" href="#top" aria-label="Bench Tested home">
         <img src="bench-tested-logo.png" alt="Bench Tested: A Ghostbusters Podcast" />
-        <span class="nav-status"><span class="status-dot" aria-hidden="true"></span> Season 2 incoming</span>
+        <span class="nav-status"><span class="status-dot" aria-hidden="true"></span> New episodes streaming</span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#featured">Featured episode</a>
         <a href="#listen">Listen</a>
         <a href="#guests">Guests</a>
-        <a href="#community">Community</a>
+        <a href="#guest-form">Request a guest</a>
       </nav>
     </div>
   </header>
@@ -314,27 +317,28 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <img class="hero-logo" src="bench-tested-logo.png" alt="Bench Tested: A Ghostbusters Podcast" />
-          <div class="launch-line">The containment grid is cycling up</div>
-          <h1>Season 2<br /><span>drops June 24.</span></h1>
-          <p class="lede">Fresh builds. Sharper questions. More time at the bench with the people making Ghostbusters gear, props, and fandom worth paying attention to.</p>
+          <div class="launch-line">A Ghostbusters podcast for builders and fans</div>
+          <h1>Built at the bench.<br /><span>Made for the fandom.</span></h1>
+          <p class="lede">Bench Tested gets into the props, processes, design choices, and shop stories behind the Ghostbusters gear we obsess over—with the people who actually do the work.</p>
           <div class="actions">
-            <a class="btn btn-primary" href="#listen">Listen to Bench Tested <span aria-hidden="true">→</span></a>
-            <a class="btn btn-secondary" href="#featured">Meet the latest guest</a>
+            <a class="btn btn-primary" href="#listen">Listen to the latest <span aria-hidden="true">→</span></a>
+            <a class="btn btn-secondary" href="#guest-form">Request a guest</a>
           </div>
         </div>
 
-        <aside class="launch-card surface" aria-label="Season 2 launch date">
-          <p class="eyebrow">Season 2 premiere</p>
+        <aside class="launch-card surface" aria-label="Next episode release date">
+          <p class="eyebrow">Next episode</p>
           <div class="date-block">
-            <span class="date-day">24</span>
-            <span class="date-month">Wednesday / June <span class="date-year">2026</span></span>
+            <span class="date-day">08</span>
+            <span class="date-month">Wednesday / July <span class="date-year">2026</span></span>
           </div>
-          <div class="countdown" aria-label="Countdown to Season 2">
+          <div class="countdown" aria-label="Countdown to the next episode">
             <div class="countdown-unit"><strong id="count-days">00</strong><span>Days</span></div>
             <div class="countdown-unit"><strong id="count-hours">00</strong><span>Hours</span></div>
             <div class="countdown-unit"><strong id="count-minutes">00</strong><span>Minutes</span></div>
           </div>
-          <p class="launch-note" id="launch-note">New conversations. New shop stories. Same obsession with getting the details right.</p>
+          <p class="launch-note" id="launch-note">Guest announcement incoming. The next conversation lands July 8.</p>
+          <a class="next-guest-link" href="#guest-form">Know who should be next? Request a guest →</a>
         </aside>
       </div>
     </section>
@@ -373,7 +377,7 @@
         </div>
         <aside class="listen-side surface">
           <div>
-            <p class="eyebrow">Subscribe for Season 2</p>
+            <p class="eyebrow">Listen everywhere</p>
             <h2>Pick your frequency.</h2>
             <p>Follow Bench Tested wherever you already listen and be ready when the new season hits the feed.</p>
           </div>
@@ -488,12 +492,12 @@
       </div>
     </section>
 
-    <section class="section section-tight">
+    <section class="section section-tight" id="guest-form">
       <div class="wrap guest-cta">
         <div class="guest-cta-copy surface">
-          <p class="eyebrow">Pull up to the bench</p>
-          <h2>Have work worth talking about?</h2>
-          <p>Builders, collectors, restorers, designers, fabricators, and Ghostbusters community contributors can submit their story for a future episode.</p>
+          <p class="eyebrow">Nominate a future guest</p>
+          <h2>Know who belongs at the bench?</h2>
+          <p>Send us a builder, collector, restorer, designer, fabricator, or Ghostbusters community contributor whose work deserves a deeper conversation. Self-nominations are welcome too.</p>
         </div>
         <div class="form-card surface">
           <iframe id="JotFormIFrame-261324950226049" title="Bench Tested guest submission form" onload="window.parent.scrollTo(0,0)" allowtransparency="true" allow="geolocation; microphone; camera; fullscreen; payment" src="https://form.jotform.com/261324950226049" scrolling="no"></iframe>
@@ -506,9 +510,9 @@
     <section class="section section-tight">
       <div class="wrap final-cta surface">
         <div>
-          <p class="eyebrow">Season 2 / June 24, 2026</p>
-          <h2>The bench lights are back on.</h2>
-          <p>Follow the show now. The next round of builds and conversations is almost here.</p>
+          <p class="eyebrow">Follow Bench Tested</p>
+          <h2>Keep the feed in your kit.</h2>
+          <p>New conversations, practical build insight, and more time with the people pushing Ghostbusters craft forward.</p>
         </div>
         <a class="btn btn-primary" href="https://open.spotify.com/show/7xth7akhzUCkKaY6e5sexj" target="_blank" rel="noreferrer">Follow on Spotify <span aria-hidden="true">↗</span></a>
       </div>
@@ -524,19 +528,19 @@
 
   <script>
     (() => {
-      const launch = new Date("2026-06-24T00:00:00-06:00");
+      const nextEpisode = new Date("2026-07-08T00:00:00-06:00");
       const days = document.getElementById("count-days");
       const hours = document.getElementById("count-hours");
       const minutes = document.getElementById("count-minutes");
       const note = document.getElementById("launch-note");
 
       function updateCountdown() {
-        const distance = launch.getTime() - Date.now();
+        const distance = nextEpisode.getTime() - Date.now();
         if (distance <= 0) {
-          days.textContent = "S2";
-          hours.textContent = "IS";
+          days.textContent = "NEW";
+          hours.textContent = "EP";
           minutes.textContent = "LIVE";
-          note.textContent = "Season 2 is here. Open the feed and get back to the bench.";
+          note.textContent = "The new episode is live. Open the feed and get back to the bench.";
           return;
         }
         days.textContent = String(Math.floor(distance / 86400000)).padStart(2, "0");
