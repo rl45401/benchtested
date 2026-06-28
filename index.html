@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bench Tested | A Ghostbusters Podcast</title>
-  <meta name="description" content="Bench Tested is a Ghostbusters podcast for builders, collectors, and fans who care how the gear gets made. Listen to the latest episode and meet the makers behind the work." />
+  <meta name="description" content="Bench Tested is a Ghostbusters podcast for builders, collectors, and fans who care how the gear gets made. The July 8 episode features GPStar's Nomake Wan and Dustin Grau." />
   <meta name="theme-color" content="#08090a" />
   <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2" />
@@ -121,7 +121,7 @@
     .nav-links a:hover { color: #fff; }
 
     .hero { min-height: 700px; display: grid; align-items: center; padding: 58px 0 72px; }
-    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.17fr) minmax(340px, .83fr); gap: 64px; align-items: center; }
+    .hero-grid { display: grid; grid-template-columns: minmax(0, 1.02fr) minmax(360px, .98fr); gap: 58px; align-items: center; }
     .hero-logo { width: min(540px, 88%); margin-bottom: 44px; filter: drop-shadow(0 16px 32px rgba(0,0,0,.35)); }
     .launch-line { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; color: var(--yellow); font-weight: 900; letter-spacing: .18em; text-transform: uppercase; font-size: .76rem; }
     .launch-line::before { content: ""; width: 42px; height: 2px; background: var(--yellow); }
@@ -152,8 +152,8 @@
     .btn-dark { color: #0b0c0d; background: var(--yellow); }
     .btn-dark:hover { background: #ffe05d; }
 
-    .launch-card { position: relative; padding: 34px; overflow: hidden; }
-    .launch-card::before {
+    .launch-card, .episode-promo-card { position: relative; padding: 34px; overflow: hidden; }
+    .launch-card::before, .episode-promo-card::before {
       content: "";
       position: absolute;
       width: 230px;
@@ -163,7 +163,16 @@
       border: 34px solid rgba(240,68,62,.10);
       border-radius: 50%;
     }
-    .launch-card > * { position: relative; }
+    .launch-card > *, .episode-promo-card > * { position: relative; }
+    .episode-promo-card { padding: 14px; background: linear-gradient(145deg, rgba(24,25,28,.98), rgba(7,8,9,.98)); }
+    .promo-art { overflow: hidden; border: 1px solid rgba(255,255,255,.12); border-radius: 17px; background: #050505; }
+    .promo-art img { width: 100%; height: auto; }
+    .promo-info { display: grid; grid-template-columns: 96px 1fr; gap: 18px; align-items: center; padding: 22px 10px 6px; }
+    .promo-info .date-block { padding: 12px 0 14px; }
+    .promo-info .date-day { font-size: 4.3rem; }
+    .promo-info .date-month { margin-top: 10px; font-size: .72rem; }
+    .promo-copy h3 { margin-bottom: 6px; color: #fff; font-size: 1rem; }
+    .promo-copy p { font-size: .86rem; line-height: 1.5; }
     .date-block { padding: 24px 0 26px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
     .date-day { display: block; color: var(--red); font-size: clamp(4.6rem, 9vw, 7rem); line-height: .78; letter-spacing: -.07em; font-weight: 950; }
     .date-month { display: block; margin-top: 16px; font-weight: 900; letter-spacing: .11em; text-transform: uppercase; }
@@ -181,12 +190,17 @@
     .caution-wrap.slim { width: min(var(--max), calc(100% - 40px)); height: 10px; margin: 0 auto; border-radius: 4px; opacity: .8; }
 
     .feature { padding-top: 104px; }
-    .feature-grid { display: grid; grid-template-columns: minmax(300px, .78fr) minmax(0, 1.22fr); gap: 0; overflow: hidden; }
+    .feature-grid { display: grid; grid-template-columns: minmax(0, .95fr) minmax(300px, 1.05fr); gap: 0; overflow: hidden; }
     .feature-visual { min-height: 520px; overflow: hidden; background: #101214; }
     .feature-visual img { width: 100%; height: 100%; object-fit: cover; }
     .feature-copy { padding: clamp(34px, 6vw, 68px); display: flex; flex-direction: column; justify-content: center; }
     .feature-copy h2 { font-size: clamp(2.35rem, 5vw, 4.6rem); }
     .feature-copy .lede { max-width: 620px; }
+    .episode-guests { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; padding: clamp(24px, 4vw, 42px); align-content: center; background: radial-gradient(circle at 45% 15%, rgba(240,68,62,.14), transparent 22rem), #0d0f11; }
+    .episode-guest { overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.035); }
+    .episode-guest img { width: 100%; aspect-ratio: 4 / 4.35; object-fit: cover; }
+    .episode-guest-body { padding: 18px; }
+    .episode-guest-body p { font-size: .84rem; line-height: 1.5; }
     .signal-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
     .signal { padding: 8px 11px; border: 1px solid var(--line); border-radius: 999px; color: #d6d6d6; font-size: .67rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
 
@@ -256,7 +270,7 @@
       .hero-grid, .feature-grid, .listen-grid, .about-grid, .guest-cta { grid-template-columns: 1fr; }
       .hero-grid { gap: 38px; }
       .hero-logo { margin-bottom: 34px; }
-      .launch-card { max-width: 620px; }
+      .launch-card, .episode-promo-card { max-width: 680px; }
       .feature-visual { min-height: 400px; }
       .guest-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .guest-card:last-child { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; }
@@ -275,7 +289,11 @@
       .hero-logo { width: 100%; margin-bottom: 32px; }
       .hero-grid { gap: 34px; }
       .launch-card, .feature-copy, .player-card, .listen-side, .community-card, .guest-cta-copy { padding: 24px; }
+      .episode-promo-card { padding: 10px; }
+      .promo-info { grid-template-columns: 82px 1fr; gap: 14px; padding: 18px 4px 6px; }
+      .promo-info .date-day { font-size: 3.6rem; }
       .feature-visual { min-height: 320px; }
+      .episode-guests { grid-template-columns: 1fr; }
       .player-card iframe { height: 352px; }
       .guest-intro { align-items: start; flex-direction: column; gap: 10px; }
       .guest-grid, .community-grid, .topic-list { grid-template-columns: 1fr; }
@@ -304,7 +322,7 @@
         <span class="nav-status"><span class="status-dot" aria-hidden="true"></span> New episodes streaming</span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#featured">Featured episode</a>
+        <a href="#featured">July 8 episode</a>
         <a href="#listen">Listen</a>
         <a href="#guests">Guests</a>
         <a href="#guest-form">Request a guest</a>
@@ -317,28 +335,36 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <img class="hero-logo" src="bench-tested-logo.png" alt="Bench Tested: A Ghostbusters Podcast" />
-          <div class="launch-line">A Ghostbusters podcast for builders and fans</div>
-          <h1>Built at the bench.<br /><span>Made for the fandom.</span></h1>
-          <p class="lede">Bench Tested gets into the props, processes, design choices, and shop stories behind the Ghostbusters gear we obsess over—with the people who actually do the work.</p>
+          <div class="launch-line">Next episode / July 8, 2026</div>
+          <h1>GPStar’s Nomake Wan <span>and Dustin Grau.</span></h1>
+          <p class="lede">The next Bench Tested conversation brings two Ghostbusters builders to the bench for a sharp, fan-savvy look at gear, process, problem-solving, and the details that make a build feel alive.</p>
           <div class="actions">
-            <a class="btn btn-primary" href="#listen">Listen to the latest <span aria-hidden="true">→</span></a>
-            <a class="btn btn-secondary" href="#guest-form">Request a guest</a>
+            <a class="btn btn-primary" href="#featured">Preview the episode <span aria-hidden="true">→</span></a>
+            <a class="btn btn-secondary" href="#guest-form">Request a future guest</a>
           </div>
         </div>
 
-        <aside class="launch-card surface" aria-label="Next episode release date">
-          <p class="eyebrow">Next episode</p>
-          <div class="date-block">
-            <span class="date-day">08</span>
-            <span class="date-month">Wednesday / July <span class="date-year">2026</span></span>
+        <aside class="episode-promo-card surface" aria-label="July 8 episode promo">
+          <div class="promo-art">
+            <img src="july-8-episode-promo.png" alt="Bench Tested next episode July 8 featuring GPStar's Nomake Wan and Dustin Grau" />
           </div>
-          <div class="countdown" aria-label="Countdown to the next episode">
+          <div class="promo-info">
+            <div class="date-block">
+              <span class="date-day">08</span>
+              <span class="date-month">Wednesday / July <span class="date-year">2026</span></span>
+            </div>
+            <div class="promo-copy">
+              <p class="eyebrow">Coming up next</p>
+              <h3>Nomake Wan + Dustin Grau</h3>
+              <p>Queue it up and bring a builder’s ear — this one is for the fans who notice the hardware.</p>
+            </div>
+          </div>
+          <div class="countdown" aria-label="Countdown to the July 8 episode">
             <div class="countdown-unit"><strong id="count-days">00</strong><span>Days</span></div>
             <div class="countdown-unit"><strong id="count-hours">00</strong><span>Hours</span></div>
             <div class="countdown-unit"><strong id="count-minutes">00</strong><span>Minutes</span></div>
           </div>
-          <p class="launch-note" id="launch-note">Guest announcement incoming. The next conversation lands July 8.</p>
-          <a class="next-guest-link" href="#guest-form">Know who should be next? Request a guest →</a>
+          <p class="launch-note" id="launch-note">The next Bench Tested episode drops Wednesday, July 8.</p>
         </aside>
       </div>
     </section>
@@ -348,22 +374,38 @@
     <section class="section feature" id="featured">
       <div class="wrap">
         <div class="feature-grid surface">
-          <div class="feature-visual">
-            <img src="dirt-farmer-feature.jpg" alt="Dirt Farmer Industries" />
-          </div>
           <div class="feature-copy">
-            <p class="eyebrow">Latest episode / Guest spotlight</p>
-            <h2>Sepp gets dirt under the fingernails.</h2>
-            <p class="lede">A shop-floor conversation with Sepp from Dirt Farmer Industries about practical builds, problem-solving, and the decisions that separate a prop that looks the part from one that holds up in the field.</p>
+            <p class="eyebrow">Upcoming episode / July 8</p>
+            <h2>Two makers. One packed bench.</h2>
+            <p class="lede">GPStar’s Nomake Wan and Dustin Grau join Bench Tested for a conversation rooted in Ghostbusters craft: the practical choices, smart compromises, and tiny screen-inspired details that separate a cool prop from a piece of gear you believe in.</p>
             <div class="signal-row" aria-label="Episode topics">
-              <span class="signal">Builder insight</span>
-              <span class="signal">Practical fabrication</span>
+              <span class="signal">GPStar</span>
+              <span class="signal">Prop electronics</span>
+              <span class="signal">Builder process</span>
               <span class="signal">Ghostbusters gear</span>
             </div>
             <div class="actions">
-              <a class="btn btn-dark" href="https://www.dirtfarmerindustries.com" target="_blank" rel="noreferrer">Visit Dirt Farmer Industries <span aria-hidden="true">↗</span></a>
-              <a class="btn btn-secondary" href="#listen">Play the episode</a>
+              <a class="btn btn-dark" href="#listen">Listen to Bench Tested</a>
+              <a class="btn btn-secondary" href="#guest-form">Request a guest</a>
             </div>
+          </div>
+          <div class="episode-guests" aria-label="July 8 episode guests">
+            <article class="episode-guest">
+              <img src="nomake.png" alt="Nomake Wan" />
+              <div class="episode-guest-body">
+                <span class="guest-credit">GPStar / Nomake Wan</span>
+                <h3>Nomake Wan</h3>
+                <p>Builder instinct, technical problem-solving, and the kind of practical iteration the fandom runs on.</p>
+              </div>
+            </article>
+            <article class="episode-guest">
+              <img src="dustin-grau.jpg" alt="Dustin Grau in Ghostbusters flight suit" />
+              <div class="episode-guest-body">
+                <span class="guest-credit">Guest builder</span>
+                <h3>Dustin Grau</h3>
+                <p>Hands-on perspective from the shop side of Ghostbusters gear, detail hunting, and fan-built hardware.</p>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -379,7 +421,7 @@
           <div>
             <p class="eyebrow">Listen everywhere</p>
             <h2>Pick your frequency.</h2>
-            <p>Follow Bench Tested wherever you already listen and be ready when the new season hits the feed.</p>
+            <p>Follow Bench Tested wherever you already listen so the July 8 episode drops straight into your feed.</p>
           </div>
           <div class="platforms">
             <a class="platform-link" href="https://podcasts.apple.com/us/podcast/bench-tested-a-ghostbusters-podcast/id1886335915" target="_blank" rel="noreferrer"><span class="platform-icon"></span><span>Apple Podcasts</span></a>
