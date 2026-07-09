@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bench Tested | A Ghostbusters Podcast</title>
-  <meta name="description" content="Bench Tested is a Ghostbusters podcast for builders, collectors, and fans who care how the gear gets made. The July 8 episode features GPStar's Nomake Wan and Dustin Grau." />
+  <meta name="description" content="Bench Tested is a Ghostbusters podcast for builders, collectors, and fans who care how the gear gets made. The July 22 episode features Luke Ellis, The Green Haired Ghostbuster, and his community trading card project." />
   <meta name="theme-color" content="#08090a" />
   <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2" />
@@ -20,6 +20,7 @@
       --red: #f0443e;
       --red-deep: #8d1f1c;
       --yellow: #f4cc32;
+      --green: #45cf19;
       --line: rgba(255, 255, 255, 0.11);
       --max: 1180px;
       --radius: 22px;
@@ -197,10 +198,20 @@
     .feature-copy h2 { font-size: clamp(2.35rem, 5vw, 4.6rem); }
     .feature-copy .lede { max-width: 620px; }
     .episode-guests { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; padding: clamp(24px, 4vw, 42px); align-content: center; background: radial-gradient(circle at 45% 15%, rgba(240,68,62,.14), transparent 22rem), #0d0f11; }
+    .episode-guests.green-signal { background: radial-gradient(circle at 58% 14%, rgba(69,207,25,.18), transparent 22rem), #0d0f11; }
     .episode-guest { overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.035); }
     .episode-guest img { width: 100%; aspect-ratio: 4 / 4.35; object-fit: cover; }
+    .episode-guest.wide img { aspect-ratio: 4 / 3.15; }
     .episode-guest-body { padding: 18px; }
     .episode-guest-body p { font-size: .84rem; line-height: 1.5; }
+    .current-episode { padding-top: 0; }
+    .current-card { display: grid; grid-template-columns: minmax(240px, .7fr) minmax(0, 1.3fr); gap: 0; overflow: hidden; }
+    .current-visual { min-height: 310px; background: #101214; }
+    .current-visual img { width: 100%; height: 100%; object-fit: cover; }
+    .current-copy { padding: clamp(28px, 5vw, 52px); display: flex; flex-direction: column; justify-content: center; }
+    .current-copy h2 { font-size: clamp(1.95rem, 4vw, 3.7rem); }
+    .trade-link { display: inline-flex; margin-top: 18px; color: var(--green); font-size: .72rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; }
+    .trade-link:hover { color: #83ff60; }
     .signal-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
     .signal { padding: 8px 11px; border: 1px solid var(--line); border-radius: 999px; color: #d6d6d6; font-size: .67rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
 
@@ -267,11 +278,12 @@
     @media (max-width: 960px) {
       .nav-links { display: none; }
       .hero { min-height: auto; }
-      .hero-grid, .feature-grid, .listen-grid, .about-grid, .guest-cta { grid-template-columns: 1fr; }
+      .hero-grid, .feature-grid, .listen-grid, .about-grid, .guest-cta, .current-card { grid-template-columns: 1fr; }
       .hero-grid { gap: 38px; }
       .hero-logo { margin-bottom: 34px; }
       .launch-card, .episode-promo-card { max-width: 680px; }
       .feature-visual { min-height: 400px; }
+      .current-visual { min-height: 360px; }
       .guest-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .guest-card:last-child { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; }
       .guest-card:last-child .guest-media { aspect-ratio: auto; min-height: 340px; }
@@ -293,6 +305,7 @@
       .promo-info { grid-template-columns: 82px 1fr; gap: 14px; padding: 18px 4px 6px; }
       .promo-info .date-day { font-size: 3.6rem; }
       .feature-visual { min-height: 320px; }
+      .current-visual { min-height: 280px; }
       .episode-guests { grid-template-columns: 1fr; }
       .player-card iframe { height: 352px; }
       .guest-intro { align-items: start; flex-direction: column; gap: 10px; }
@@ -322,7 +335,7 @@
         <span class="nav-status"><span class="status-dot" aria-hidden="true"></span> New episodes streaming</span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#featured">July 8 episode</a>
+        <a href="#featured">July 22 episode</a>
         <a href="#listen">Listen</a>
         <a href="#guests">Guests</a>
         <a href="#guest-form">Request a guest</a>
@@ -335,36 +348,36 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <img class="hero-logo" src="bench-tested-logo.png" alt="Bench Tested: A Ghostbusters Podcast" />
-          <div class="launch-line">Next episode / July 8, 2026</div>
-          <h1>GPStar’s Nomake Wan <span>and Dustin Grau.</span></h1>
-          <p class="lede">The next Bench Tested conversation brings two Ghostbusters builders to the bench for a sharp, fan-savvy look at gear, process, problem-solving, and the details that make a build feel alive.</p>
+          <div class="launch-line">Next episode / July 22, 2026</div>
+          <h1>The Green Haired Ghostbuster <span>hits the bench.</span></h1>
+          <p class="lede">Luke Ellis joins Bench Tested to talk about the Green Haired Ghostbuster community trading card project — a fan-made collectible network built around trades, franchises, mailboxes, and the kind of community momentum only Ghostbusters fans can generate.</p>
           <div class="actions">
             <a class="btn btn-primary" href="#featured">Preview the episode <span aria-hidden="true">→</span></a>
-            <a class="btn btn-secondary" href="#guest-form">Request a future guest</a>
+            <a class="btn btn-secondary" href="https://www.facebook.com/share/g/1945LgtPvm/" target="_blank" rel="noreferrer">Trade cards <span aria-hidden="true">↗</span></a>
           </div>
         </div>
 
-        <aside class="episode-promo-card surface" aria-label="July 8 episode promo">
+        <aside class="episode-promo-card surface" aria-label="July 22 episode promo">
           <div class="promo-art">
-            <img src="july-8-episode-promo.png" alt="Bench Tested next episode July 8 featuring GPStar's Nomake Wan and Dustin Grau" />
+            <img src="july-22-ghgb-promo.png" alt="Bench Tested next episode July 22 featuring The Green Haired Ghostbuster" />
           </div>
           <div class="promo-info">
             <div class="date-block">
-              <span class="date-day">08</span>
+              <span class="date-day">22</span>
               <span class="date-month">Wednesday / July <span class="date-year">2026</span></span>
             </div>
             <div class="promo-copy">
               <p class="eyebrow">Coming up next</p>
-              <h3>Nomake Wan + Dustin Grau</h3>
-              <p>Queue it up and bring a builder’s ear — this one is for the fans who notice the hardware.</p>
+              <h3>The Green Haired Ghostbuster</h3>
+              <p>Trading cards, community mail, franchise pride, and the joy of seeing fan projects travel.</p>
             </div>
           </div>
-          <div class="countdown" aria-label="Countdown to the July 8 episode">
+          <div class="countdown" aria-label="Countdown to the July 22 episode">
             <div class="countdown-unit"><strong id="count-days">00</strong><span>Days</span></div>
             <div class="countdown-unit"><strong id="count-hours">00</strong><span>Hours</span></div>
             <div class="countdown-unit"><strong id="count-minutes">00</strong><span>Minutes</span></div>
           </div>
-          <p class="launch-note" id="launch-note">The next Bench Tested episode drops Wednesday, July 8.</p>
+          <p class="launch-note" id="launch-note">The next Bench Tested episode drops Wednesday, July 22.</p>
         </aside>
       </div>
     </section>
@@ -375,37 +388,56 @@
       <div class="wrap">
         <div class="feature-grid surface">
           <div class="feature-copy">
-            <p class="eyebrow">Upcoming episode / July 8</p>
-            <h2>Two makers. One packed bench.</h2>
-            <p class="lede">GPStar’s Nomake Wan and Dustin Grau join Bench Tested for a conversation rooted in Ghostbusters craft: the practical choices, smart compromises, and tiny screen-inspired details that separate a cool prop from a piece of gear you believe in.</p>
+            <p class="eyebrow">Upcoming episode / July 22</p>
+            <h2>From fan card to global trade route.</h2>
+            <p class="lede">The Green Haired Ghostbuster trading card project started as a fan-made idea and turned into a way for Ghostbusters fans and groups to connect across borders. On July 22, Luke Ellis brings the origin story, the logistics, and the collector energy behind the cards to Bench Tested.</p>
             <div class="signal-row" aria-label="Episode topics">
-              <span class="signal">GPStar</span>
-              <span class="signal">Prop electronics</span>
-              <span class="signal">Builder process</span>
-              <span class="signal">Ghostbusters gear</span>
+              <span class="signal">GHGB trading cards</span>
+              <span class="signal">Fan collecting</span>
+              <span class="signal">Community mail</span>
+              <span class="signal">Ghostbusters franchises</span>
             </div>
             <div class="actions">
               <a class="btn btn-dark" href="#listen">Listen to Bench Tested</a>
-              <a class="btn btn-secondary" href="#guest-form">Request a guest</a>
+              <a class="btn btn-secondary" href="https://www.facebook.com/share/g/1945LgtPvm/" target="_blank" rel="noreferrer">Join the trade group <span aria-hidden="true">↗</span></a>
             </div>
           </div>
-          <div class="episode-guests" aria-label="July 8 episode guests">
+          <div class="episode-guests green-signal" aria-label="July 22 episode feature images">
             <article class="episode-guest">
-              <img src="nomake.png" alt="Nomake Wan" />
+              <img src="green-haired-ghostbuster.jpg" alt="Luke Ellis, The Green Haired Ghostbuster" />
               <div class="episode-guest-body">
-                <span class="guest-credit">GPStar / Nomake Wan</span>
-                <h3>Nomake Wan</h3>
-                <p>Builder instinct, technical problem-solving, and the kind of practical iteration the fandom runs on.</p>
+                <span class="guest-credit">Guest spotlight</span>
+                <h3>Luke Ellis</h3>
+                <p>The Green Haired Ghostbuster behind the community trading card project.</p>
               </div>
             </article>
-            <article class="episode-guest">
-              <img src="dustin-grau.jpg" alt="Dustin Grau in Ghostbusters flight suit" />
+            <article class="episode-guest wide">
+              <img src="ghgb-trading-cards.jpg" alt="Green Haired Ghostbuster community trading cards arranged in a circular display" />
               <div class="episode-guest-body">
-                <span class="guest-credit">Guest builder</span>
-                <h3>Dustin Grau</h3>
-                <p>Hands-on perspective from the shop side of Ghostbusters gear, detail hunting, and fan-built hardware.</p>
+                <span class="guest-credit">Community project</span>
+                <h3>Trading cards</h3>
+                <p>Fan-made cards designed to be collected, shared, mailed, and traded across the Ghostbusters community.</p>
               </div>
             </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section current-episode" id="current">
+      <div class="wrap">
+        <div class="current-card surface">
+          <div class="current-visual">
+            <img src="july-8-episode-promo.png" alt="Bench Tested July 8 episode featuring GPStar's Nomake Wan and Dustin Grau" />
+          </div>
+          <div class="current-copy">
+            <p class="eyebrow">Current episode / Now streaming</p>
+            <h2>GPStar’s Nomake Wan and Dustin Grau are still on the feed.</h2>
+            <p class="lede">Before the July 22 conversation lands, catch the current Bench Tested episode with Nomake Wan and Dustin Grau — a builder-heavy discussion about Ghostbusters gear, problem-solving, and the details fans actually care about.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="#listen">Listen now</a>
+              <a class="btn btn-secondary" href="#guest-form">Request a future guest</a>
+            </div>
           </div>
         </div>
       </div>
@@ -421,7 +453,7 @@
           <div>
             <p class="eyebrow">Listen everywhere</p>
             <h2>Pick your frequency.</h2>
-            <p>Follow Bench Tested wherever you already listen so the July 8 episode drops straight into your feed.</p>
+            <p>Follow Bench Tested wherever you already listen so the July 22 Green Haired Ghostbuster episode drops straight into your feed.</p>
           </div>
           <div class="platforms">
             <a class="platform-link" href="https://podcasts.apple.com/us/podcast/bench-tested-a-ghostbusters-podcast/id1886335915" target="_blank" rel="noreferrer"><span class="platform-icon"></span><span>Apple Podcasts</span></a>
@@ -570,7 +602,7 @@
 
   <script>
     (() => {
-      const nextEpisode = new Date("2026-07-08T00:00:00-06:00");
+      const nextEpisode = new Date("2026-07-22T00:00:00-06:00");
       const days = document.getElementById("count-days");
       const hours = document.getElementById("count-hours");
       const minutes = document.getElementById("count-minutes");
@@ -582,7 +614,7 @@
           days.textContent = "NEW";
           hours.textContent = "EP";
           minutes.textContent = "LIVE";
-          note.textContent = "The new episode is live. Open the feed and get back to the bench.";
+          note.textContent = "The Green Haired Ghostbuster episode is live. Open the feed and get back to the bench.";
           return;
         }
         days.textContent = String(Math.floor(distance / 86400000)).padStart(2, "0");
