@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bench Tested | A Ghostbusters Podcast</title>
-  <meta name="description" content="Bench Tested is a Ghostbusters podcast for builders, collectors, and fans who care how the gear gets made. The July 22 episode features Luke Ellis, The Green Haired Ghostbuster, and his community trading card project." />
+  <meta name="description" content="Bench Tested is a Ghostbusters podcast for builders, collectors, and fans who care how the gear gets made. The August 5 episode features Archer from Nerd Affiliated and The Real Nerd Busters." />
   <meta name="theme-color" content="#08090a" />
   <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2" />
@@ -199,11 +199,21 @@
     .feature-copy .lede { max-width: 620px; }
     .episode-guests { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; padding: clamp(24px, 4vw, 42px); align-content: center; background: radial-gradient(circle at 45% 15%, rgba(240,68,62,.14), transparent 22rem), #0d0f11; }
     .episode-guests.green-signal { background: radial-gradient(circle at 58% 14%, rgba(69,207,25,.18), transparent 22rem), #0d0f11; }
+    .episode-guests.archer-signal { background: radial-gradient(circle at 58% 14%, rgba(244,204,50,.14), transparent 22rem), radial-gradient(circle at 20% 80%, rgba(240,68,62,.12), transparent 18rem), #0d0f11; }
     .episode-guest { overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.035); }
-    .episode-guest img { width: 100%; aspect-ratio: 4 / 4.35; object-fit: cover; }
+    .episode-guest img { width: 100%; aspect-ratio: 4 / 4.35; object-fit: cover; object-position: center; }
+    .episode-guest.contain-photo img { padding: 10px; object-fit: contain; background: #070809; }
     .episode-guest.wide img { aspect-ratio: 4 / 3.15; }
+    .episode-guest.landscape { grid-column: 1 / -1; }
+    .episode-guest.landscape img { aspect-ratio: 16 / 9; object-fit: contain; padding: 10px; background: #070809; }
     .episode-guest-body { padding: 18px; }
     .episode-guest-body p { font-size: .84rem; line-height: 1.5; }
+    .video-section { padding-top: 0; }
+    .video-card { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(280px, .82fr); gap: 0; overflow: hidden; }
+    .video-frame { padding: 18px; background: #070809; }
+    .video-frame iframe { display: block; width: 100%; aspect-ratio: 16 / 9; height: auto; border: 0; border-radius: 16px; background: #000; }
+    .video-copy { padding: clamp(28px, 5vw, 52px); display: flex; flex-direction: column; justify-content: center; }
+    .video-copy h2 { font-size: clamp(1.95rem, 4vw, 3.6rem); }
     .current-episode { padding-top: 0; }
     .current-card { display: grid; grid-template-columns: minmax(240px, .7fr) minmax(0, 1.3fr); gap: 0; overflow: hidden; }
     .current-visual { min-height: 310px; display: grid; place-items: center; padding: 16px; background: #101214; }
@@ -278,7 +288,7 @@
     @media (max-width: 960px) {
       .nav-links { display: none; }
       .hero { min-height: auto; }
-      .hero-grid, .feature-grid, .listen-grid, .about-grid, .guest-cta, .current-card { grid-template-columns: 1fr; }
+      .hero-grid, .feature-grid, .listen-grid, .about-grid, .guest-cta, .current-card, .video-card { grid-template-columns: 1fr; }
       .hero-grid { gap: 38px; }
       .hero-logo { margin-bottom: 34px; }
       .launch-card, .episode-promo-card { max-width: 680px; }
@@ -307,6 +317,7 @@
       .feature-visual { min-height: 320px; }
       .current-visual { min-height: 280px; }
       .episode-guests { grid-template-columns: 1fr; }
+      .episode-guest.landscape { grid-column: auto; }
       .player-card iframe { height: 352px; }
       .guest-intro { align-items: start; flex-direction: column; gap: 10px; }
       .guest-grid, .community-grid, .topic-list { grid-template-columns: 1fr; }
@@ -335,7 +346,8 @@
         <span class="nav-status"><span class="status-dot" aria-hidden="true"></span> New episodes streaming</span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#featured">July 22 episode</a>
+        <a href="#featured">August 5 episode</a>
+        <a href="#video">Video</a>
         <a href="#listen">Listen</a>
         <a href="#guests">Guests</a>
         <a href="#guest-form">Request a guest</a>
@@ -348,36 +360,36 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <img class="hero-logo" src="bench-tested-logo.png" alt="Bench Tested: A Ghostbusters Podcast" />
-          <div class="launch-line">Next episode / July 22, 2026</div>
-          <h1>The Green Haired Ghostbuster <span>hits the bench.</span></h1>
-          <p class="lede">Luke Ellis joins Bench Tested to talk about the Green Haired Ghostbuster community trading card project — a fan-made collectible network built around trades, franchises, mailboxes, and the kind of community momentum only Ghostbusters fans can generate.</p>
+          <div class="launch-line">Next episode / August 5, 2026</div>
+          <h1>Archer brings the build debate <span>to the bench.</span></h1>
+          <p class="lede">Charlie sits down with Archer from Nerd Affiliated and The Real Nerd Busters for a conversation about flight suits, weathering, proton packs, electronics, HasLab upgrades, Ghostbusters: Night Shift, and whether “movie accurate” should really be the final word.</p>
           <div class="actions">
             <a class="btn btn-primary" href="#featured">Preview the episode <span aria-hidden="true">→</span></a>
-            <a class="btn btn-secondary" href="https://www.facebook.com/share/g/1945LgtPvm/" target="_blank" rel="noreferrer">Trade cards <span aria-hidden="true">↗</span></a>
+            <a class="btn btn-secondary" href="#video">Watch the teaser</a>
           </div>
         </div>
 
-        <aside class="episode-promo-card surface" aria-label="July 22 episode promo">
+        <aside class="episode-promo-card surface" aria-label="August 5 episode promo">
           <div class="promo-art">
-            <img src="july-22-ghgb-promo.png" alt="Bench Tested next episode July 22 featuring The Green Haired Ghostbuster" />
+            <img src="archer-aug-5-promo.png" alt="Bench Tested next episode August 5, 2026 featuring Archer with Nerd Affiliated and The Real Nerd Busters" />
           </div>
           <div class="promo-info">
             <div class="date-block">
-              <span class="date-day">22</span>
-              <span class="date-month">Wednesday / July <span class="date-year">2026</span></span>
+              <span class="date-day">05</span>
+              <span class="date-month">Wednesday / August <span class="date-year">2026</span></span>
             </div>
             <div class="promo-copy">
               <p class="eyebrow">Coming up next</p>
-              <h3>The Green Haired Ghostbuster</h3>
-              <p>Trading cards, community mail, franchise pride, and the joy of seeing fan projects travel.</p>
+              <h3>Archer / Nerd Affiliated</h3>
+              <p>Reference photos, personal creativity, gear upgrades, and the choices that make a build yours.</p>
             </div>
           </div>
-          <div class="countdown" aria-label="Countdown to the July 22 episode">
+          <div class="countdown" aria-label="Countdown to the August 5 episode">
             <div class="countdown-unit"><strong id="count-days">00</strong><span>Days</span></div>
             <div class="countdown-unit"><strong id="count-hours">00</strong><span>Hours</span></div>
             <div class="countdown-unit"><strong id="count-minutes">00</strong><span>Minutes</span></div>
           </div>
-          <p class="launch-note" id="launch-note">The next Bench Tested episode drops Wednesday, July 22.</p>
+          <p class="launch-note" id="launch-note">The next Bench Tested episode drops Wednesday, August 5.</p>
         </aside>
       </div>
     </section>
@@ -388,37 +400,65 @@
       <div class="wrap">
         <div class="feature-grid surface">
           <div class="feature-copy">
-            <p class="eyebrow">Upcoming episode / July 22</p>
-            <h2>From fan card to global trade route.</h2>
-            <p class="lede">The Green Haired Ghostbuster trading card project started as a fan-made idea and turned into a way for Ghostbusters fans and groups to connect across borders. On July 22, Luke Ellis brings the origin story, the logistics, and the collector energy behind the cards to Bench Tested.</p>
+            <p class="eyebrow">Upcoming episode / August 5</p>
+            <h2>Screen accuracy, shop reality, and making it yours.</h2>
+            <p class="lede">Archer joins Bench Tested for a builder-forward conversation that goes past recreating what is seen on screen. From flight suit weathering to proton pack electronics and HasLab upgrades, this one digs into the tension between reference accuracy, available tools, and personal creativity.</p>
             <div class="signal-row" aria-label="Episode topics">
-              <span class="signal">GHGB trading cards</span>
-              <span class="signal">Fan collecting</span>
-              <span class="signal">Community mail</span>
-              <span class="signal">Ghostbusters franchises</span>
+              <span class="signal">Nerd Affiliated</span>
+              <span class="signal">The Real Nerd Busters</span>
+              <span class="signal">Flight suits</span>
+              <span class="signal">HasLab upgrades</span>
+              <span class="signal">Night Shift</span>
             </div>
             <div class="actions">
-              <a class="btn btn-dark" href="#listen">Listen to Bench Tested</a>
-              <a class="btn btn-secondary" href="https://www.facebook.com/share/g/1945LgtPvm/" target="_blank" rel="noreferrer">Join the trade group <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-dark" href="https://www.nerdaffiliated.com/" target="_blank" rel="noreferrer">Visit Nerd Affiliated <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-secondary" href="https://www.instagram.com/therealnerdbusters/" target="_blank" rel="noreferrer">The Real Nerd Busters <span aria-hidden="true">↗</span></a>
             </div>
           </div>
-          <div class="episode-guests green-signal" aria-label="July 22 episode feature images">
-            <article class="episode-guest">
-              <img src="green-haired-ghostbuster.jpg" alt="Luke Ellis, The Green Haired Ghostbuster" />
+          <div class="episode-guests archer-signal" aria-label="August 5 Archer episode feature images">
+            <article class="episode-guest contain-photo">
+              <img src="archer-reading.jpg" alt="Archer reading Ghostbusters: The Ultimate Visual History in his workshop" />
               <div class="episode-guest-body">
-                <span class="guest-credit">Guest spotlight</span>
-                <h3>Luke Ellis</h3>
-                <p>The Green Haired Ghostbuster behind the community trading card project.</p>
+                <span class="guest-credit">Nerd Affiliated</span>
+                <h3>Archer</h3>
+                <p>Builder perspective on reference, weathering, and knowing when a prop needs your own fingerprints.</p>
               </div>
             </article>
-            <article class="episode-guest wide">
-              <img src="ghgb-trading-cards.jpg" alt="Green Haired Ghostbuster community trading cards arranged in a circular display" />
+            <article class="episode-guest contain-photo">
+              <img src="archer-portrait.jpg" alt="Archer smiling in yellow glasses and black flight suit" />
               <div class="episode-guest-body">
-                <span class="guest-credit">Community project</span>
-                <h3>Trading cards</h3>
-                <p>Fan-made cards designed to be collected, shared, mailed, and traded across the Ghostbusters community.</p>
+                <span class="guest-credit">The Real Nerd Busters</span>
+                <h3>Community craft</h3>
+                <p>Collaboration, available tools, and why modern builders have more ways than ever to make something real.</p>
               </div>
             </article>
+            <article class="episode-guest landscape">
+              <img src="archer-pack.jpg" alt="Archer standing beside a proton pack build in his workshop" />
+              <div class="episode-guest-body">
+                <span class="guest-credit">Build table</span>
+                <h3>Packs, electronics, and upgrades</h3>
+                <p>From proton pack details to HasLab upgrades, the episode gets into the practical choices behind the gear.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section video-section" id="video">
+      <div class="wrap">
+        <div class="video-card surface">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/65O28SZ5v3A?si=jdOd3Eufph7bpIHp" title="Archer from Nerd Affiliated video teaser" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+          </div>
+          <div class="video-copy">
+            <p class="eyebrow">Video signal / Archer preview</p>
+            <h2>See the shop energy before the episode drops.</h2>
+            <p class="lede">Archer’s world sits right where Bench Tested likes to live: build choices, prop obsession, Ghostbusters community energy, and the fun of pushing past “close enough” into something that feels personal.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="#listen">Listen to Bench Tested</a>
+              <a class="btn btn-secondary" href="https://www.facebook.com/TheRealNerdbusters/" target="_blank" rel="noreferrer">Real Nerd Busters on Facebook <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
         </div>
       </div>
@@ -428,15 +468,15 @@
       <div class="wrap">
         <div class="current-card surface">
           <div class="current-visual">
-            <img src="july-8-episode-promo.png" alt="Bench Tested July 8 episode featuring GPStar's Nomake Wan and Dustin Grau" />
+            <img src="july-22-ghgb-promo.png" alt="Bench Tested July 22 episode featuring The Green Haired Ghostbuster" />
           </div>
           <div class="current-copy">
             <p class="eyebrow">Current episode / Now streaming</p>
-            <h2>GPStar’s Nomake Wan and Dustin Grau are still on the feed.</h2>
-            <p class="lede">Before the July 22 conversation lands, catch the current Bench Tested episode with Nomake Wan and Dustin Grau — a builder-heavy discussion about Ghostbusters gear, problem-solving, and the details fans actually care about.</p>
+            <h2>The Green Haired Ghostbuster episode is on the feed.</h2>
+            <p class="lede">Before Archer’s episode drops, catch the current Bench Tested conversation with Luke Ellis about the Green Haired Ghostbuster community trading card project, fan collecting, and how Ghostbusters groups connect through trades and mailboxes.</p>
             <div class="actions">
               <a class="btn btn-primary" href="#listen">Listen now</a>
-              <a class="btn btn-secondary" href="#guest-form">Request a future guest</a>
+              <a class="btn btn-secondary" href="https://www.facebook.com/share/g/1945LgtPvm/" target="_blank" rel="noreferrer">Trade cards <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </div>
@@ -453,7 +493,7 @@
           <div>
             <p class="eyebrow">Listen everywhere</p>
             <h2>Pick your frequency.</h2>
-            <p>Follow Bench Tested wherever you already listen so the July 22 Green Haired Ghostbuster episode drops straight into your feed.</p>
+            <p>Follow Bench Tested wherever you already listen so the August 5 Archer episode drops straight into your feed.</p>
           </div>
           <div class="platforms">
             <a class="platform-link" href="https://podcasts.apple.com/us/podcast/bench-tested-a-ghostbusters-podcast/id1886335915" target="_blank" rel="noreferrer"><span class="platform-icon"></span><span>Apple Podcasts</span></a>
@@ -602,7 +642,7 @@
 
   <script>
     (() => {
-      const nextEpisode = new Date("2026-07-22T00:00:00-06:00");
+      const nextEpisode = new Date("2026-08-05T00:00:00-06:00");
       const days = document.getElementById("count-days");
       const hours = document.getElementById("count-hours");
       const minutes = document.getElementById("count-minutes");
@@ -614,7 +654,7 @@
           days.textContent = "NEW";
           hours.textContent = "EP";
           minutes.textContent = "LIVE";
-          note.textContent = "The Green Haired Ghostbuster episode is live. Open the feed and get back to the bench.";
+          note.textContent = "The Archer episode is live. Open the feed and get back to the bench.";
           return;
         }
         days.textContent = String(Math.floor(distance / 86400000)).padStart(2, "0");
