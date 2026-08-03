@@ -282,7 +282,9 @@
 
     footer { padding: 28px 0 44px; }
     .footer-row { display: flex; align-items: flex-start; justify-content: space-between; gap: 36px; padding-top: 26px; border-top: 1px solid var(--line); }
+    .footer-branding { display: flex; align-items: center; gap: 18px; flex-shrink: 0; }
     .footer-mark { width: 150px; opacity: .8; }
+    .footer-producer { width: 88px; border: 1px solid rgba(255,255,255,.12); border-radius: 14px; opacity: .9; box-shadow: 0 12px 30px rgba(0,0,0,.25); }
     .footer-copy { max-width: 780px; color: #777a7e; font-size: .68rem; line-height: 1.6; }
 
     @media (max-width: 960px) {
@@ -328,6 +330,7 @@
       .actions { flex-direction: column; }
       .btn { width: 100%; }
       .final-cta, .footer-row { align-items: stretch; flex-direction: column; }
+      .footer-branding { justify-content: space-between; }
       .final-cta { padding: 28px; }
       .caution-wrap.slim { width: calc(100% - 28px); }
     }
@@ -635,8 +638,11 @@
 
   <footer>
     <div class="wrap footer-row">
-      <img class="footer-mark" src="bench-tested-logo.png" alt="Bench Tested" />
-      <p class="footer-copy">Bench Tested: A Ghostbusters Podcast is an independent fan-created podcast and is not affiliated with, endorsed by, sponsored by, or associated with Ghost Corps, Sony Pictures, Columbia Pictures, or any related rights holders. Ghostbusters and related names, characters, props, logos, and elements are the property of their respective owners. Any references are used for commentary, discussion, review, and fan purposes only. No official partnership, authorization, or endorsement is claimed or implied. All third-party trademarks, copyrights, and brand names remain the property of their respective owners.</p>
+      <div class="footer-branding" aria-label="Bench Tested and Harsh Media">
+        <img class="footer-mark" src="bench-tested-logo.png" alt="Bench Tested" />
+        <img class="footer-producer" src="harsh-media-logo.jpg" alt="Harsh Media" />
+      </div>
+      <p class="footer-copy">© 2026 Harsh Media. All rights reserved. Bench Tested: A Ghostbusters Podcast is an independent fan-created podcast and is not affiliated with, endorsed by, sponsored by, or associated with Ghost Corps, Sony Pictures, Columbia Pictures, or any related rights holders. Ghostbusters and related names, characters, props, logos, and elements are the property of their respective owners. Any references are used for commentary, discussion, review, and fan purposes only. No official partnership, authorization, or endorsement is claimed or implied. All third-party trademarks, copyrights, and brand names remain the property of their respective owners.</p>
     </div>
   </footer>
 
