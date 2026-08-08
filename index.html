@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bench Tested | A Ghostbusters Podcast</title>
-  <meta name="description" content="Bench Tested is a Ghostbusters podcast for builders, collectors, and fans who care how the gear gets made. The August 5 episode features Archer from Nerd Affiliated and The Real Nerd Busters." />
+  <meta name="description" content="Bench Tested is a Ghostbusters podcast for builders, collectors, and fans who care how the gear gets made. The August 19 episode features Ryan AKA McFonz and Renel of the Capital Ghostbusters from Ottawa, Ontario." />
   <meta name="theme-color" content="#08090a" />
   <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2" />
@@ -200,6 +200,7 @@
     .episode-guests { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; padding: clamp(24px, 4vw, 42px); align-content: center; background: radial-gradient(circle at 45% 15%, rgba(240,68,62,.14), transparent 22rem), #0d0f11; }
     .episode-guests.green-signal { background: radial-gradient(circle at 58% 14%, rgba(69,207,25,.18), transparent 22rem), #0d0f11; }
     .episode-guests.archer-signal { background: radial-gradient(circle at 58% 14%, rgba(244,204,50,.14), transparent 22rem), radial-gradient(circle at 20% 80%, rgba(240,68,62,.12), transparent 18rem), #0d0f11; }
+    .episode-guests.capital-signal { background: radial-gradient(circle at 62% 16%, rgba(240,68,62,.18), transparent 24rem), radial-gradient(circle at 12% 76%, rgba(244,204,50,.08), transparent 18rem), #0d0f11; }
     .episode-guest { overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: rgba(255,255,255,.035); }
     .episode-guest img { width: 100%; aspect-ratio: 4 / 4.35; object-fit: cover; object-position: center; }
     .episode-guest.contain-photo img { padding: 10px; object-fit: contain; background: #070809; }
@@ -224,6 +225,34 @@
     .trade-link:hover { color: #83ff60; }
     .signal-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
     .signal { padding: 8px 11px; border: 1px solid var(--line); border-radius: 999px; color: #d6d6d6; font-size: .67rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase; }
+
+    .gallery-section { padding-top: 0; }
+    .build-gallery {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+    .gallery-card {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: linear-gradient(145deg, rgba(23,25,28,.94), rgba(10,12,14,.98));
+      box-shadow: 0 18px 45px rgba(0,0,0,.22);
+    }
+    .gallery-card.wide { grid-column: span 2; }
+    .gallery-card.tall { grid-row: span 2; }
+    .gallery-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: contain;
+      padding: 10px;
+      background: #070809;
+    }
+    .gallery-card.wide img { aspect-ratio: 16 / 9; }
+    .gallery-card.tall img { aspect-ratio: 3 / 4.4; }
+    .gallery-caption { padding: 14px 16px 16px; }
+    .gallery-caption h3 { margin-bottom: 4px; font-size: .94rem; }
+    .gallery-caption p { color: var(--dim); font-size: .78rem; line-height: 1.45; }
 
     .listen-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(280px, .7fr); gap: 24px; align-items: stretch; }
     .player-card { padding: 30px; }
@@ -296,6 +325,7 @@
       .launch-card, .episode-promo-card { max-width: 680px; }
       .feature-visual { min-height: 400px; }
       .current-visual { min-height: 360px; }
+      .build-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .guest-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .guest-card:last-child { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr 1fr; }
       .guest-card:last-child .guest-media { aspect-ratio: auto; min-height: 340px; }
@@ -320,6 +350,9 @@
       .current-visual { min-height: 280px; }
       .episode-guests { grid-template-columns: 1fr; }
       .episode-guest.landscape { grid-column: auto; }
+      .build-gallery { grid-template-columns: 1fr; }
+      .gallery-card.wide, .gallery-card.tall { grid-column: auto; grid-row: auto; }
+      .gallery-card.wide img, .gallery-card.tall img, .gallery-card img { aspect-ratio: 4 / 3; }
       .player-card iframe { height: 352px; }
       .guest-intro { align-items: start; flex-direction: column; gap: 10px; }
       .guest-grid, .community-grid, .topic-list { grid-template-columns: 1fr; }
@@ -349,10 +382,10 @@
         <span class="nav-status"><span class="status-dot" aria-hidden="true"></span> New episodes streaming</span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#featured">August 5 episode</a>
-        <a href="#video">Video</a>
+        <a href="#featured">August 19 episode</a>
+        <a href="#gallery">Build gallery</a>
+        <a href="#current">Archer</a>
         <a href="#listen">Listen</a>
-        <a href="#guests">Guests</a>
         <a href="#guest-form">Request a guest</a>
       </nav>
     </div>
@@ -363,36 +396,36 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <img class="hero-logo" src="bench-tested-logo.png" alt="Bench Tested: A Ghostbusters Podcast" />
-          <div class="launch-line">Next episode / August 5, 2026</div>
-          <h1>Archer brings the build debate <span>to the bench.</span></h1>
-          <p class="lede">Charlie sits down with Archer from Nerd Affiliated and The Real Nerd Busters for a conversation about flight suits, weathering, proton packs, electronics, HasLab upgrades, Ghostbusters: Night Shift, and whether “movie accurate” should really be the final word.</p>
+          <div class="launch-line">Next episode / August 19, 2026</div>
+          <h1>Capital Ghostbusters bring Ottawa builds <span>to the bench.</span></h1>
+          <p class="lede">Charlie sits down with Ryan, AKA McFonz, and Renel of the Capital Ghostbusters out of Ottawa, Ontario for a builder-heavy conversation about franchise life, practical fabrication, flight suits, electronics, pack work, and the kind of community energy that keeps the gear moving.</p>
           <div class="actions">
             <a class="btn btn-primary" href="#featured">Preview the episode <span aria-hidden="true">→</span></a>
-            <a class="btn btn-secondary" href="#video">Watch the teaser</a>
+            <a class="btn btn-secondary" href="#gallery">See the builds</a>
           </div>
         </div>
 
-        <aside class="episode-promo-card surface" aria-label="August 5 episode promo">
+        <aside class="episode-promo-card surface" aria-label="August 19 episode promo">
           <div class="promo-art">
-            <img src="archer-aug-5-promo.png" alt="Bench Tested next episode August 5, 2026 featuring Archer with Nerd Affiliated and The Real Nerd Busters" />
+            <img src="capital-aug-19-promo.png" alt="Bench Tested next episode August 19, 2026 featuring Ryan McFonz and Renel of the Capital Ghostbusters" />
           </div>
           <div class="promo-info">
             <div class="date-block">
-              <span class="date-day">05</span>
+              <span class="date-day">19</span>
               <span class="date-month">Wednesday / August <span class="date-year">2026</span></span>
             </div>
             <div class="promo-copy">
               <p class="eyebrow">Coming up next</p>
-              <h3>Archer / Nerd Affiliated</h3>
-              <p>Reference photos, personal creativity, gear upgrades, and the choices that make a build yours.</p>
+              <h3>Ryan “McFonz” &amp; Renel</h3>
+              <p>Capital Ghostbusters shop talk from Ottawa: suits, packs, panels, goggles, and community work.</p>
             </div>
           </div>
-          <div class="countdown" aria-label="Countdown to the August 5 episode">
+          <div class="countdown" aria-label="Countdown to the August 19 episode">
             <div class="countdown-unit"><strong id="count-days">00</strong><span>Days</span></div>
             <div class="countdown-unit"><strong id="count-hours">00</strong><span>Hours</span></div>
             <div class="countdown-unit"><strong id="count-minutes">00</strong><span>Minutes</span></div>
           </div>
-          <p class="launch-note" id="launch-note">The next Bench Tested episode drops Wednesday, August 5.</p>
+          <p class="launch-note" id="launch-note">The next Bench Tested episode drops Wednesday, August 19.</p>
         </aside>
       </div>
     </section>
@@ -403,47 +436,78 @@
       <div class="wrap">
         <div class="feature-grid surface">
           <div class="feature-copy">
-            <p class="eyebrow">Upcoming episode / August 5</p>
-            <h2>Screen accuracy, shop reality, and making it yours.</h2>
-            <p class="lede">Archer joins Bench Tested for a builder-forward conversation that goes past recreating what is seen on screen. From flight suit weathering to proton pack electronics and HasLab upgrades, this one digs into the tension between reference accuracy, available tools, and personal creativity.</p>
+            <p class="eyebrow">Upcoming episode / August 19</p>
+            <h2>Ottawa franchise energy, real builds, and bench-tested details.</h2>
+            <p class="lede">Ryan “McFonz” and Renel join Bench Tested for a Capital Ghostbusters conversation rooted in the stuff builders actually care about: how gear gets assembled, how suits get personalized, how power and electronics stay clean, and how a local Ghostbusters franchise turns craft into community presence.</p>
             <div class="signal-row" aria-label="Episode topics">
-              <span class="signal">Nerd Affiliated</span>
-              <span class="signal">The Real Nerd Busters</span>
+              <span class="signal">Capital Ghostbusters</span>
+              <span class="signal">Ottawa, Ontario</span>
               <span class="signal">Flight suits</span>
-              <span class="signal">HasLab upgrades</span>
-              <span class="signal">Night Shift</span>
+              <span class="signal">Pack builds</span>
+              <span class="signal">Electronics</span>
+              <span class="signal">Community events</span>
             </div>
             <div class="actions">
-              <a class="btn btn-dark" href="https://www.nerdaffiliated.com/" target="_blank" rel="noreferrer">Visit Nerd Affiliated <span aria-hidden="true">↗</span></a>
-              <a class="btn btn-secondary" href="https://www.instagram.com/therealnerdbusters/" target="_blank" rel="noreferrer">The Real Nerd Busters <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-dark" href="#gallery">Explore the build gallery</a>
+              <a class="btn btn-secondary" href="#listen">Listen to the podcast</a>
             </div>
           </div>
-          <div class="episode-guests archer-signal" aria-label="August 5 Archer episode feature images">
+          <div class="episode-guests capital-signal" aria-label="August 19 Capital Ghostbusters episode feature images">
             <article class="episode-guest contain-photo">
-              <img src="archer-reading.jpg" alt="Archer reading Ghostbusters: The Ultimate Visual History in his workshop" />
+              <img src="capital-duo.jpg" alt="Ryan McFonz and Renel of the Capital Ghostbusters photographed from a low angle in Ghostbusters gear" />
               <div class="episode-guest-body">
-                <span class="guest-credit">Nerd Affiliated</span>
-                <h3>Archer</h3>
-                <p>Builder perspective on reference, weathering, and knowing when a prop needs your own fingerprints.</p>
+                <span class="guest-credit">Capital Ghostbusters</span>
+                <h3>Ryan &amp; Renel</h3>
+                <p>Two Ottawa builders talking through the gear, the choices, and the franchise work behind the suit.</p>
               </div>
             </article>
             <article class="episode-guest contain-photo">
-              <img src="archer-portrait.jpg" alt="Archer smiling in yellow glasses and black flight suit" />
+              <img src="capital-logo.jpg" alt="Capital Ghostbusters logo" />
               <div class="episode-guest-body">
-                <span class="guest-credit">The Real Nerd Busters</span>
-                <h3>Community craft</h3>
-                <p>Collaboration, available tools, and why modern builders have more ways than ever to make something real.</p>
+                <span class="guest-credit">Ottawa, ON</span>
+                <h3>Franchise identity</h3>
+                <p>A local crew with a strong visual mark, practical gear, and a community-first reason to suit up.</p>
               </div>
             </article>
             <article class="episode-guest landscape">
-              <img src="archer-pack.jpg" alt="Archer standing beside a proton pack build in his workshop" />
+              <img src="capital-power-wall.jpg" alt="Capital Ghostbusters wall-mounted electronics and power boxes for a build" />
               <div class="episode-guest-body">
                 <span class="guest-credit">Build table</span>
-                <h3>Packs, electronics, and upgrades</h3>
-                <p>From proton pack details to HasLab upgrades, the episode gets into the practical choices behind the gear.</p>
+                <h3>Panels, power, and practical decisions</h3>
+                <p>Clean wiring, labeled boxes, caution-tape staging, and the behind-the-scenes work that makes a prop feel alive.</p>
               </div>
             </article>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="gallery">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Builds discussed in the episode</p>
+          <h2>From flight suits to pack guts.</h2>
+          <p class="lede">A look at the Capital Ghostbusters gear and works-in-progress behind the August 19 conversation: suit weathering, franchise patches, power controls, Ecto goggle details, pack shells, and community appearances.</p>
+        </div>
+        <div class="build-gallery" aria-label="Capital Ghostbusters build photo gallery">
+          <article class="gallery-card wide"><img src="capital-community-event.jpg" alt="Capital Ghostbusters at a community event outside Tim Hortons" /><div class="gallery-caption"><h3>Community presence</h3><p>Capital Ghostbusters out in the wild, bringing the franchise beyond the workbench.</p></div></article>
+          <article class="gallery-card"><img src="capital-suits-wide.jpg" alt="Capital Ghostbusters flight suits hanging with patches and name tapes" /><div class="gallery-caption"><h3>Flight suit lineup</h3><p>Multiple suit colors, patches, and character identities in one rack.</p></div></article>
+          <article class="gallery-card"><img src="capital-suits-close.jpg" alt="Close-up of Capital Ghostbusters patches on flight suits" /><div class="gallery-caption"><h3>Patch details</h3><p>The kind of close-up franchise identity that makes a suit read instantly.</p></div></article>
+          <article class="gallery-card tall"><img src="capital-ryan-car.jpg" alt="Ryan McFonz in a Ghostbusters flight suit leaning on a vehicle" /><div class="gallery-caption"><h3>Ryan “McFonz”</h3><p>A clean portrait with the suit, patch, and personality all doing the talking.</p></div></article>
+          <article class="gallery-card tall"><img src="capital-ryan-pack.jpg" alt="Ryan McFonz wearing a proton pack and Ghostbusters flight suit" /><div class="gallery-caption"><h3>Suited and packed</h3><p>The finished-kit energy that starts with a lot of bench work.</p></div></article>
+          <article class="gallery-card wide"><img src="capital-build-drill.jpg" alt="Builder drilling into a wall panel for a Capital Ghostbusters build" /><div class="gallery-caption"><h3>Shop work</h3><p>Practical drilling, mounting, measuring, and the unglamorous steps that make the cool stuff possible.</p></div></article>
+          <article class="gallery-card"><img src="capital-power-boxes.jpg" alt="White labeled power boxes on a caution-striped base" /><div class="gallery-caption"><h3>Power boxes</h3><p>Labeled inputs and outputs keep the build understandable when the wiring gets real.</p></div></article>
+          <article class="gallery-card wide"><img src="capital-red-panel.jpg" alt="Large red Ghostbusters-inspired containment panel on a brick wall" /><div class="gallery-caption"><h3>Containment-room flavor</h3><p>A red wall panel that brings that firehouse utility mood into the room.</p></div></article>
+          <article class="gallery-card"><img src="capital-goggles-front.jpg" alt="Weathered Ecto goggles viewed from the front" /><div class="gallery-caption"><h3>Ecto goggle front</h3><p>Weathered lenses, scuffs, and a lived-in finish.</p></div></article>
+          <article class="gallery-card"><img src="capital-goggles-side.jpg" alt="Weathered Ecto goggles viewed from the side" /><div class="gallery-caption"><h3>Ecto goggle side</h3><p>Side profile with grime, labels, and shape doing the heavy lifting.</p></div></article>
+          <article class="gallery-card"><img src="capital-goggles-back.jpg" alt="Weathered Ecto goggles viewed from the padded back" /><div class="gallery-caption"><h3>Ecto goggle back</h3><p>The padded side of the build, because comfort is part of the prop too.</p></div></article>
+          <article class="gallery-card"><img src="capital-goggles-detail.jpg" alt="Detailed rear angle of weathered Ecto goggles" /><div class="gallery-caption"><h3>Ecto goggle detail</h3><p>A final angle on the worn-in hardware and strap work.</p></div></article>
+          <article class="gallery-card tall"><img src="capital-pack-black.jpg" alt="Black proton pack shell before weathering" /><div class="gallery-caption"><h3>Black base coat</h3><p>Pack shell work before all the personality lands on top.</p></div></article>
+          <article class="gallery-card tall"><img src="capital-pack-primed.jpg" alt="Primed gray proton pack shell on the floor" /><div class="gallery-caption"><h3>Primer stage</h3><p>A cleaner look at shape, depth, and surface before paint and wear.</p></div></article>
+          <article class="gallery-card tall"><img src="capital-pack-on-box.jpg" alt="Black proton pack shell sitting on a box in a workshop" /><div class="gallery-caption"><h3>Shell on the bench</h3><p>The midpoint where the pack starts becoming an object with weight.</p></div></article>
+          <article class="gallery-card tall"><img src="capital-pack-ring.jpg" alt="Close-up of proton pack cyclotron ring and parts" /><div class="gallery-caption"><h3>Cyclotron work</h3><p>Fine-fit pieces and texture around one of the pack’s most recognizable zones.</p></div></article>
+          <article class="gallery-card tall"><img src="capital-pack-overhead.jpg" alt="Overhead view of proton pack details and wire loom" /><div class="gallery-caption"><h3>Pack overhead</h3><p>Wires, labels, surfaces, and that satisfying organized chaos.</p></div></article>
+          <article class="gallery-card tall"><img src="capital-complete-pack.jpg" alt="Completed weathered proton pack hanging on a red wall" /><div class="gallery-caption"><h3>Finished pack energy</h3><p>A weathered pack with wand, loom, bumper, warning labels, and display presence.</p></div></article>
         </div>
       </div>
     </section>
@@ -455,8 +519,8 @@
             <iframe src="https://www.youtube.com/embed/65O28SZ5v3A?si=jdOd3Eufph7bpIHp" title="Archer from Nerd Affiliated video teaser" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
           </div>
           <div class="video-copy">
-            <p class="eyebrow">Video signal / Archer preview</p>
-            <h2>See the shop energy before the episode drops.</h2>
+            <p class="eyebrow">Still streaming / Archer preview</p>
+            <h2>Keep Archer in the rotation.</h2>
             <p class="lede">Archer’s world sits right where Bench Tested likes to live: build choices, prop obsession, Ghostbusters community energy, and the fun of pushing past “close enough” into something that feels personal.</p>
             <div class="actions">
               <a class="btn btn-primary" href="#listen">Listen to Bench Tested</a>
@@ -471,15 +535,16 @@
       <div class="wrap">
         <div class="current-card surface">
           <div class="current-visual">
-            <img src="july-22-ghgb-promo.png" alt="Bench Tested July 22 episode featuring The Green Haired Ghostbuster" />
+            <img src="archer-aug-5-promo.png" alt="Bench Tested August 5 episode featuring Archer with Nerd Affiliated and The Real Nerd Busters" />
           </div>
           <div class="current-copy">
             <p class="eyebrow">Current episode / Now streaming</p>
-            <h2>The Green Haired Ghostbuster episode is on the feed.</h2>
-            <p class="lede">Before Archer’s episode drops, catch the current Bench Tested conversation with Luke Ellis about the Green Haired Ghostbuster community trading card project, fan collecting, and how Ghostbusters groups connect through trades and mailboxes.</p>
+            <h2>Archer from Nerd Affiliated is still on the feed.</h2>
+            <p class="lede">While the Capital Ghostbusters episode gets ready to drop, keep the Archer conversation rolling. The episode digs into flight suits, weathering, proton packs, electronics, HasLab upgrades, Ghostbusters: Night Shift, and the line between screen accuracy and personal creativity.</p>
             <div class="actions">
               <a class="btn btn-primary" href="#listen">Listen now</a>
-              <a class="btn btn-secondary" href="https://www.facebook.com/share/g/1945LgtPvm/" target="_blank" rel="noreferrer">Trade cards <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-secondary" href="https://www.nerdaffiliated.com/" target="_blank" rel="noreferrer">Nerd Affiliated <span aria-hidden="true">↗</span></a>
+              <a class="btn btn-secondary" href="https://www.instagram.com/therealnerdbusters/" target="_blank" rel="noreferrer">The Real Nerd Busters <span aria-hidden="true">↗</span></a>
             </div>
           </div>
         </div>
@@ -496,7 +561,7 @@
           <div>
             <p class="eyebrow">Listen everywhere</p>
             <h2>Pick your frequency.</h2>
-            <p>Follow Bench Tested wherever you already listen so the August 5 Archer episode drops straight into your feed.</p>
+            <p>Follow Bench Tested wherever you already listen so the August 19 Capital Ghostbusters episode drops straight into your feed.</p>
           </div>
           <div class="platforms">
             <a class="platform-link" href="https://podcasts.apple.com/us/podcast/bench-tested-a-ghostbusters-podcast/id1886335915" target="_blank" rel="noreferrer"><span class="platform-icon"></span><span>Apple Podcasts</span></a>
@@ -648,7 +713,7 @@
 
   <script>
     (() => {
-      const nextEpisode = new Date("2026-08-05T00:00:00-06:00");
+      const nextEpisode = new Date("2026-08-19T00:00:00-06:00");
       const days = document.getElementById("count-days");
       const hours = document.getElementById("count-hours");
       const minutes = document.getElementById("count-minutes");
@@ -660,7 +725,7 @@
           days.textContent = "NEW";
           hours.textContent = "EP";
           minutes.textContent = "LIVE";
-          note.textContent = "The Archer episode is live. Open the feed and get back to the bench.";
+          note.textContent = "The Capital Ghostbusters episode is live. Open the feed and get back to the bench.";
           return;
         }
         days.textContent = String(Math.floor(distance / 86400000)).padStart(2, "0");
