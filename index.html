@@ -255,8 +255,75 @@
     .gallery-caption p { color: var(--dim); font-size: .78rem; line-height: 1.45; }
 
     .listen-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(280px, .7fr); gap: 24px; align-items: stretch; }
-    .player-card { padding: 30px; }
-    .player-card iframe { display: block; width: 100%; height: 352px; border: 0; border-radius: 14px; background: #000; }
+    .player-card { min-width: 0; padding: 30px; }
+    .castopod-player { display: grid; gap: 20px; }
+    .player-loading {
+      min-height: 356px;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      color: var(--dim);
+      background: rgba(0,0,0,.18);
+      font-size: .76rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .player-loading[hidden], .show-player[hidden] { display: none; }
+    .now-playing { display: grid; grid-template-columns: 108px minmax(0, 1fr); gap: 20px; align-items: center; }
+    .now-playing-art {
+      width: 108px;
+      aspect-ratio: 1;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #08090a;
+      box-shadow: 0 14px 34px rgba(0,0,0,.28);
+    }
+    .now-playing-copy { min-width: 0; }
+    .now-playing-label { margin-bottom: 7px; color: var(--red); font-size: .65rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+    .now-playing-title { margin: 0; color: #fff; font-size: clamp(1.15rem, 2.1vw, 1.55rem); line-height: 1.16; text-transform: none; }
+    .now-playing-meta { margin-top: 8px; color: var(--dim); font-size: .75rem; font-weight: 800; letter-spacing: .04em; }
+    .castopod-audio { width: 100%; height: 48px; accent-color: var(--red); }
+    .player-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; }
+    .episode-count { color: var(--dim); font-size: .66rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
+    .castopod-link { color: var(--yellow); font-size: .68rem; font-weight: 900; letter-spacing: .09em; text-transform: uppercase; }
+    .castopod-link:hover { color: #ffe36a; }
+    .episode-list {
+      max-height: 330px;
+      display: grid;
+      gap: 8px;
+      overflow-y: auto;
+      padding: 3px 5px 3px 0;
+      scrollbar-color: rgba(255,255,255,.22) transparent;
+    }
+    .episode-item {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr) 34px;
+      gap: 12px;
+      align-items: center;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      color: var(--text);
+      background: rgba(255,255,255,.022);
+      cursor: pointer;
+      text-align: left;
+      transition: border-color .2s ease, background .2s ease, transform .2s ease;
+    }
+    .episode-item:hover { transform: translateY(-1px); border-color: rgba(240,68,62,.5); background: rgba(240,68,62,.06); }
+    .episode-item.is-active { border-color: rgba(240,68,62,.72); background: linear-gradient(90deg, rgba(240,68,62,.14), rgba(240,68,62,.035)); }
+    .episode-number { color: var(--dim); font-size: .67rem; font-weight: 900; letter-spacing: .08em; text-align: center; }
+    .episode-item.is-active .episode-number { color: #ff9b96; }
+    .episode-copy { min-width: 0; }
+    .episode-title { display: block; overflow: hidden; color: #f1f1ef; font-size: .82rem; font-weight: 850; line-height: 1.35; text-overflow: ellipsis; white-space: nowrap; }
+    .episode-meta { display: block; margin-top: 5px; color: var(--dim); font-size: .66rem; font-weight: 700; }
+    .episode-play { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: rgba(255,255,255,.08); font-size: .65rem; }
+    .episode-item.is-active .episode-play { background: var(--red); box-shadow: 0 6px 18px rgba(240,68,62,.25); }
     .listen-side { padding: 30px; display: flex; flex-direction: column; }
     .listen-side h2 { font-size: clamp(2rem, 3.4vw, 3rem); overflow-wrap: anywhere; }
     .listen-side .platforms { margin-top: auto; }
@@ -353,7 +420,11 @@
       .build-gallery { grid-template-columns: 1fr; }
       .gallery-card.wide, .gallery-card.tall { grid-column: auto; grid-row: auto; }
       .gallery-card.wide img, .gallery-card.tall img, .gallery-card img { aspect-ratio: 4 / 3; }
-      .player-card iframe { height: 352px; }
+      .now-playing { grid-template-columns: 82px minmax(0, 1fr); gap: 15px; }
+      .now-playing-art { width: 82px; }
+      .episode-list { max-height: 390px; }
+      .episode-item { grid-template-columns: 28px minmax(0, 1fr) 30px; gap: 9px; padding: 11px 9px; }
+      .episode-title { white-space: normal; }
       .guest-intro { align-items: start; flex-direction: column; gap: 10px; }
       .guest-grid, .community-grid, .topic-list { grid-template-columns: 1fr; }
       .guest-card:last-child { grid-column: auto; display: block; }
@@ -556,7 +627,25 @@
       <div class="wrap listen-grid">
         <div class="player-card surface">
           <p class="eyebrow">Now transmitting</p>
-          <iframe data-testid="embed-iframe" src="https://open.spotify.com/embed/show/7xth7akhzUCkKaY6e5sexj?utm_source=generator" title="Bench Tested on Spotify" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+          <div class="castopod-player" data-feed="https://podcast.benchtestedpod.com/@benchtestedpod/feed.xml">
+            <div class="player-loading" id="player-status" role="status" aria-live="polite">Loading the Bench Tested signal…</div>
+            <div class="show-player" id="show-player" hidden>
+              <div class="now-playing">
+                <img class="now-playing-art" id="now-playing-art" src="bench-tested-logo.png" alt="Bench Tested cover artwork" />
+                <div class="now-playing-copy">
+                  <div class="now-playing-label">Selected episode</div>
+                  <h3 class="now-playing-title" id="now-playing-title">Bench Tested</h3>
+                  <div class="now-playing-meta" id="now-playing-meta"></div>
+                </div>
+              </div>
+              <audio class="castopod-audio" id="castopod-audio" controls preload="metadata"></audio>
+              <div class="player-actions">
+                <span class="episode-count" id="episode-count"></span>
+                <a class="castopod-link" id="episode-page-link" href="https://podcast.benchtestedpod.com/@benchtestedpod" target="_blank" rel="noreferrer">Open episode notes ↗</a>
+              </div>
+              <div class="episode-list" id="episode-list" aria-label="Bench Tested episodes"></div>
+            </div>
+          </div>
         </div>
         <aside class="listen-side surface">
           <div>
@@ -736,6 +825,137 @@
 
       updateCountdown();
       window.setInterval(updateCountdown, 60000);
+    })();
+
+    (() => {
+      const playerRoot = document.querySelector(".castopod-player");
+      if (!playerRoot) return;
+
+      const feedUrl = playerRoot.dataset.feed;
+      const showUrl = "https://podcast.benchtestedpod.com/@benchtestedpod";
+      const status = document.getElementById("player-status");
+      const player = document.getElementById("show-player");
+      const audio = document.getElementById("castopod-audio");
+      const artwork = document.getElementById("now-playing-art");
+      const title = document.getElementById("now-playing-title");
+      const meta = document.getElementById("now-playing-meta");
+      const count = document.getElementById("episode-count");
+      const episodeLink = document.getElementById("episode-page-link");
+      const episodeList = document.getElementById("episode-list");
+      const dateFormatter = new Intl.DateTimeFormat("en-US", { month: "short", day: "numeric", year: "numeric" });
+
+      const childText = (node, tagName) => node.getElementsByTagName(tagName)[0]?.textContent?.trim() || "";
+
+      function formatDate(value) {
+        const date = new Date(value);
+        return Number.isNaN(date.getTime()) ? "" : dateFormatter.format(date);
+      }
+
+      function formatDuration(value) {
+        if (!value) return "";
+        if (value.includes(":")) return value;
+        const seconds = Number.parseInt(value, 10);
+        if (!Number.isFinite(seconds)) return "";
+        const hours = Math.floor(seconds / 3600);
+        const minutes = Math.floor((seconds % 3600) / 60);
+        const remaining = seconds % 60;
+        return hours > 0
+          ? `${hours}:${String(minutes).padStart(2, "0")}:${String(remaining).padStart(2, "0")}`
+          : `${minutes}:${String(remaining).padStart(2, "0")}`;
+      }
+
+      function setActiveEpisode(episodes, index, shouldPlay = false) {
+        const episode = episodes[index];
+        if (!episode) return;
+
+        audio.src = episode.audioUrl;
+        title.textContent = episode.title;
+        meta.textContent = [formatDate(episode.date), formatDuration(episode.duration)].filter(Boolean).join(" • ");
+        artwork.src = episode.artwork || episodes.showArtwork || "bench-tested-logo.png";
+        artwork.alt = `${episode.title} artwork`;
+        episodeLink.href = episode.link || showUrl;
+
+        episodeList.querySelectorAll(".episode-item").forEach((button, buttonIndex) => {
+          const active = buttonIndex === index;
+          button.classList.toggle("is-active", active);
+          button.setAttribute("aria-pressed", String(active));
+        });
+
+        if (shouldPlay) audio.play().catch(() => {});
+      }
+
+      function renderEpisodes(episodes) {
+        count.textContent = `${episodes.length} episode${episodes.length === 1 ? "" : "s"} from Castopod`;
+        episodeList.replaceChildren();
+
+        episodes.forEach((episode, index) => {
+          const button = document.createElement("button");
+          button.type = "button";
+          button.className = "episode-item";
+          button.setAttribute("aria-label", `Play ${episode.title}`);
+          button.setAttribute("aria-pressed", "false");
+
+          const number = document.createElement("span");
+          number.className = "episode-number";
+          number.textContent = String(index + 1).padStart(2, "0");
+
+          const copy = document.createElement("span");
+          copy.className = "episode-copy";
+          const episodeTitle = document.createElement("span");
+          episodeTitle.className = "episode-title";
+          episodeTitle.textContent = episode.title;
+          const episodeMeta = document.createElement("span");
+          episodeMeta.className = "episode-meta";
+          episodeMeta.textContent = [formatDate(episode.date), formatDuration(episode.duration)].filter(Boolean).join(" • ");
+          copy.append(episodeTitle, episodeMeta);
+
+          const play = document.createElement("span");
+          play.className = "episode-play";
+          play.setAttribute("aria-hidden", "true");
+          play.textContent = "▶";
+
+          button.append(number, copy, play);
+          button.addEventListener("click", () => setActiveEpisode(episodes, index, true));
+          episodeList.append(button);
+        });
+
+        setActiveEpisode(episodes, 0);
+        status.hidden = true;
+        player.hidden = false;
+      }
+
+      fetch(feedUrl, { headers: { Accept: "application/rss+xml, application/xml;q=0.9" } })
+        .then((response) => {
+          if (!response.ok) throw new Error(`Feed returned ${response.status}`);
+          return response.text();
+        })
+        .then((xmlText) => {
+          const xml = new DOMParser().parseFromString(xmlText, "application/xml");
+          if (xml.querySelector("parsererror")) throw new Error("Feed XML could not be parsed");
+
+          const channel = xml.getElementsByTagName("channel")[0];
+          const channelImage = channel?.getElementsByTagName("itunes:image")[0]?.getAttribute("href")
+            || channel?.getElementsByTagName("image")[0]?.getElementsByTagName("url")[0]?.textContent?.trim()
+            || "bench-tested-logo.png";
+
+          const episodes = Array.from(xml.getElementsByTagName("item"))
+            .map((item) => ({
+              title: childText(item, "title") || "Untitled episode",
+              link: childText(item, "link") || showUrl,
+              date: childText(item, "pubDate"),
+              duration: childText(item, "itunes:duration"),
+              audioUrl: item.getElementsByTagName("enclosure")[0]?.getAttribute("url") || "",
+              artwork: item.getElementsByTagName("itunes:image")[0]?.getAttribute("href") || channelImage
+            }))
+            .filter((episode) => episode.audioUrl);
+
+          if (!episodes.length) throw new Error("No playable episodes were found");
+          episodes.showArtwork = channelImage;
+          renderEpisodes(episodes);
+        })
+        .catch(() => {
+          status.innerHTML = "The live episode list is temporarily unavailable. <a class=\"castopod-link\" href=\"https://podcast.benchtestedpod.com/@benchtestedpod\" target=\"_blank\" rel=\"noreferrer\">Open Bench Tested on Castopod ↗</a>";
+        });
     })();
   </script>
 </body>
