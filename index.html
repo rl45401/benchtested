@@ -210,6 +210,24 @@
     .episode-guest.landscape img { aspect-ratio: 16 / 9; object-fit: contain; padding: 10px; background: #070809; }
     .episode-guest-body { padding: 18px; }
     .episode-guest-body p { font-size: .84rem; line-height: 1.5; }
+    .grant-photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .grant-photo { display: block; overflow: hidden; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; }
+    .grant-photo img { width: 100%; height: 270px; object-fit: contain; background: #050505; }
+    .grant-photo:hover, .grant-photo:focus-visible { border-color: var(--yellow); }
+    .grant-photo-caption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; padding: 18px; font-size: .85rem; font-weight: 700; }
+    .grant-photo-caption span { color: var(--yellow); font-size: .75rem; }
+    .photo-viewer { width: min(1200px, calc(100vw - 24px)); max-width: none; max-height: calc(100dvh - 24px); margin: auto; padding: 16px; border: 1px solid var(--line); border-radius: 16px; color: var(--text); background: #0c0e10; }
+    .photo-viewer::backdrop { background: rgba(0,0,0,.92); }
+    .photo-viewer[open] { display: flex; flex-direction: column; gap: 12px; }
+    .photo-toolbar, .photo-controls { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+    .photo-toolbar p, .photo-controls p { margin: 0; }
+    .photo-toolbar a { color: var(--yellow); text-decoration: underline; font-size: .85rem; }
+    .photo-viewer button { min-height: 44px; padding: 10px 16px; color: #fff; background: #26282b; border: 1px solid #717171; border-radius: 8px; font: inherit; cursor: pointer; }
+    .photo-viewer button:focus-visible { outline: 3px solid var(--yellow); outline-offset: 3px; }
+    #photo-large { width: 100%; min-height: 0; height: min(72dvh, 850px); object-fit: contain; }
+    #photo-caption { flex: 1; text-align: center; font-size: .9rem; }
+    @media (max-width: 900px) { .grant-photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    @media (max-width: 560px) { .grant-photo-grid { grid-template-columns: 1fr; } .photo-viewer { padding: 10px; } #photo-large { height: 58dvh; } .photo-toolbar { font-size: .8rem; } .photo-controls button { padding: 8px; font-size: .8rem; } }
     .video-caption { margin-top: 18px; color: var(--muted); font-size: .86rem; }
     .grant-tutorials { display: grid; gap: 14px; margin-top: 28px; }
     .grant-tutorials a { color: var(--yellow); font-weight: 700; line-height: 1.5; }
@@ -485,6 +503,7 @@
             <a class="btn btn-primary" href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-ghostbusters-gear-that-lasts-with-gspropsmith" target="_blank" rel="noreferrer">Listen to Grant <span aria-hidden="true">→</span></a>
             <a class="btn btn-dark" href="https://gspropsmith.etsy.com/" target="_blank" rel="noreferrer">Shop GSPropsmith on Etsy ↗</a>
             <a class="btn btn-secondary" href="#grant-youtube">Watch Grant on YouTube</a>
+            <a class="btn btn-secondary" href="#grant-gallery">See Grant’s photos</a>
           </div>
         </div>
 
@@ -547,6 +566,60 @@
     </section>
 
     <div class="caution-wrap slim" aria-hidden="true"></div>
+
+    <section class="section" id="grant-gallery">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Grant / GSPropsmith photo gallery</p>
+          <h2>From the workshop to the field.</h2>
+          <p class="lede">Props, community, and a few memorable moments from Grant’s collection. Select any photo to see it larger.</p>
+        </div>
+        <div class="grant-photo-grid">
+          <a class="grant-photo" href="grant-gallery/grant-4.jpg" data-caption="Planet Comicon" aria-label="Enlarge photo: Planet Comicon">
+            <img src="grant-gallery/grant-4-thumb.jpg" alt="Ghostbusters fans in flight suits posing at Planet Comicon Kansas City." loading="lazy" />
+            <span class="grant-photo-caption">Planet Comicon<span aria-hidden="true">View larger ↗</span></span>
+          </a>
+          <a class="grant-photo" href="grant-gallery/grant-5.jpg" data-caption="At the workshop" aria-label="Enlarge photo: At the workshop">
+            <img src="grant-gallery/grant-5-thumb.jpg" alt="GSPropsmith shirt and a thumbs-up in the workshop." loading="lazy" />
+            <span class="grant-photo-caption">At the workshop<span aria-hidden="true">View larger ↗</span></span>
+          </a>
+          <a class="grant-photo" href="grant-gallery/grant-6.jpg" data-caption="A messy night of busting" aria-label="Enlarge photo: A messy night of busting">
+            <img src="grant-gallery/grant-6-thumb.jpg" alt="Ghostbusters flight suit and proton pack covered in white foam." loading="lazy" />
+            <span class="grant-photo-caption">A messy night of busting<span aria-hidden="true">View larger ↗</span></span>
+          </a>
+          <a class="grant-photo" href="grant-gallery/grant-7.jpg" data-caption="MK. 5 belt gizmo" aria-label="Enlarge photo: MK. 5 belt gizmo">
+            <img src="grant-gallery/grant-7-thumb.jpg" alt="GSPropsmith MK. 5 belt gizmo with illuminated red displays, colorful wiring, and a coiled cable." loading="lazy" />
+            <span class="grant-photo-caption">MK. 5 belt gizmo<span aria-hidden="true">View larger ↗</span></span>
+          </a>
+          <a class="grant-photo" href="grant-gallery/grant-8.jpg" data-caption="At the firehouse" aria-label="Enlarge photo: At the firehouse">
+            <img src="grant-gallery/grant-8-thumb.jpg" alt="Ghostbusters fans gathered outside the Hook and Ladder 8 firehouse." loading="lazy" />
+            <span class="grant-photo-caption">At the firehouse<span aria-hidden="true">View larger ↗</span></span>
+          </a>
+          <a class="grant-photo" href="grant-gallery/grant-9.jpg" data-caption="Out with the crew" aria-label="Enlarge photo: Out with the crew">
+            <img src="grant-gallery/grant-9-thumb.jpg" alt="Three Ghostbusters fans posing with their gear beside a vehicle at a ballpark." loading="lazy" />
+            <span class="grant-photo-caption">Out with the crew<span aria-hidden="true">View larger ↗</span></span>
+          </a>
+          <a class="grant-photo" href="grant-gallery/grant-10.jpg" data-caption="Ecto after dark" aria-label="Enlarge photo: Ecto after dark">
+            <img src="grant-gallery/grant-10-thumb.jpg" alt="Ghostbusters-inspired black SUV with illuminated roof equipment and green lights." loading="lazy" />
+            <span class="grant-photo-caption">Ecto after dark<span aria-hidden="true">View larger ↗</span></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <dialog class="photo-viewer" id="grant-photo-viewer" aria-label="Grant photo gallery" aria-describedby="photo-caption">
+      <div class="photo-toolbar">
+        <p id="photo-position" aria-live="polite"></p>
+        <a id="photo-original" target="_blank" rel="noreferrer">Open full-size photo ↗</a>
+        <button type="button" id="photo-close" autofocus>Close ×</button>
+      </div>
+      <img id="photo-large" alt="" />
+      <div class="photo-controls">
+        <button type="button" id="photo-prev" aria-label="Previous photo">← Previous</button>
+        <p id="photo-caption" aria-live="polite"></p>
+        <button type="button" id="photo-next" aria-label="Next photo">Next →</button>
+      </div>
+    </dialog>
 
     <section class="section" id="grant-youtube">
       <div class="wrap">
@@ -802,6 +875,55 @@
   </footer>
 
   <script>
+    (() => {
+      const links = [...document.querySelectorAll('.grant-photo')];
+      const dialog = document.getElementById('grant-photo-viewer');
+      if (!dialog || typeof dialog.showModal !== 'function') return;
+      const large = document.getElementById('photo-large');
+      const caption = document.getElementById('photo-caption');
+      const position = document.getElementById('photo-position');
+      const original = document.getElementById('photo-original');
+      let index = 0;
+      let trigger;
+      let previousOverflow;
+      function showPhoto(next) {
+        index = (next + links.length) % links.length;
+        const link = links[index];
+        large.src = link.href;
+        large.alt = link.querySelector('img').alt;
+        caption.textContent = link.dataset.caption;
+        position.textContent = `${index + 1} / ${links.length}`;
+        original.href = link.href;
+      }
+      links.forEach((link, i) => link.addEventListener('click', event => {
+        if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+        event.preventDefault();
+        trigger = link;
+        showPhoto(i);
+        previousOverflow = document.body.style.overflow;
+        dialog.showModal();
+        document.body.style.overflow = 'hidden';
+      }));
+      document.getElementById('photo-close').addEventListener('click', () => dialog.close());
+      document.getElementById('photo-prev').addEventListener('click', () => showPhoto(index - 1));
+      document.getElementById('photo-next').addEventListener('click', () => showPhoto(index + 1));
+      dialog.addEventListener('keydown', event => {
+        if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
+          event.preventDefault();
+          showPhoto(index + (event.key === 'ArrowLeft' ? -1 : 1));
+        }
+      });
+      dialog.addEventListener('click', event => {
+        if (event.target !== dialog) return;
+        const box = dialog.getBoundingClientRect();
+        if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
+      });
+      dialog.addEventListener('close', () => {
+        document.body.style.overflow = previousOverflow;
+        trigger?.focus();
+      });
+    })();
+
     (() => {
       const playerRoot = document.querySelector(".castopod-player");
       if (!playerRoot) return;
