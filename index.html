@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bench Tested | A Ghostbusters Podcast</title>
-  <meta name="description" content="Bench Tested is a Ghostbusters podcast for builders, collectors, and fans who care how the gear gets made. Out now: Grant from GSPropsmith on building Ghostbusters gear that lasts. Catch up with Nan Robinson and Phil Goulet of the Kalamazoo Ghostbusters, now streaming." />
+  <meta name="description" content="Bench Tested is a Ghostbusters podcast for builders, collectors, and fans who care how the gear gets made. Out now: Grant from GSPropsmith on building Ghostbusters gear that lasts. Listen to Grant’s episode, shop GSPropsmith on Etsy, and explore his YouTube tutorials." />
   <meta name="theme-color" content="#08090a" />
   <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2" />
@@ -210,6 +210,16 @@
     .episode-guest.landscape img { aspect-ratio: 16 / 9; object-fit: contain; padding: 10px; background: #070809; }
     .episode-guest-body { padding: 18px; }
     .episode-guest-body p { font-size: .84rem; line-height: 1.5; }
+    .video-caption { margin-top: 18px; color: var(--muted); font-size: .86rem; }
+    .grant-tutorials { display: grid; gap: 14px; margin-top: 28px; }
+    .grant-tutorials a { color: var(--yellow); font-weight: 700; line-height: 1.5; }
+    .grant-shop { margin-top: 28px; padding: clamp(24px, 4vw, 44px); border-top: 3px solid var(--yellow); }
+    .grant-shop h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
+    .grant-socials { display: flex; flex-wrap: wrap; gap: 16px 24px; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--line); font-size: .85rem; }
+    .grant-socials span { color: var(--dim); }
+    .grant-socials a { text-decoration: underline; text-underline-offset: 4px; }
+    .past-episode { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 24px; padding: 28px; margin-bottom: 30px; }
+    .past-episode h3 { font-size: 1.4rem; }
     .video-section { padding-top: 0; }
     .video-card { display: grid; grid-template-columns: minmax(0, 1.18fr) minmax(280px, .82fr); gap: 0; overflow: hidden; }
     .video-frame { padding: 18px; background: #070809; }
@@ -455,8 +465,8 @@
       </a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#featured">Grant / Out now</a>
-        <a href="#gallery">Build gallery</a>
-        <a href="#nan-phil">Nan &amp; Phil</a>
+        <a href="#grant-youtube">YouTube</a>
+        <a href="https://gspropsmith.etsy.com/" target="_blank" rel="noreferrer">Shop GSPropsmith ↗</a>
         <a href="#listen">Listen</a>
         <a href="#guest-form">Request a guest</a>
       </nav>
@@ -473,7 +483,8 @@
           <p class="lede">Grant from GSPropsmith joins Charlie to talk about building Ghostbusters gear that lasts—from Spirit Pack upgrades to custom props and running a one-person shop. The episode is live. Listen now.</p>
           <div class="actions">
             <a class="btn btn-primary" href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-ghostbusters-gear-that-lasts-with-gspropsmith" target="_blank" rel="noreferrer">Listen to Grant <span aria-hidden="true">→</span></a>
-            <a class="btn btn-secondary" href="#nan-phil">Catch up with Nan &amp; Phil</a>
+            <a class="btn btn-dark" href="https://gspropsmith.etsy.com/" target="_blank" rel="noreferrer">Shop GSPropsmith on Etsy ↗</a>
+            <a class="btn btn-secondary" href="#grant-youtube">Watch Grant on YouTube</a>
           </div>
         </div>
 
@@ -515,7 +526,7 @@
             </div>
             <div class="actions">
               <a class="btn btn-primary" href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-ghostbusters-gear-that-lasts-with-gspropsmith" target="_blank" rel="noreferrer">Listen to the episode <span aria-hidden="true">→</span></a>
-              <a class="btn btn-secondary" href="#nan-phil">Nan &amp; Phil / Now streaming</a>
+              <a class="btn btn-dark" href="https://gspropsmith.etsy.com/" target="_blank" rel="noreferrer">Shop GSPropsmith on Etsy ↗</a>
             </div>
           </div>
           <div class="episode-guests green-signal" aria-label="Grant from GSPropsmith photos">
@@ -537,85 +548,49 @@
 
     <div class="caution-wrap slim" aria-hidden="true"></div>
 
-    <section class="section feature" id="nan-phil">
-      <div class="wrap">
-        <div class="feature-grid surface">
-          <div class="feature-copy">
-            <p class="eyebrow">Now streaming / September 2 episode</p>
-            <h2>Catch up with Nan Robinson &amp; Phil Goulet.</h2>
-            <p class="lede">Nan Robinson and Phil Goulet join Bench Tested for a maker-forward conversation rooted in the stuff builders actually care about: RC trap vehicles, wearable electronics, custom patches, Mini Pufts, display pieces, community appearances, and charity work that turns fandom into something generous.</p>
-            <div class="signal-row" aria-label="Episode topics">
-              <span class="signal">Kalamazoo Ghostbusters</span>
-              <span class="signal">No Ghost Gear</span>
-              <span class="signal">RTV Omega</span>
-              <span class="signal">Man Cave Puzzles</span>
-              <span class="signal">Great Lakes Burn Camp</span>
-              <span class="signal">Mini Pufts</span>
-            </div>
-            <div class="actions">
-              <a class="btn btn-primary" href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-the-next-generation-of-ghostbusters-gear" target="_blank" rel="noreferrer">Listen to Nan &amp; Phil</a>
-              <a class="btn btn-dark" href="#gallery">Explore their build gallery</a>
-              <a class="btn btn-primary" href="https://noghostgear.etsy.com" target="_blank" rel="noreferrer">No Ghost Gear <span aria-hidden="true">↗</span></a>
-              <a class="btn btn-secondary" href="https://glbcforkids.org" target="_blank" rel="noreferrer">Great Lakes Burn Camp <span aria-hidden="true">↗</span></a>
-              <a class="btn btn-secondary" href="https://www.facebook.com/share/19DxqE1mCq/?mibextid=wwXIfr" target="_blank" rel="noreferrer">Kalamazoo GB <span aria-hidden="true">↗</span></a>
-              <a class="btn btn-secondary" href="http://rtv.knightshop.com/" target="_blank" rel="noreferrer">RTV Omega <span aria-hidden="true">↗</span></a>
-              <a class="btn btn-secondary" href="https://www.etsy.com/shop/ManCavePuzzles" target="_blank" rel="noreferrer">Man Cave Puzzles <span aria-hidden="true">↗</span></a>
-            </div>
-          </div>
-          <div class="episode-guests kalamazoo-signal" aria-label="September 2 Kalamazoo Ghostbusters episode feature images">
-            <article class="episode-guest contain-photo">
-              <img src="nan-frozen-empire-premiere.jpg" alt="Nan Robinson in Ghostbusters gear outside the New York firehouse facade for Frozen Empire" />
-              <div class="episode-guest-body">
-                <span class="guest-credit">No Ghost Gear</span>
-                <h3>Nan Robinson</h3>
-                <p>Maker, patch designer, Mini Puft wrangler, Ecto builder, and Kalamazoo Ghostbuster with a serious practical-prop streak.</p>
-              </div>
-            </article>
-            <article class="episode-guest contain-photo">
-              <img src="phil-rtv-portrait.jpg" alt="Phil Goulet in a Ghostbusters suit kneeling with an RTV Omega build" />
-              <div class="episode-guest-body">
-                <span class="guest-credit">RTV Omega</span>
-                <h3>Phil Goulet</h3>
-                <p>Community builder and Man Cave Puzzles maker behind the famous RTV Omega and other wonderfully overbuilt gadgets.</p>
-              </div>
-            </article>
-            <article class="episode-guest landscape">
-              <img src="nan-dan-aykroyd.jpg" alt="Kalamazoo Ghostbusters posing with Dan Aykroyd" />
-              <div class="episode-guest-body">
-                <span class="guest-credit">Kalamazoo GB</span>
-                <h3>Community that shows up</h3>
-                <p>Appearances, charity work, conventions, movie-premiere moments, and the kind of franchise energy that travels well.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section gallery-section" id="gallery">
+    <section class="section" id="grant-youtube">
       <div class="wrap">
         <div class="section-head">
-          <p class="eyebrow">Nan &amp; Phil / Build gallery</p>
-          <h2>Props, vehicles, patches, and glorious little weirdos.</h2>
-          <p class="lede">A look at the Kalamazoo Ghostbusters builds and appearances behind the September 2 conversation: Nan’s No Ghost Gear creations, Phil’s RTV Omega, handmade gadgets, Ecto-inspired rides, glowing ghosts, convention moments, and charity-minded community work.</p>
+          <p class="eyebrow">GS PropSmith on YouTube</p>
+          <h2>See the gear in action.</h2>
+          <p class="lede">Keep the workshop conversation going with Grant’s hands-on demonstrations, installation guides, and vent-kit tutorials.</p>
         </div>
-        <div class="build-gallery" aria-label="Nan Robinson and Phil Goulet build photo gallery">
-          <article class="gallery-card wide"><img src="nan-charlesworth-trap.jpg" alt="Smoking Ghostbusters-inspired trap and electronics build" /><div class="gallery-caption"><h3>Trap build drama</h3><p>Smoke, light, wiring, and the lovely little theater that makes a prop feel alive.</p></div></article>
-          <article class="gallery-card tall"><img src="phil-profile-card.jpg" alt="Phil Goulet builder profile card featuring RTV Omega and Aura Analyzer Helmet" /><div class="gallery-caption"><h3>Phil Goulet</h3><p>Builder profile energy: RTV Omega, an Aura Analyzer Helmet, and a card that knows exactly what it is.</p></div></article>
-          <article class="gallery-card"><img src="kalamazoo-ghostbusters-logo.jpg" alt="Kalamazoo Ghostbusters logo" /><div class="gallery-caption"><h3>Kalamazoo GB</h3><p>The franchise mark anchoring Nan and Phil’s side of the Ghostbusters map.</p></div></article>
-          <article class="gallery-card"><img src="nan-phil-attenuator.jpg" alt="A handmade attenuator prop with glowing blue and red lights" /><div class="gallery-caption"><h3>Second attenuator</h3><p>A compact gadget build with toggles, lights, warning labels, and just enough menace.</p></div></article>
-          <article class="gallery-card wide"><img src="phil-rtv-wide.jpg" alt="RTV Omega remote trap vehicle from the front" /><div class="gallery-caption"><h3>RTV Omega</h3><p>Phil’s remote trap vehicle sits right in the sweet spot between toy, tool, and full-on prop obsession.</p></div></article>
-          <article class="gallery-card wide"><img src="phil-rtv-patch.jpg" alt="RTV Omega close-up with a remote trap vehicle operator patch" /><div class="gallery-caption"><h3>Remote trap operator</h3><p>Big tires, battered details, and a patch that turns the build into a whole little world.</p></div></article>
-          <article class="gallery-card"><img src="nan-minipufts.jpg" alt="Handmade Mini Puft figures holding glowing fire pieces" /><div class="gallery-caption"><h3>Mini Pufts</h3><p>Nan’s tiny troublemakers bring that perfect mix of cute, chaotic, and extremely flammable-looking.</p></div></article>
-          <article class="gallery-card tall"><img src="nan-terror-dog.jpg" alt="Finished three-dimensional Terror Dog head mounted on a brick wall with glowing red eyes" /><div class="gallery-caption"><h3>Terror Dog head</h3><p>A finished display piece with glowing eyes, gnarly texture, and teeth doing most of the talking.</p></div></article>
-          <article class="gallery-card"><img src="nan-pocket-gizmo.jpg" alt="Glowing handmade Ghostbusters pocket gizmo patch" /><div class="gallery-caption"><h3>Pocket gizmo</h3><p>Small-format electronics, stitched into the costume language where details reward a second look.</p></div></article>
-          <article class="gallery-card"><img src="nan-ecu-lights.jpg" alt="Close-up of a lit electronics control unit panel sewn into red fabric" /><div class="gallery-caption"><h3>ECU lights</h3><p>Wearable wiring, bright indicators, and tidy practical choices hiding inside the suit.</p></div></article>
-          <article class="gallery-card wide"><img src="nan-ecu-booth.jpg" alt="Nan Robinson using a trap at a red containment unit display booth" /><div class="gallery-caption"><h3>ECU in action</h3><p>The booth-build side of the fandom: big red panels, chains, lights, and the crowd-facing payoff.</p></div></article>
-          <article class="gallery-card wide"><img src="nan-egon-jeep.jpg" alt="Nan Robinson's Jeep Egon decorated as a Ghostbusters-inspired vehicle" /><div class="gallery-caption"><h3>Egon the Jeep</h3><p>An Ecto-flavored Jeep build loaded with slime, tanks, roof details, and parade-night attitude.</p></div></article>
-          <article class="gallery-card tall"><img src="nan-frozen-empire-premiere.jpg" alt="Nan Robinson outside the Ghostbusters Frozen Empire New York premiere firehouse facade" /><div class="gallery-caption"><h3>Frozen Empire premiere</h3><p>Nan outside the New York firehouse facade, suited up where the fandom and the films meet.</p></div></article>
-          <article class="gallery-card tall"><img src="nan-mckenna-grace.jpg" alt="Nan Robinson with McKenna Grace" /><div class="gallery-caption"><h3>With McKenna Grace</h3><p>A premiere-side moment with Phoebe Spengler herself and a pack full of handmade details.</p></div></article>
-          <article class="gallery-card tall"><img src="nan-ernie-hudson.jpg" alt="Nan Robinson with Ernie Hudson" /><div class="gallery-caption"><h3>With Ernie Hudson</h3><p>A convention meet-up with Winston Zeddemore energy and Nan’s kit right there in the frame.</p></div></article>
-          <article class="gallery-card wide"><img src="nan-dan-aykroyd.jpg" alt="Kalamazoo Ghostbusters posing with Dan Aykroyd" /><div class="gallery-caption"><h3>With Dan Aykroyd</h3><p>Kalamazoo Ghostbusters, community smiles, and a very familiar pair of pointing fingers.</p></div></article>
+        <div class="video-card surface">
+          <div class="video-frame">
+            <iframe src="https://www.youtube.com/embed/2Ya9Y26-s7o" title="GS PropSmith Pedal Activator Functionality" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+            <p class="video-caption">Featured video: GS PropSmith Pedal Activator Functionality</p>
+            <a class="trade-link" href="https://www.youtube.com/watch?v=2Ya9Y26-s7o" target="_blank" rel="noreferrer">Watch this video on YouTube ↗</a>
+          </div>
+          <div class="video-copy">
+            <p class="eyebrow">Watch. Learn. Build.</p>
+            <h2>More time at Grant’s bench.</h2>
+            <p>See how his pedal activator works, then explore the channel for proton pack walkthroughs, vent-kit refills, and installation help.</p>
+            <div class="actions">
+              <a class="btn btn-primary" href="https://www.youtube.com/@GSPropSmith?sub_confirmation=1" target="_blank" rel="noreferrer">Visit &amp; subscribe on YouTube ↗</a>
+            </div>
+            <div class="grant-tutorials" aria-label="More GS PropSmith videos">
+              <a href="https://www.youtube.com/watch?v=GTQSCeSN8yo" target="_blank" rel="noreferrer">Pedal activator installation ↗</a>
+              <a href="https://www.youtube.com/watch?v=geacSWAZ2g8" target="_blank" rel="noreferrer">HasLab trap vent kit: functionality &amp; refill ↗</a>
+              <a href="https://www.youtube.com/watch?v=tW9XdbwTAdM" target="_blank" rel="noreferrer">Proton pack basic functionality ↗</a>
+            </div>
+          </div>
+        </div>
+        <div class="grant-shop surface">
+          <div>
+            <p class="eyebrow">Made by a fan, for fans</p>
+            <h2>Bring GSPropsmith to your build.</h2>
+            <p>Browse Grant’s Ghostbusters props, apparel, and custom embroidery on Etsy.</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-dark" href="https://gspropsmith.etsy.com/" target="_blank" rel="noreferrer">Shop GSPropsmith on Etsy ↗</a>
+            <a class="btn btn-secondary" href="https://gspropsmith.com" target="_blank" rel="noreferrer">gspropsmith.com ↗</a>
+          </div>
+          <div class="grant-socials" aria-label="Connect with Grant">
+            <span>Connect with Grant</span>
+            <a href="https://www.facebook.com/GSPropSmith" target="_blank" rel="noreferrer">Facebook ↗</a>
+            <a href="https://linktr.ee/gspropsmith" target="_blank" rel="noreferrer">Linktree &amp; contact details ↗</a>
+            <a href="https://www.paypal.me/GrantSmith901" target="_blank" rel="noreferrer">Grant’s PayPal ↗</a>
+          </div>
         </div>
       </div>
     </section>
@@ -667,7 +642,7 @@
           <div>
             <p class="eyebrow">Listen everywhere</p>
             <h2>Pick your frequency.</h2>
-            <p>Grant from GSPropsmith is out now. Listen here or open your favorite podcast app, and catch up with Nan Robinson and Phil Goulet too.</p>
+            <p>Grant from GSPropsmith is out now. Listen here or open your favorite podcast app for this episode and the full Bench Tested archive.</p>
           </div>
           <div class="platforms">
             <a class="platform-link" href="https://podcasts.apple.com/us/podcast/bench-tested-a-ghostbusters-podcast/id1886335915" target="_blank" rel="noreferrer"><span class="platform-icon"></span><span>Apple Podcasts</span></a>
@@ -692,6 +667,15 @@
           </div>
           <p>Past episodes are a working record of the makers, designers, and film craftspeople shaping the gear and the community around it.</p>
         </div>
+
+        <article class="past-episode surface" id="nan-phil">
+          <div>
+            <p class="eyebrow">Past guests / September 2, 2026</p>
+            <h3>Nan Robinson &amp; Phil Goulet</h3>
+            <p>Building the Next Generation of Ghostbusters Gear</p>
+          </div>
+          <a class="btn btn-secondary" href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-the-next-generation-of-ghostbusters-gear" target="_blank" rel="noreferrer">Listen to their episode ↗</a>
+        </article>
 
         <div class="guest-grid">
           <article class="guest-card logo-card surface">
