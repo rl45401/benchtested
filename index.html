@@ -389,8 +389,11 @@
     .community-card { padding: 34px; }
     .support-logos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 26px; }
     .support-logo { min-height: 112px; display: grid; place-items: center; padding: 16px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.025); }
+    .support-logo-feature { grid-column: 1 / -1; gap: 14px; }
+    .support-logo-feature span { color: var(--yellow); font-size: .85rem; font-weight: 700; }
     .support-logo:hover { border-color: rgba(255,255,255,.25); }
     .support-logo img { max-height: 68px; width: auto; object-fit: contain; }
+    .support-logo-feature img { max-height: 240px; max-width: 100%; height: auto; }
     .cause-list { display: grid; gap: 12px; margin-top: 26px; }
     .cause { display: grid; grid-template-columns: 88px 1fr; align-items: center; gap: 18px; padding: 14px; border: 1px solid var(--line); border-radius: 14px; background: rgba(255,255,255,.025); }
     .cause img { width: 76px; height: 76px; object-fit: contain; border-radius: 10px; }
@@ -815,6 +818,7 @@
             <div class="support-logos">
               <a class="support-logo" href="https://www.etsy.com/shop/MobySignCo?ref=shop-header-name&amp;listing_id=4446164006&amp;from_page=listing" target="_blank" rel="noreferrer"><img src="moby sign co.png" alt="Moby Sign Co." /></a>
               <a class="support-logo" href="https://www.ghostworkslab.com" target="_blank" rel="noreferrer"><img src="ghostworks lab.png" alt="Ghostworks Lab" /></a>
+              <a class="support-logo support-logo-feature" href="https://www.facebook.com/profile.php?id=61585043026496" target="_blank" rel="noreferrer" aria-label="Chasing Props on Facebook"><img src="chasing-props-logo.jpg" alt="Chasing Props — Cosplays, Collectibles &amp; Customs" loading="lazy" /><span>Chasing Props on Facebook ↗</span></a>
             </div>
           </article>
 
