@@ -471,6 +471,13 @@
       .caution-wrap.slim { width: calc(100% - 28px); }
     }
 
+    .community-build { padding: clamp(20px, 4vw, 40px); border-top: 3px solid var(--yellow); }
+    .build-heading { display: flex; align-items: start; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+    .build-heading h3 { font-size: clamp(1.7rem, 3vw, 2.6rem); }
+    .build-heading p { max-width: 680px; }
+    .build-heading .signal { flex-shrink: 0; }
+    .nav-links { flex-wrap: wrap; justify-content: flex-end; gap: 12px 18px; }
+    @media (max-width: 700px) { .build-heading { flex-direction: column; gap: 8px; } }
     .rhett-profile { padding: 24px; display: grid; gap: 20px; align-content: start; }
     .rhett-portrait { width: 100%; max-height: 570px; object-fit: contain; background: #050505; border-radius: 16px; }
     .stantz-brand { display: block; width: min(100%, 270px); margin: auto; }
@@ -497,6 +504,7 @@
         <a href="#featured">Rhett / Out now</a>
         <a href="#rhett-gallery">Prop gallery</a>
         <a href="https://www.etsy.com/shop/StantzIndustries" target="_blank" rel="noreferrer">Shop Stantz Industries ↗</a>
+        <a href="#community-builds">Community builds</a>
         <a href="#listen">Listen</a>
         <a href="#guest-form">Request a guest</a>
       </nav>
@@ -515,6 +523,7 @@
             <a class="btn btn-primary" href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-your-first-ghostbusters-gear-with-stantz-industries" target="_blank" rel="noreferrer">Listen to Rhett →</a>
             <a class="btn btn-dark" href="https://www.etsy.com/shop/StantzIndustries" target="_blank" rel="noreferrer">Shop Stantz Industries on Etsy ↗</a>
             <a class="btn btn-secondary" href="#rhett-gallery">Explore Rhett’s props</a>
+            <a class="btn btn-secondary" href="#community-builds">Community builds gallery</a>
           </div>
         </div>
         <aside class="episode-promo-card surface" aria-label="Rhett J. Martin from Stantz Industries — episode out now">
@@ -549,7 +558,7 @@
     <div class="caution-wrap slim" aria-hidden="true"></div>
     <section class="section" id="rhett-gallery">
       <div class="wrap"><div class="section-head"><p class="eyebrow">Rhett / Stantz Industries photo gallery</p><h2>On screen. On set. On the bench.</h2><p class="lede">Explore Rhett’s props, production moments, and museum displays. Select any photo to see it larger.</p></div>
-      <div class="guest-photo-grid">
+      <div class="guest-photo-grid" data-photo-gallery="rhett" data-gallery-label="Rhett photo gallery">
         <a class="guest-photo" href="rhett-gallery/spooky-adventure.jpg" data-caption="Rhett’s props on screen in Peyton and Eli’s Spooky Adventure." aria-label="Enlarge photo: Peyton and Eli’s Spooky Adventure"><img src="rhett-gallery/spooky-adventure-thumb.jpg" alt="A scene from Peyton and Eli’s Spooky Adventure featuring Ghostbusters gear." loading="lazy" /><span class="guest-photo-caption">Peyton and Eli’s Spooky Adventure<span aria-hidden="true">View larger ↗</span></span></a>
         <a class="guest-photo" href="rhett-gallery/on-set.jpg" data-caption="Behind the scenes: Rhett’s props on set." aria-label="Enlarge photo: On set"><img src="rhett-gallery/on-set-thumb.jpg" alt="Film crew recording a Ghostbusters scene on an auditorium stage." loading="lazy" /><span class="guest-photo-caption">On set<span aria-hidden="true">View larger ↗</span></span></a>
         <a class="guest-photo" href="rhett-gallery/sony-museum.jpg" data-caption="Rhett’s Ecto goggles on display at the Sony museum." aria-label="Enlarge photo: Ecto goggles at the Sony museum"><img src="rhett-gallery/sony-museum-thumb.jpg" alt="Ecto goggles displayed beside a ghost trap and Slimer at the Sony museum." loading="lazy" /><span class="guest-photo-caption">Ecto goggles at the Sony museum<span aria-hidden="true">View larger ↗</span></span></a>
@@ -693,6 +702,36 @@
       </div>
     </section>
 
+    <!-- Permanent community build archive: preserve this section during episode rotations. -->
+    <div class="caution-wrap slim" aria-hidden="true"></div>
+    <section class="section" id="community-builds" aria-labelledby="community-builds-title">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="eyebrow">Community Builds / The growing collection</p>
+          <h2 id="community-builds-title">Built by the community.</h2>
+          <p class="lede">A home for Ghostbusters builds, from workbench progress to the finished gear. Explore the details, meet the makers, and come back as the collection grows.</p>
+        </div>
+        <article class="community-build surface" id="dc-callari-build">
+          <div class="build-heading">
+            <div><p class="eyebrow">Build 001 / GPStar</p><h3>David “D.C.” Callari</h3><p>A proton pack with bold yellow accents. Nine photos follow D.C.’s build through assembly, finishing details, and the completed pack.</p></div>
+            <span class="signal">9 photos / Select to enlarge</span>
+          </div>
+          <div class="guest-photo-grid" data-photo-gallery="dc-callari" data-gallery-label="David D.C. Callari’s build gallery">
+            <a class="guest-photo" href="community-builds/dc-callari/dc-3584.jpg" data-caption="David “D.C.” Callari / GPStar — Finished proton pack outdoors, with yellow accents, ribbon cable, and attached wand." aria-label="Enlarge D.C. build: Finished pack"><img src="community-builds/dc-callari/dc-3584-thumb.jpg" alt="Finished proton pack outdoors, with yellow accents, ribbon cable, and attached wand." loading="lazy" width="720" height="960" /><span class="guest-photo-caption">Finished pack<span aria-hidden="true">View larger ↗</span></span></a>
+            <a class="guest-photo" href="community-builds/dc-callari/dc-3504.jpg" data-caption="David “D.C.” Callari / GPStar — Black backplate with mounting hardware and a red warning label." aria-label="Enlarge D.C. build: Backplate details"><img src="community-builds/dc-callari/dc-3504-thumb.jpg" alt="Black backplate with mounting hardware and a red warning label." loading="lazy" width="720" height="960" /><span class="guest-photo-caption">Backplate details<span aria-hidden="true">View larger ↗</span></span></a>
+            <a class="guest-photo" href="community-builds/dc-callari/dc-3509.jpg" data-caption="David “D.C.” Callari / GPStar — Three-quarter view of the proton pack and wand indoors." aria-label="Enlarge D.C. build: Pack and wand"><img src="community-builds/dc-callari/dc-3509-thumb.jpg" alt="Three-quarter view of the proton pack and wand indoors." loading="lazy" width="720" height="960" /><span class="guest-photo-caption">Pack and wand<span aria-hidden="true">View larger ↗</span></span></a>
+            <a class="guest-photo" href="community-builds/dc-callari/dc-3510.jpg" data-caption="David “D.C.” Callari / GPStar — Front view showing the yellow bumper and matching accents on the pack and wand." aria-label="Enlarge D.C. build: Yellow accents"><img src="community-builds/dc-callari/dc-3510-thumb.jpg" alt="Front view showing the yellow bumper and matching accents on the pack and wand." loading="lazy" width="720" height="960" /><span class="guest-photo-caption">Yellow accents<span aria-hidden="true">View larger ↗</span></span></a>
+            <a class="guest-photo" href="community-builds/dc-callari/dc-3511.jpg" data-caption="David “D.C.” Callari / GPStar — Three proton packs displayed together, with D.C.’s yellow-accented build in the center." aria-label="Enlarge D.C. build: In good company"><img src="community-builds/dc-callari/dc-3511-thumb.jpg" alt="Three proton packs displayed together, with D.C.’s yellow-accented build in the center." loading="lazy" width="720" height="960" /><span class="guest-photo-caption">In good company<span aria-hidden="true">View larger ↗</span></span></a>
+            <a class="guest-photo" href="community-builds/dc-callari/dc-3488.jpg" data-caption="David “D.C.” Callari / GPStar — Proton pack laid out on an outdoor workbench with tools and supplies." aria-label="Enlarge D.C. build: On the workbench"><img src="community-builds/dc-callari/dc-3488-thumb.jpg" alt="Proton pack laid out on an outdoor workbench with tools and supplies." loading="lazy" width="720" height="960" /><span class="guest-photo-caption">On the workbench<span aria-hidden="true">View larger ↗</span></span></a>
+            <a class="guest-photo" href="community-builds/dc-callari/dc-3489.jpg" data-caption="David “D.C.” Callari / GPStar — Overhead view of the pack during assembly, with tools and fittings nearby." aria-label="Enlarge D.C. build: Assembly in progress"><img src="community-builds/dc-callari/dc-3489-thumb.jpg" alt="Overhead view of the pack during assembly, with tools and fittings nearby." loading="lazy" width="720" height="960" /><span class="guest-photo-caption">Assembly in progress<span aria-hidden="true">View larger ↗</span></span></a>
+            <a class="guest-photo" href="community-builds/dc-callari/dc-3490.jpg" data-caption="David “D.C.” Callari / GPStar — Angled workbench view of the yellow bumper, black shell, and hose routing." aria-label="Enlarge D.C. build: A closer look"><img src="community-builds/dc-callari/dc-3490-thumb.jpg" alt="Angled workbench view of the yellow bumper, black shell, and hose routing." loading="lazy" width="720" height="960" /><span class="guest-photo-caption">A closer look<span aria-hidden="true">View larger ↗</span></span></a>
+            <a class="guest-photo" href="community-builds/dc-callari/dc-3457.jpg" data-caption="David “D.C.” Callari / GPStar — Black pack components and yellow bumper arranged before the finishing details." aria-label="Enlarge D.C. build: Early assembly"><img src="community-builds/dc-callari/dc-3457-thumb.jpg" alt="Black pack components and yellow bumper arranged before the finishing details." loading="lazy" width="720" height="960" /><span class="guest-photo-caption">Early assembly<span aria-hidden="true">View larger ↗</span></span></a>
+          </div>
+        </article>
+      </div>
+    </section>
+    <!-- End permanent community build archive. -->
+
     <section class="section" id="about">
       <div class="wrap about-grid">
         <div class="about-lead surface">
@@ -789,7 +828,8 @@
 
   <script>
     (() => {
-      const links = [...document.querySelectorAll('.guest-photo')];
+      const allLinks = [...document.querySelectorAll('.guest-photo')];
+      let links = [];
       const dialog = document.getElementById('episode-photo-viewer');
       if (!dialog || typeof dialog.showModal !== 'function') return;
       const large = document.getElementById('photo-large');
@@ -808,11 +848,14 @@
         position.textContent = `${index + 1} / ${links.length}`;
         original.href = link.href;
       }
-      links.forEach((link, i) => link.addEventListener('click', event => {
+      allLinks.forEach(link => link.addEventListener('click', event => {
         if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
         event.preventDefault();
         trigger = link;
-        showPhoto(i);
+        const gallery = link.closest('[data-photo-gallery]');
+        links = [...gallery.querySelectorAll('.guest-photo')];
+        dialog.setAttribute('aria-label', gallery.dataset.galleryLabel || 'Photo gallery');
+        showPhoto(links.indexOf(link));
         previousOverflow = document.body.style.overflow;
         dialog.showModal();
         document.body.style.overflow = 'hidden';
