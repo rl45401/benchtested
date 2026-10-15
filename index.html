@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bench Tested | A Ghostbusters Podcast</title>
-  <meta name="description" content="Bench Tested is a Ghostbusters podcast for builders, collectors, and fans who care how the gear gets made. Out now: Rhett J. Martin of Stantz Industries on building your first Ghostbusters gear. Listen, explore his screen-used props, and shop Stantz Industries on Etsy." />
+  <meta name="description" content="Bench Tested is a Ghostbusters podcast for builders, collectors, and fans who care how the gear gets made. Out now: Jeff Keenan from the Massachusetts Ghostbusters on building beyond the blueprint. Listen to the episode and explore photos from the group’s events." />
   <meta name="theme-color" content="#08090a" />
   <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2" />
@@ -478,6 +478,12 @@
     .build-heading .signal { flex-shrink: 0; }
     .nav-links { flex-wrap: wrap; justify-content: flex-end; gap: 12px 18px; }
     @media (max-width: 700px) { .build-heading { flex-direction: column; gap: 8px; } }
+    .massachusetts-profile { padding: clamp(24px, 4vw, 48px); display: grid; align-content: center; gap: 16px; text-align: center; }
+    .massachusetts-profile img { width: 100%; max-width: 440px; margin: auto; }
+    .massachusetts-profile p { color: var(--muted); font-weight: 700; }
+    .massachusetts-photos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .massachusetts-photos img { height: 390px; }
+    @media (max-width: 560px) { .massachusetts-photos { grid-template-columns: 1fr; } .massachusetts-photos img { height: 310px; } }
     .rhett-profile { padding: 24px; display: grid; gap: 20px; align-content: start; }
     .rhett-portrait { width: 100%; max-height: 570px; object-fit: contain; background: #050505; border-radius: 16px; }
     .stantz-brand { display: block; width: min(100%, 270px); margin: auto; }
@@ -501,9 +507,8 @@
         <span class="nav-status"><span class="status-dot" aria-hidden="true"></span> New episodes streaming</span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#featured">Rhett / Out now</a>
-        <a href="#rhett-gallery">Prop gallery</a>
-        <a href="https://www.etsy.com/shop/StantzIndustries" target="_blank" rel="noreferrer">Shop Stantz Industries ↗</a>
+        <a href="#featured">Jeff / Out now</a>
+        <a href="#massachusetts-gallery">Event gallery</a>
         <a href="#community-builds">Community builds</a>
         <a href="#listen">Listen</a>
         <a href="#guest-form">Request a guest</a>
@@ -516,24 +521,23 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <img class="hero-logo" src="bench-tested-logo.png" alt="Bench Tested: A Ghostbusters Podcast" />
-          <div class="launch-line">Live now / Stantz Industries</div>
-          <h1>Rhett J. Martin<br>is <span>out now.</span></h1>
-          <p class="lede">Build your first Ghostbusters gear with Stantz Industries. Rhett joins Charlie to talk flight suits, proton packs, and the choices that turn a first build into gear you can actually wear and use.</p>
+          <div class="launch-line">Live now / Massachusetts Ghostbusters</div>
+          <h1>Jeff Keenan<br>is <span>out now.</span></h1>
+          <p class="lede">Go beyond the build guide with Jeff from the Massachusetts Ghostbusters. Jeff joins Charlie to talk original props, interactive exhibits, and creating a Ghostbusters experience that people can step into.</p>
           <div class="actions">
-            <a class="btn btn-primary" href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-your-first-ghostbusters-gear-with-stantz-industries" target="_blank" rel="noreferrer">Listen to Rhett →</a>
-            <a class="btn btn-dark" href="https://www.etsy.com/shop/StantzIndustries" target="_blank" rel="noreferrer">Shop Stantz Industries on Etsy ↗</a>
-            <a class="btn btn-secondary" href="#rhett-gallery">Explore Rhett’s props</a>
+            <a class="btn btn-primary" href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-beyond-the-blueprint-with-the-massachusetts-ghostbusters" target="_blank" rel="noreferrer">Listen to Jeff →</a>
+            <a class="btn btn-secondary" href="#massachusetts-gallery">See the event photos</a>
             <a class="btn btn-secondary" href="#community-builds">Community builds gallery</a>
           </div>
         </div>
-        <aside class="episode-promo-card surface" aria-label="Rhett J. Martin from Stantz Industries — episode out now">
-          <div class="promo-art"><img src="rhett-out-now.png" alt="Bench Tested with Rhett J. Martin of Stantz Industries — out now" /></div>
+        <aside class="episode-promo-card surface" aria-label="Jeff Keenan from the Massachusetts Ghostbusters — episode out now">
+          <div class="promo-art"><img src="massachusetts-out-now.png" alt="Bench Tested featuring Jeff with the Massachusetts Ghostbusters — out now" /></div>
           <div class="promo-info">
-            <div class="date-block"><span class="date-day">30</span><span class="date-month">Wednesday / September <span class="date-year">2026</span></span></div>
-            <div class="promo-copy"><p class="eyebrow">LIVE / OUT NOW</p><h3>Rhett J. Martin</h3><p>Building Your First Ghostbusters Gear with Stantz Industries.</p></div>
+            <div class="date-block"><span class="date-day">14</span><span class="date-month">Wednesday / October <span class="date-year">2026</span></span></div>
+            <div class="promo-copy"><p class="eyebrow">LIVE / OUT NOW</p><h3>Jeff Keenan</h3><p>Building Beyond the Blueprint with the Massachusetts Ghostbusters.</p></div>
           </div>
-          <div class="actions"><a class="btn btn-primary" href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-your-first-ghostbusters-gear-with-stantz-industries" target="_blank" rel="noreferrer">Listen now →</a></div>
-          <p class="launch-note">Released September 30, 2026. Now streaming.</p>
+          <div class="actions"><a class="btn btn-primary" href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-beyond-the-blueprint-with-the-massachusetts-ghostbusters" target="_blank" rel="noreferrer">Listen now →</a></div>
+          <p class="launch-note">Released October 14, 2026. Now streaming.</p>
         </aside>
       </div>
     </section>
@@ -541,32 +545,26 @@
     <section class="section feature" id="featured">
       <div class="wrap"><div class="feature-grid surface">
         <div class="feature-copy">
-          <p class="eyebrow">Now at the bench / Stantz Industries</p>
-          <h2>From your first build to the screen.</h2>
-          <p class="lede">Meet Rhett J. Martin: prop maker, designer, and longtime builder behind Stantz Industries.</p>
-          <p>With nearly three decades in the prop community and contributions to Ghostbusters: Frozen Empire, Rhett brings practical experience to the bench. Hear how to plan a build around your budget, skills, comfort, and the way you’ll use your gear.</p>
-          <p>From test fitting and material choices to learning from mistakes, this conversation is a starting point for making Ghostbusters gear your own.</p>
-          <div class="signal-row"><span class="signal">Stantz Industries</span><span class="signal">Screen &amp; workshop</span><span class="signal">September 30, 2026</span></div>
-          <div class="actions"><a class="btn btn-primary" href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-your-first-ghostbusters-gear-with-stantz-industries" target="_blank" rel="noreferrer">Listen to the episode →</a><a class="btn btn-dark" href="https://www.etsy.com/shop/StantzIndustries" target="_blank" rel="noreferrer">Shop Stantz Industries on Etsy ↗</a></div>
+          <p class="eyebrow">Now at the bench / Massachusetts Ghostbusters</p>
+          <h2>Building beyond the blueprint.</h2>
+          <p class="lede">Jeff Keenan helps turn the Massachusetts Ghostbusters’ convention presence into an interactive experience.</p>
+          <p>Hear how Jeff combines 3D drafting, 3D printing, and Arduino electronics to create original props and exhibits—from a full-size Slimer to a Firehouse backdrop, parade displays, and the Slime Lab.</p>
+          <p>Charlie and Jeff explore learning new skills, designing from scratch, and balancing the look of a build with durability, transportation, setup time, and public interaction.</p>
+          <div class="signal-row"><span class="signal">Original props</span><span class="signal">Interactive exhibits</span><span class="signal">October 14, 2026</span></div>
+          <div class="actions"><a class="btn btn-primary" href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-beyond-the-blueprint-with-the-massachusetts-ghostbusters" target="_blank" rel="noreferrer">Listen to the episode →</a><a class="btn btn-secondary" href="#massachusetts-gallery">Explore the event gallery</a></div>
         </div>
-        <div class="rhett-profile">
-          <img class="rhett-portrait" src="rhett-martin.jpg" alt="Rhett J. Martin beside a Ghostbusters collection display and The Real Ohio Ghostbusters flag" loading="lazy" />
-          <a class="stantz-brand" href="https://www.etsy.com/shop/StantzIndustries" target="_blank" rel="noreferrer" aria-label="Shop Stantz Industries on Etsy"><span class="stantz-logo-window"><img src="stantz-industries-logo.jpg" alt="Stantz Industries LLC — a division of Zeddemore Industries Ltd." loading="lazy" /></span></a>
-        </div>
+        <div class="massachusetts-profile"><img src="massachusetts-badge.png" alt="Massachusetts Ghostbusters badge" loading="lazy" /><p>Massachusetts Ghostbusters</p></div>
       </div></div>
     </section>
     <div class="caution-wrap slim" aria-hidden="true"></div>
-    <section class="section" id="rhett-gallery">
-      <div class="wrap"><div class="section-head"><p class="eyebrow">Rhett / Stantz Industries photo gallery</p><h2>On screen. On set. On the bench.</h2><p class="lede">Explore Rhett’s props, production moments, and museum displays. Select any photo to see it larger.</p></div>
-      <div class="guest-photo-grid" data-photo-gallery="rhett" data-gallery-label="Rhett photo gallery">
-        <a class="guest-photo" href="rhett-gallery/spooky-adventure.jpg" data-caption="Rhett’s props on screen in Peyton and Eli’s Spooky Adventure." aria-label="Enlarge photo: Peyton and Eli’s Spooky Adventure"><img src="rhett-gallery/spooky-adventure-thumb.jpg" alt="A scene from Peyton and Eli’s Spooky Adventure featuring Ghostbusters gear." loading="lazy" /><span class="guest-photo-caption">Peyton and Eli’s Spooky Adventure<span aria-hidden="true">View larger ↗</span></span></a>
-        <a class="guest-photo" href="rhett-gallery/on-set.jpg" data-caption="Behind the scenes: Rhett’s props on set." aria-label="Enlarge photo: On set"><img src="rhett-gallery/on-set-thumb.jpg" alt="Film crew recording a Ghostbusters scene on an auditorium stage." loading="lazy" /><span class="guest-photo-caption">On set<span aria-hidden="true">View larger ↗</span></span></a>
-        <a class="guest-photo" href="rhett-gallery/sony-museum.jpg" data-caption="Rhett’s Ecto goggles on display at the Sony museum." aria-label="Enlarge photo: Ecto goggles at the Sony museum"><img src="rhett-gallery/sony-museum-thumb.jpg" alt="Ecto goggles displayed beside a ghost trap and Slimer at the Sony museum." loading="lazy" /><span class="guest-photo-caption">Ecto goggles at the Sony museum<span aria-hidden="true">View larger ↗</span></span></a>
-        <a class="guest-photo" href="rhett-gallery/extractor-wand.jpg" data-caption="Extractor wand #8 (junk pulls) from Frozen Empire, molded and cast from the superhero proton pack." aria-label="Enlarge photo: Frozen Empire extractor wand #8"><img src="rhett-gallery/extractor-wand-thumb.jpg" alt="Illuminated extractor wand displayed on a yellow circular base." loading="lazy" /><span class="guest-photo-caption">Frozen Empire extractor wand #8<span aria-hidden="true">View larger ↗</span></span></a>
-        <a class="guest-photo" href="rhett-gallery/london-goggles.jpg" data-caption="Frozen Empire goggles on the bench in London. Rhett designed the kit for a custom commission; the production barely changed a thing." aria-label="Enlarge photo: Frozen Empire goggles / London"><img src="rhett-gallery/london-goggles-thumb.jpg" alt="Green Ecto goggles with extended lenses on a workshop bench in London." loading="lazy" /><span class="guest-photo-caption">Frozen Empire goggles / London<span aria-hidden="true">View larger ↗</span></span></a>
+    <section class="section" id="massachusetts-gallery">
+      <div class="wrap"><div class="section-head"><p class="eyebrow">Massachusetts Ghostbusters / Event gallery</p><h2>Gear out in the community.</h2><p class="lede">A look at Ghostbusters gear and moments from the group’s events. Select either photo for a closer look.</p></div>
+      <div class="guest-photo-grid massachusetts-photos" data-photo-gallery="massachusetts" data-gallery-label="Massachusetts Ghostbusters event photos">
+        <a class="guest-photo" href="massachusetts-gallery/event-pack.webp" data-caption="Massachusetts Ghostbusters event photo: a close look at a weathered proton pack and wand." aria-label="Enlarge event photo: Proton pack details"><img src="massachusetts-gallery/event-pack.webp" alt="Rear view of a worn proton pack and attached wand at an outdoor Ghostbusters event" loading="lazy" /><span class="guest-photo-caption">Proton pack details<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="massachusetts-gallery/convention.jpg" data-caption="Massachusetts Ghostbusters event photo: colorful gear at a convention. Photo credit: csull80lightroom." aria-label="Enlarge event photo: Convention moments"><img src="massachusetts-gallery/convention-thumb.jpg" alt="Convention attendee in a Ghostbusters uniform demonstrating blue-and-yellow prop gear at an event booth" loading="lazy" /><span class="guest-photo-caption">Convention moments / csull80lightroom<span aria-hidden="true">View larger ↗</span></span></a>
       </div></div>
     </section>
-    <dialog class="photo-viewer" id="episode-photo-viewer" aria-label="Rhett photo gallery" aria-describedby="photo-caption">
+    <dialog class="photo-viewer" id="episode-photo-viewer" aria-label="Photo gallery" aria-describedby="photo-caption">
       <div class="photo-toolbar">
         <p id="photo-position" aria-live="polite"></p>
         <a id="photo-original" target="_blank" rel="noreferrer">Open full-size photo ↗</a>
@@ -579,13 +577,6 @@
         <button type="button" id="photo-next" aria-label="Next photo">Next →</button>
       </div>
     </dialog>
-
-    <section class="section section-tight" id="real-ohio">
-      <div class="wrap"><div class="ohio-feature surface">
-        <a href="https://www.facebook.com/therealohioghostbusters/" target="_blank" rel="noreferrer" aria-label="The Real Ohio Ghostbusters on Facebook"><img src="real-ohio-ghostbusters.webp" alt="The Real Ohio Ghostbusters flag" loading="lazy" /></a>
-        <div><p class="eyebrow">Rhett’s Ghostbusters community</p><h2>The Real Ohio Ghostbusters.</h2><p>Rhett is also part of The Real Ohio Ghostbusters. Connect with the group and follow their community on Facebook.</p><div class="actions"><a class="btn btn-primary" href="https://www.facebook.com/therealohioghostbusters/" target="_blank" rel="noreferrer">Follow The Real Ohio Ghostbusters ↗</a></div></div>
-      </div></div>
-    </section>
 
     <section class="section current-episode" id="current">
       <div class="wrap">
@@ -634,7 +625,7 @@
           <div>
             <p class="eyebrow">Listen everywhere</p>
             <h2>Pick your frequency.</h2>
-            <p>Rhett J. Martin from Stantz Industries is out now. Listen here or open your favorite podcast app for this episode and the full Bench Tested archive.</p>
+            <p>Jeff Keenan from the Massachusetts Ghostbusters is out now. Listen here or open your favorite podcast app for this episode and the full Bench Tested archive.</p>
           </div>
           <div class="platforms">
             <a class="platform-link" href="https://podcasts.apple.com/us/podcast/bench-tested-a-ghostbusters-podcast/id1886335915" target="_blank" rel="noreferrer"><span class="platform-icon"></span><span>Apple Podcasts</span></a>
@@ -659,6 +650,11 @@
           </div>
           <p>Past episodes are a working record of the makers, designers, and film craftspeople shaping the gear and the community around it.</p>
         </div>
+
+        <article class="past-episode surface" id="rhett-past-episode">
+          <div><p class="eyebrow">Past guest / September 30, 2026</p><h3>Rhett J. Martin / Stantz Industries</h3><p>Building Your First Ghostbusters Gear with Stantz Industries</p><p><a class="trade-link" href="https://www.etsy.com/shop/StantzIndustries" target="_blank" rel="noreferrer">Shop Stantz Industries ↗</a></p></div>
+          <a class="btn btn-secondary" href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-your-first-ghostbusters-gear-with-stantz-industries" target="_blank" rel="noreferrer">Listen to Rhett’s episode ↗</a>
+        </article>
 
         <article class="past-episode surface" id="nan-phil">
           <div>
