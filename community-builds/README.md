@@ -13,4 +13,4 @@ This archive is independent of episode promotions. Preserve the `#community-buil
 
 First entry: David “D.C.” Callari from GPStar, nine user-supplied photos, added October 10, 2026.
 
-Second entry: Jeff Keenan & the Massachusetts Ghostbusters, 11 unique photos. Nine new photos live in `community-builds/massachusetts/`; two existing photos are shared from `massachusetts-gallery/`. Preserve both asset folders during episode rotations. The episode and permanent galleries intentionally reference the same files; do not add duplicate cards within a gallery.
+Second entry: Jeff Keenan & the Massachusetts Ghostbusters, 15 unique photos. Thirteen photos live in `community-builds/massachusetts/`; two existing photos are shared from `massachusetts-gallery/`. Preserve both asset folders during episode rotations. The episode and permanent galleries intentionally reference the same files; do not add duplicate cards within a gallery.
