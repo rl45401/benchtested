@@ -11,6 +11,6 @@ This archive is independent of episode promotions. Preserve the `#community-buil
 5. Each `.guest-photo` links to its large image and includes a thumbnail with descriptive alt text and `data-caption`. The shared viewer automatically limits next/previous navigation to that build.
 6. Check mobile layout, image loading, keyboard navigation, Escape, focus restoration, and that episode galleries stay separate.
 
-First entry: David “D.C.” Callari from GPStar, nine user-supplied photos, added October 10, 2026.
+First entry: David “D.C.” Callari from GPStar, 15 user-supplied photos, added October 10, 2026 and expanded October 17, 2026.
 
 Second entry: Jeff Keenan & the Massachusetts Ghostbusters, 15 unique photos. Thirteen photos live in `community-builds/massachusetts/`; two existing photos are shared from `massachusetts-gallery/`. Preserve both asset folders during episode rotations. The episode and permanent galleries intentionally reference the same files; do not add duplicate cards within a gallery.
