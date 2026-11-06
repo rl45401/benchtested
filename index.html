@@ -499,6 +499,15 @@
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition: none !important; }
     }
+    /* Temporary server outage notice — remove when service is restored. */
+    .server-notice { margin-top: 28px; padding: clamp(24px, 4vw, 42px); border: 1px solid var(--yellow); border-radius: var(--radius); background: linear-gradient(120deg, #242012, #111315 65%); display: flex; align-items: center; gap: 32px; position: relative; overflow: hidden; }
+    .server-notice::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 7px; background: repeating-linear-gradient(135deg, var(--yellow) 0 14px, #17191c 14px 28px); }
+    .server-notice img { height: auto; width: 150px; flex: 0 0 150px; }
+    .server-notice .eyebrow { color: var(--yellow); margin: 0 0 10px; }
+    .server-notice h2 { font-size: clamp(1.6rem, 3vw, 2.5rem); margin: 0 0 12px; }
+    .server-notice p { max-width: 760px; line-height: 1.65; margin: 0; }
+    .server-notice .notice-thanks { color: var(--muted); margin-top: 10px; }
+    @media (max-width: 600px) { .server-notice { flex-direction: column; align-items: flex-start; gap: 18px; } .server-notice img { width: 88px; flex-basis: auto; } }
   </style>
 </head>
 <body>
@@ -506,7 +515,7 @@
     <div class="wrap nav">
       <a class="nav-brand" href="#top" aria-label="Bench Tested home">
         <img src="bench-tested-logo.png" alt="Bench Tested: A Ghostbusters Podcast" />
-        <span class="nav-status"><span class="status-dot" aria-hidden="true"></span> New episodes streaming</span>
+        <span class="nav-status"><span aria-hidden="true">⚠</span> Server issues / See update</span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#featured">Jeff / Out now</a>
@@ -519,6 +528,16 @@
   </header>
 
   <main id="top">
+    <section class="wrap server-notice" id="server-status" aria-labelledby="server-status-title">
+      <img src="server-status.svg" alt="" width="240" height="200" aria-hidden="true" />
+      <div>
+        <p class="eyebrow">Bench Tested / Service update</p>
+        <h2 id="server-status-title">We’re having technical difficulties.</h2>
+        <p>Our podcast server is experiencing technical difficulties, which may affect episode playback and downloads. We hope to have service restored soon.</p>
+        <p class="notice-thanks">We apologize for the inconvenience. Thanks for your patience and for sticking with Bench Tested.</p>
+      </div>
+    </section>
+
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
