@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bench Tested | A Ghostbusters Podcast</title>
-  <meta name="description" content="Bench Tested is a Ghostbusters podcast for builders, collectors, and fans who care how the gear gets made. Out now: Jeff Keenan from the Massachusetts Ghostbusters on building beyond the blueprint. Listen to the episode and explore photos from the group’s events." />
+  <meta name="description" content="Bench Tested is a Ghostbusters podcast for builders, collectors, and fans who care how the gear gets made. Out now: D.C. and the NYC Ghostbusters. Explore community photos, D.C.’s proton pack build, and a Ghostbusters in Concert promo. Podcast server service notice remains in effect." />
   <meta name="theme-color" content="#08090a" />
   <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2" />
@@ -508,6 +508,15 @@
     .server-notice p { max-width: 760px; line-height: 1.65; margin: 0; }
     .server-notice .notice-thanks { color: var(--muted); margin-top: 10px; }
     @media (max-width: 600px) { .server-notice { flex-direction: column; align-items: flex-start; gap: 18px; } .server-notice img { width: 88px; flex-basis: auto; } }
+    .concert-feature { padding: 30px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 28px; align-items: center; }
+    .concert-feature h2 { font-size: clamp(1.7rem, 3vw, 2.6rem); }
+    .concert-feature p { line-height: 1.7; color: var(--muted); }
+    .concert-video { width: 100%; aspect-ratio: 16 / 9; border: 0; border-radius: 12px; }
+    .past-compact { padding: 28px; }
+    .past-compact h2 { font-size: 1.6rem; }
+    .past-links { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 18px; }
+    .past-links a { color: var(--text); font-size: .9rem; text-decoration: underline; text-underline-offset: 4px; }
+    @media (max-width: 700px) { .concert-feature { grid-template-columns: 1fr; padding: 22px; } }
   </style>
 </head>
 <body>
@@ -518,8 +527,8 @@
         <span class="nav-status"><span aria-hidden="true">⚠</span> Server issues / See update</span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#featured">Jeff / Out now</a>
-        <a href="#massachusetts-gallery">Event gallery</a>
+        <a href="#featured">D.C. / Out now</a>
+        <a href="#dc-nyc-gallery">NYC photos</a>
         <a href="#community-builds">Community builds</a>
         <a href="#listen">Listen</a>
         <a href="#guest-form">Request a guest</a>
@@ -542,23 +551,16 @@
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <img class="hero-logo" src="bench-tested-logo.png" alt="Bench Tested: A Ghostbusters Podcast" />
-          <div class="launch-line">Live now / Massachusetts Ghostbusters</div>
-          <h1>Jeff Keenan<br>is <span>out now.</span></h1>
-          <p class="lede">Go beyond the build guide with Jeff from the Massachusetts Ghostbusters. Jeff joins Charlie to talk original props, interactive exhibits, and creating a Ghostbusters experience that people can step into.</p>
-          <div class="actions">
-            <a class="btn btn-primary" href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-beyond-the-blueprint-with-the-massachusetts-ghostbusters" target="_blank" rel="noreferrer">Listen to Jeff →</a>
-            <a class="btn btn-secondary" href="#massachusetts-gallery">See the event photos</a>
-            <a class="btn btn-secondary" href="#community-builds">Community builds gallery</a>
-          </div>
+          <div class="launch-line">Latest episode / NYC Ghostbusters</div>
+          <h1>D.C. is<br><span>at the bench.</span></h1>
+          <p class="lede">David “D.C.” Callari and the NYC Ghostbusters take the spotlight. Meet the maker behind the yellow-accented proton pack and explore the community that brings the gear to life.</p>
+          <div class="actions"><a class="btn btn-primary" href="#listen">Listen to Bench Tested →</a><a class="btn btn-secondary" href="#dc-nyc-gallery">See the NYC photos</a><a class="btn btn-secondary" href="#dc-callari-build">Explore D.C.’s build</a></div>
+          <p class="launch-note">Episode playback may be affected by the server outage. See the service notice above.</p>
         </div>
-        <aside class="episode-promo-card surface" aria-label="Jeff Keenan from the Massachusetts Ghostbusters — episode out now">
-          <div class="promo-art"><img src="massachusetts-out-now.png" alt="Bench Tested featuring Jeff with the Massachusetts Ghostbusters — out now" /></div>
-          <div class="promo-info">
-            <div class="date-block"><span class="date-day">14</span><span class="date-month">Wednesday / October <span class="date-year">2026</span></span></div>
-            <div class="promo-copy"><p class="eyebrow">LIVE / OUT NOW</p><h3>Jeff Keenan</h3><p>Building Beyond the Blueprint with the Massachusetts Ghostbusters.</p></div>
-          </div>
-          <div class="actions"><a class="btn btn-primary" href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-beyond-the-blueprint-with-the-massachusetts-ghostbusters" target="_blank" rel="noreferrer">Listen now →</a></div>
-          <p class="launch-note">Released October 14, 2026. Now streaming.</p>
+        <aside class="episode-promo-card surface" aria-label="D.C. and the NYC Ghostbusters — latest episode">
+          <div class="promo-art"><img src="dc-nyc/out-now.jpg" alt="Bench Tested — out now featuring D.C. and the NYC Ghostbusters" /></div>
+          <div class="promo-info"><div class="promo-copy"><p class="eyebrow">Latest episode / Out now</p><h3>D.C. &amp; the NYC Ghostbusters</h3><p>From the workbench to the city that started it all.</p></div></div>
+          <div class="actions"><a class="btn btn-primary" href="#listen">Listening options →</a></div>
         </aside>
       </div>
     </section>
@@ -566,41 +568,26 @@
     <section class="section feature" id="featured">
       <div class="wrap"><div class="feature-grid surface">
         <div class="feature-copy">
-          <p class="eyebrow">Now at the bench / Massachusetts Ghostbusters</p>
-          <h2>Building beyond the blueprint.</h2>
-          <p class="lede">Jeff Keenan helps turn the Massachusetts Ghostbusters’ convention presence into an interactive experience.</p>
-          <p>Hear how Jeff combines 3D drafting, 3D printing, and Arduino electronics to create original props and exhibits—from a full-size Slimer to a Firehouse backdrop, parade displays, and the Slime Lab.</p>
-          <p>Charlie and Jeff explore learning new skills, designing from scratch, and balancing the look of a build with durability, transportation, setup time, and public interaction.</p>
-          <p>Connect with the Massachusetts Ghostbusters for more from the group and their community events.</p>
-          <div class="actions"><a class="btn btn-secondary" href="https://www.maghostbusters.com/" target="_blank" rel="noopener noreferrer">Visit Massachusetts Ghostbusters ↗</a><a class="btn btn-secondary" href="https://www.facebook.com/MAGhostbusters" target="_blank" rel="noopener noreferrer">Follow on Facebook ↗</a></div>
-          <div class="signal-row"><span class="signal">Original props</span><span class="signal">Interactive exhibits</span><span class="signal">October 14, 2026</span></div>
-          <div class="actions"><a class="btn btn-primary" href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-beyond-the-blueprint-with-the-massachusetts-ghostbusters" target="_blank" rel="noreferrer">Listen to the episode →</a><a class="btn btn-secondary" href="#massachusetts-gallery">Explore the event gallery</a></div>
+          <p class="eyebrow">Now at the bench / D.C. &amp; NYC Ghostbusters</p>
+          <h2>Built with care.<br>Shared with the city.</h2>
+          <p class="lede">The latest Bench Tested episode puts D.C. and the NYC Ghostbusters front and center.</p>
+          <p>Explore D.C.’s detailed proton pack build below, from early assembly to the finished gear, alongside photos shared for this episode.</p>
+          <p>The NYC Ghostbusters bring their love of the franchise to charitable appearances, creative activities, and community events. Visit their website to learn more about the group and its work.</p>
+          <div class="actions"><a class="btn btn-primary" href="https://call.nycghostbusters.com/home" target="_blank" rel="noopener noreferrer">Meet the NYC Ghostbusters ↗</a><a class="btn btn-secondary" href="#dc-callari-build">D.C.’s build gallery →</a></div>
         </div>
-        <div class="massachusetts-profile"><img src="massachusetts-badge.png" alt="Massachusetts Ghostbusters badge" loading="lazy" /><p>Massachusetts Ghostbusters</p></div>
+        <div class="massachusetts-profile"><img src="dc-nyc/nyc-badge.jpg" alt="NYC Ghostbusters red apple ghost logo" loading="lazy" /><p>NYC Ghostbusters</p></div>
       </div></div>
     </section>
-    <div class="caution-wrap slim" aria-hidden="true"></div>
-    <section class="section" id="massachusetts-gallery">
-      <div class="wrap"><div class="section-head"><p class="eyebrow">Massachusetts Ghostbusters / Event gallery</p><h2>Gear out in the community.</h2><p class="lede">A growing collection of Ghostbusters gear, creative displays, and moments from the group’s events. Select any photo for a closer look.</p></div>
-      <div class="guest-photo-grid massachusetts-photos" data-photo-gallery="massachusetts" data-gallery-label="Massachusetts Ghostbusters event photos">
-        <a class="guest-photo" href="massachusetts-gallery/event-pack.webp" data-caption="Massachusetts Ghostbusters event photo: a close look at a weathered proton pack and wand." aria-label="Enlarge event photo: Proton pack details"><img src="massachusetts-gallery/event-pack.webp" alt="Rear view of a worn proton pack and attached wand at an outdoor Ghostbusters event" loading="lazy" /><span class="guest-photo-caption">Proton pack details<span aria-hidden="true">View larger ↗</span></span></a>
-        <a class="guest-photo" href="massachusetts-gallery/convention.jpg" data-caption="Massachusetts Ghostbusters event photo: colorful gear at a convention. Photo credit: csull80lightroom." aria-label="Enlarge event photo: Convention moments"><img src="massachusetts-gallery/convention-thumb.jpg" alt="Convention attendee in a Ghostbusters uniform demonstrating blue-and-yellow prop gear at an event booth" loading="lazy" /><span class="guest-photo-caption">Convention moments / csull80lightroom<span aria-hidden="true">View larger ↗</span></span></a>
-
-        <a class="guest-photo" href="community-builds/massachusetts/fan-expo.jpg" data-caption="Massachusetts Ghostbusters group gathered in front of a toy-package-style convention backdrop." aria-label="Enlarge event photo: Together at Fan Expo"><img src="community-builds/massachusetts/fan-expo-thumb.jpg" alt="Massachusetts Ghostbusters group gathered in front of a toy-package-style convention backdrop." loading="lazy" /><span class="guest-photo-caption">Together at Fan Expo<span aria-hidden="true">View larger ↗</span></span></a>
-        <a class="guest-photo" href="community-builds/massachusetts/community-event.jpg" data-caption="Ghostbusters volunteers and event attendees posing with photo frames at an n-Lorem Foundation event." aria-label="Enlarge event photo: Community event"><img src="community-builds/massachusetts/community-event-thumb.jpg" alt="Ghostbusters volunteers and event attendees posing with photo frames at an n-Lorem Foundation event." loading="lazy" /><span class="guest-photo-caption">Community event<span aria-hidden="true">View larger ↗</span></span></a>
-        <a class="guest-photo" href="community-builds/massachusetts/night-display.jpg" data-caption="Group photo beside an illuminated Stay Puft, building display, and Slimer at an evening event." aria-label="Enlarge event photo: Ghostbusters after dark"><img src="community-builds/massachusetts/night-display-thumb.jpg" alt="Group photo beside an illuminated Stay Puft, building display, and Slimer at an evening event." loading="lazy" /><span class="guest-photo-caption">Ghostbusters after dark<span aria-hidden="true">View larger ↗</span></span></a>
-        <a class="guest-photo" href="community-builds/massachusetts/ecto-jeep.jpg" data-caption="White Ghostbusters-themed Jeep with roof equipment and Massachusetts Ghostbusters branding. Photo credit: Adventures of a Car Girl; Granite State Comicon." aria-label="Enlarge event photo: Ecto-inspired Jeep"><img src="community-builds/massachusetts/ecto-jeep-thumb.jpg" alt="White Ghostbusters-themed Jeep with roof equipment and Massachusetts Ghostbusters branding. Photo credit: Adventures of a Car Girl; Granite State Comicon." loading="lazy" /><span class="guest-photo-caption">Ecto-inspired Jeep<span aria-hidden="true">View larger ↗</span></span></a>
-        <a class="guest-photo" href="community-builds/massachusetts/illuminated-prop.jpg" data-caption="Illuminated prop with green lights and four green sample jars." aria-label="Enlarge event photo: Glowing green details"><img src="community-builds/massachusetts/illuminated-prop-thumb.jpg" alt="Illuminated prop with green lights and four green sample jars." loading="lazy" /><span class="guest-photo-caption">Glowing green details<span aria-hidden="true">View larger ↗</span></span></a>
-        <a class="guest-photo" href="community-builds/massachusetts/colorful-display.jpg" data-caption="Colorful oversized props displayed alongside small Ghostbusters figures on a convention table." aria-label="Enlarge event photo: From toys to full-size props"><img src="community-builds/massachusetts/colorful-display-thumb.jpg" alt="Colorful oversized props displayed alongside small Ghostbusters figures on a convention table." loading="lazy" /><span class="guest-photo-caption">From toys to full-size props<span aria-hidden="true">View larger ↗</span></span></a>
-        <a class="guest-photo" href="community-builds/massachusetts/soundboard.jpg" data-caption="Custom Ghostbusters soundboard with illuminated buttons for character quotes and equipment sounds." aria-label="Enlarge event photo: Ghostbusters soundboard"><img src="community-builds/massachusetts/soundboard-thumb.jpg" alt="Custom Ghostbusters soundboard with illuminated buttons for character quotes and equipment sounds." loading="lazy" /><span class="guest-photo-caption">Ghostbusters soundboard<span aria-hidden="true">View larger ↗</span></span></a>
-        <a class="guest-photo" href="community-builds/massachusetts/toy-box-action.jpg" data-caption="A convention participant holding a pink prop wand in front of the Massachusetts Ghostbusters toy-package backdrop." aria-label="Enlarge event photo: Toy-box photo opportunity"><img src="community-builds/massachusetts/toy-box-action-thumb.jpg" alt="A convention participant holding a pink prop wand in front of the Massachusetts Ghostbusters toy-package backdrop." loading="lazy" /><span class="guest-photo-caption">Toy-box photo opportunity<span aria-hidden="true">View larger ↗</span></span></a>
-        <a class="guest-photo" href="community-builds/massachusetts/toy-box-full.jpg" data-caption="Full-length view of a blue Ghostbusters costume and pink wand at the toy-package photo backdrop." aria-label="Enlarge event photo: The complete costume"><img src="community-builds/massachusetts/toy-box-full-thumb.jpg" alt="Full-length view of a blue Ghostbusters costume and pink wand at the toy-package photo backdrop." loading="lazy" /><span class="guest-photo-caption">The complete costume<span aria-hidden="true">View larger ↗</span></span></a>
-
-        <a class="guest-photo" href="community-builds/massachusetts/spook-central-night.jpg" data-caption="Stay Puft towers over the Spook Central display amid pink lighting and fog at an evening event." aria-label="Enlarge event photo: Spook Central after dark"><img src="community-builds/massachusetts/spook-central-night-thumb.jpg" alt="Stay Puft towers over the Spook Central display amid pink lighting and fog at an evening event." loading="lazy" /><span class="guest-photo-caption">Spook Central after dark<span aria-hidden="true">View larger ↗</span></span></a>
-        <a class="guest-photo" href="community-builds/massachusetts/firehouse-display.jpg" data-caption="Hook &amp; Ladder 8 firehouse facade with Stay Puft above the roof and proton packs displayed below." aria-label="Enlarge event photo: The firehouse comes to life"><img src="community-builds/massachusetts/firehouse-display-thumb.jpg" alt="Hook &amp; Ladder 8 firehouse facade with Stay Puft above the roof and proton packs displayed below." loading="lazy" /><span class="guest-photo-caption">The firehouse comes to life<span aria-hidden="true">View larger ↗</span></span></a>
-        <a class="guest-photo" href="community-builds/massachusetts/slime-lab.jpg" data-caption="A large Slimer figure above the Slime Lab table, with ghost traps, Ecto goggles, and an Ecto-1 model." aria-label="Enlarge event photo: Slimer at the Slime Lab"><img src="community-builds/massachusetts/slime-lab-thumb.jpg" alt="A large Slimer figure above the Slime Lab table, with ghost traps, Ecto goggles, and an Ecto-1 model." loading="lazy" /><span class="guest-photo-caption">Slimer at the Slime Lab<span aria-hidden="true">View larger ↗</span></span></a>
-        <a class="guest-photo" href="community-builds/massachusetts/spook-central-float.jpg" data-caption="Stay Puft and the Spook Central building mounted on a Massachusetts Ghostbusters event trailer." aria-label="Enlarge event photo: Spook Central on the move"><img src="community-builds/massachusetts/spook-central-float-thumb.jpg" alt="Stay Puft and the Spook Central building mounted on a Massachusetts Ghostbusters event trailer." loading="lazy" /><span class="guest-photo-caption">Spook Central on the move<span aria-hidden="true">View larger ↗</span></span></a>
-          </div></div>
+    <section class="section section-tight" id="dc-nyc-gallery">
+      <div class="wrap"><div class="section-head"><p class="eyebrow">D.C. / NYC Ghostbusters photo collection</p><h2>Out in the city.</h2><p class="lede">From the firehouse to the theater: photos shared for D.C.’s episode. Select a photo for a closer look.</p></div>
+      <div class="guest-photo-grid" data-photo-gallery="dc-nyc" data-gallery-label="D.C. and NYC Ghostbusters community photos">
+        <a class="guest-photo" href="dc-nyc/firehouse.jpg" data-caption="Ghostbusters group in holiday attire outside the decorated Hook &amp; Ladder 8 firehouse." aria-label="Enlarge NYC photo: Back at the firehouse"><img src="dc-nyc/firehouse-thumb.jpg" alt="Ghostbusters group in holiday attire outside the decorated Hook &amp; Ladder 8 firehouse." loading="lazy" /><span class="guest-photo-caption">Back at the firehouse<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="dc-nyc/on-stage.jpg" data-caption="Six Ghostbusters in uniform with proton packs, standing in front of red stage curtains." aria-label="Enlarge NYC photo: Suited up together"><img src="dc-nyc/on-stage-thumb.jpg" alt="Six Ghostbusters in uniform with proton packs, standing in front of red stage curtains." loading="lazy" /><span class="guest-photo-caption">Suited up together<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="dc-nyc/theater.jpg" data-caption="Ghostbusters group with props and costumes on an ornate theater staircase." aria-label="Enlarge NYC photo: A full house"><img src="dc-nyc/theater-thumb.jpg" alt="Ghostbusters group with props and costumes on an ornate theater staircase." loading="lazy" /><span class="guest-photo-caption">A full house<span aria-hidden="true">View larger ↗</span></span></a>
+      </div></div>
+    </section>
+    <section class="section section-tight" id="nyc-concert">
+      <div class="wrap concert-feature surface"><div><p class="eyebrow">NYC Ghostbusters / Related video</p><h2>Ghostbusters in Concert.</h2><p>A look back at the concert promotion featuring Dan Aykroyd, shared by the NYC Ghostbusters. Watch United Palace’s promo below.</p><a class="trade-link" href="https://www.youtube.com/watch?v=_l83LFAo6AI" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div><iframe class="concert-video" src="https://www.youtube-nocookie.com/embed/_l83LFAo6AI" title="Ghostbusters in Concert on October 17 — United Palace promo" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
     </section>
     <dialog class="photo-viewer" id="episode-photo-viewer" aria-label="Photo gallery" aria-describedby="photo-caption">
       <div class="photo-toolbar">
@@ -615,25 +602,6 @@
         <button type="button" id="photo-next" aria-label="Next photo">Next →</button>
       </div>
     </dialog>
-
-    <section class="section current-episode" id="current">
-      <div class="wrap">
-        <div class="current-card surface">
-          <div class="current-visual">
-            <img src="capital-out-now-promo.png" alt="Bench Tested Capital Ghostbusters episode out now featuring Ryan McFonz and Renel" />
-          </div>
-          <div class="current-copy">
-            <p class="eyebrow">Previous episode / Now streaming</p>
-            <h2>Capital Ghostbusters are still on the feed.</h2>
-            <p class="lede">Keep exploring the Bench Tested archive with the Capital Ghostbusters conversation. Ryan “McFonz” and Renel bring Ottawa franchise energy, suit work, pack details, power boxes, and community presence to the bench.</p>
-            <div class="actions">
-              <a class="btn btn-primary" href="#listen">Listen now</a>
-              <a class="btn btn-secondary" href="https://capitalghostbusters.ca/merchandise/" target="_blank" rel="noreferrer">Capital GB merch <span aria-hidden="true">↗</span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="section section-tight" id="listen">
       <div class="wrap listen-grid">
@@ -663,7 +631,7 @@
           <div>
             <p class="eyebrow">Listen everywhere</p>
             <h2>Pick your frequency.</h2>
-            <p>Jeff Keenan from the Massachusetts Ghostbusters is out now. Listen here or open your favorite podcast app for this episode and the full Bench Tested archive.</p>
+            <p>D.C. and the NYC Ghostbusters are featured in our latest episode. Choose a podcast app below or use the player when server service is available. Playback and downloads may be affected by the current outage.</p>
           </div>
           <div class="platforms">
             <a class="platform-link" href="https://podcasts.apple.com/us/podcast/bench-tested-a-ghostbusters-podcast/id1886335915" target="_blank" rel="noreferrer"><span class="platform-icon"></span><span>Apple Podcasts</span></a>
@@ -679,62 +647,7 @@
 
     <div class="caution-wrap slim" aria-hidden="true"></div>
 
-    <section class="section guest-section" id="guests">
-      <div class="wrap">
-        <div class="guest-intro">
-          <div class="section-head">
-            <p class="eyebrow">From the Bench Tested archive</p>
-            <h2>Builders who moved the conversation forward.</h2>
-          </div>
-          <p>Past episodes are a working record of the makers, designers, and film craftspeople shaping the gear and the community around it.</p>
-        </div>
-
-        <article class="past-episode surface" id="rhett-past-episode">
-          <div><p class="eyebrow">Past guest / September 30, 2026</p><h3>Rhett J. Martin / Stantz Industries</h3><p>Building Your First Ghostbusters Gear with Stantz Industries</p><p><a class="trade-link" href="https://www.etsy.com/shop/StantzIndustries" target="_blank" rel="noreferrer">Shop Stantz Industries ↗</a></p></div>
-          <a class="btn btn-secondary" href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-your-first-ghostbusters-gear-with-stantz-industries" target="_blank" rel="noreferrer">Listen to Rhett’s episode ↗</a>
-        </article>
-
-        <article class="past-episode surface" id="nan-phil">
-          <div>
-            <p class="eyebrow">Past guests / September 2, 2026</p>
-            <h3>Nan Robinson &amp; Phil Goulet</h3>
-            <p>Building the Next Generation of Ghostbusters Gear</p>
-          </div>
-          <a class="btn btn-secondary" href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-the-next-generation-of-ghostbusters-gear" target="_blank" rel="noreferrer">Listen to their episode ↗</a>
-        </article>
-
-        <div class="guest-grid">
-          <article class="guest-card logo-card surface">
-            <div class="guest-media"><img src="caprop.png" alt="C&A Prop Design" /></div>
-            <div class="guest-body">
-              <span class="guest-credit">Fabrication / Design</span>
-              <h3>C&amp;A Prop Design</h3>
-              <p>Purpose-built props, design thinking, and the practical craft behind turning reference into something real.</p>
-            </div>
-          </article>
-
-          <article class="guest-card surface">
-            <div class="guest-media"><img src="archer-portrait.jpg" alt="Archer from Nerd Affiliated" /></div>
-            <div class="guest-body">
-              <span class="guest-credit">Nerd Affiliated</span>
-              <h3>Archer</h3>
-              <p>Build choices, prop obsession, and Ghostbusters community spirit—with a perspective that goes beyond screen accuracy.</p>
-            </div>
-          </article>
-
-          <article class="guest-card surface">
-            <div class="guest-media"><img src="grant-proton-pack.jpg" alt="Grant Smith from GSPropsmith wearing his Ghostbusters gear" /></div>
-            <div class="guest-body">
-              <span class="guest-credit">GSPropsmith / September 16, 2026</span>
-              <h3>Grant Smith</h3>
-              <p>Building Ghostbusters gear that lasts: practical upgrades, custom props, and life behind a one-person shop.</p>
-              <p><a class="trade-link" href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-ghostbusters-gear-that-lasts-with-gspropsmith" target="_blank" rel="noreferrer">Listen to Grant’s episode ↗</a></p>
-              <p><a class="trade-link" href="https://gspropsmith.etsy.com/" target="_blank" rel="noreferrer">Shop GSPropsmith ↗</a> · <a class="trade-link" href="https://www.youtube.com/@GSPropSmith" target="_blank" rel="noreferrer">YouTube ↗</a></p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+    <section class="section section-tight" id="guests"><div class="wrap past-compact surface"><p class="eyebrow">Previously at the bench</p><h2>More from the archive.</h2><div class="past-links"><a href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-beyond-the-blueprint-with-the-massachusetts-ghostbusters" target="_blank" rel="noopener noreferrer">Jeff Keenan / Massachusetts Ghostbusters ↗</a><a href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-your-first-ghostbusters-gear-with-stantz-industries" target="_blank" rel="noopener noreferrer">Rhett J. Martin / Stantz Industries ↗</a><a href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-ghostbusters-gear-that-lasts-with-gspropsmith" target="_blank" rel="noopener noreferrer">Grant Smith / GSPropsmith ↗</a><a href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-the-next-generation-of-ghostbusters-gear" target="_blank" rel="noopener noreferrer">Nan Robinson &amp; Phil Goulet ↗</a><a href="https://podcast.benchtestedpod.com/@benchtestedpod" target="_blank" rel="noopener noreferrer">Capital Ghostbusters &amp; all past episodes ↗</a></div><p class="launch-note">Archive playback may be affected by the server outage.</p></div></section>
 
     <!-- Permanent community build archive: preserve this section during episode rotations. -->
     <div class="caution-wrap slim" aria-hidden="true"></div>
@@ -778,6 +691,29 @@
       </div>
     </section>
     <!-- End permanent community build archive. -->
+    <section class="section" id="massachusetts-gallery">
+      <div class="wrap"><div class="section-head"><p class="eyebrow">Massachusetts Ghostbusters / Event gallery</p><h2>Gear out in the community.</h2><p class="lede">A growing collection of Ghostbusters gear, creative displays, and moments from the group’s events. Select any photo for a closer look.</p></div>
+      <div class="guest-photo-grid massachusetts-photos" data-photo-gallery="massachusetts" data-gallery-label="Massachusetts Ghostbusters event photos">
+        <a class="guest-photo" href="massachusetts-gallery/event-pack.webp" data-caption="Massachusetts Ghostbusters event photo: a close look at a weathered proton pack and wand." aria-label="Enlarge event photo: Proton pack details"><img src="massachusetts-gallery/event-pack.webp" alt="Rear view of a worn proton pack and attached wand at an outdoor Ghostbusters event" loading="lazy" /><span class="guest-photo-caption">Proton pack details<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="massachusetts-gallery/convention.jpg" data-caption="Massachusetts Ghostbusters event photo: colorful gear at a convention. Photo credit: csull80lightroom." aria-label="Enlarge event photo: Convention moments"><img src="massachusetts-gallery/convention-thumb.jpg" alt="Convention attendee in a Ghostbusters uniform demonstrating blue-and-yellow prop gear at an event booth" loading="lazy" /><span class="guest-photo-caption">Convention moments / csull80lightroom<span aria-hidden="true">View larger ↗</span></span></a>
+
+        <a class="guest-photo" href="community-builds/massachusetts/fan-expo.jpg" data-caption="Massachusetts Ghostbusters group gathered in front of a toy-package-style convention backdrop." aria-label="Enlarge event photo: Together at Fan Expo"><img src="community-builds/massachusetts/fan-expo-thumb.jpg" alt="Massachusetts Ghostbusters group gathered in front of a toy-package-style convention backdrop." loading="lazy" /><span class="guest-photo-caption">Together at Fan Expo<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="community-builds/massachusetts/community-event.jpg" data-caption="Ghostbusters volunteers and event attendees posing with photo frames at an n-Lorem Foundation event." aria-label="Enlarge event photo: Community event"><img src="community-builds/massachusetts/community-event-thumb.jpg" alt="Ghostbusters volunteers and event attendees posing with photo frames at an n-Lorem Foundation event." loading="lazy" /><span class="guest-photo-caption">Community event<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="community-builds/massachusetts/night-display.jpg" data-caption="Group photo beside an illuminated Stay Puft, building display, and Slimer at an evening event." aria-label="Enlarge event photo: Ghostbusters after dark"><img src="community-builds/massachusetts/night-display-thumb.jpg" alt="Group photo beside an illuminated Stay Puft, building display, and Slimer at an evening event." loading="lazy" /><span class="guest-photo-caption">Ghostbusters after dark<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="community-builds/massachusetts/ecto-jeep.jpg" data-caption="White Ghostbusters-themed Jeep with roof equipment and Massachusetts Ghostbusters branding. Photo credit: Adventures of a Car Girl; Granite State Comicon." aria-label="Enlarge event photo: Ecto-inspired Jeep"><img src="community-builds/massachusetts/ecto-jeep-thumb.jpg" alt="White Ghostbusters-themed Jeep with roof equipment and Massachusetts Ghostbusters branding. Photo credit: Adventures of a Car Girl; Granite State Comicon." loading="lazy" /><span class="guest-photo-caption">Ecto-inspired Jeep<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="community-builds/massachusetts/illuminated-prop.jpg" data-caption="Illuminated prop with green lights and four green sample jars." aria-label="Enlarge event photo: Glowing green details"><img src="community-builds/massachusetts/illuminated-prop-thumb.jpg" alt="Illuminated prop with green lights and four green sample jars." loading="lazy" /><span class="guest-photo-caption">Glowing green details<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="community-builds/massachusetts/colorful-display.jpg" data-caption="Colorful oversized props displayed alongside small Ghostbusters figures on a convention table." aria-label="Enlarge event photo: From toys to full-size props"><img src="community-builds/massachusetts/colorful-display-thumb.jpg" alt="Colorful oversized props displayed alongside small Ghostbusters figures on a convention table." loading="lazy" /><span class="guest-photo-caption">From toys to full-size props<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="community-builds/massachusetts/soundboard.jpg" data-caption="Custom Ghostbusters soundboard with illuminated buttons for character quotes and equipment sounds." aria-label="Enlarge event photo: Ghostbusters soundboard"><img src="community-builds/massachusetts/soundboard-thumb.jpg" alt="Custom Ghostbusters soundboard with illuminated buttons for character quotes and equipment sounds." loading="lazy" /><span class="guest-photo-caption">Ghostbusters soundboard<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="community-builds/massachusetts/toy-box-action.jpg" data-caption="A convention participant holding a pink prop wand in front of the Massachusetts Ghostbusters toy-package backdrop." aria-label="Enlarge event photo: Toy-box photo opportunity"><img src="community-builds/massachusetts/toy-box-action-thumb.jpg" alt="A convention participant holding a pink prop wand in front of the Massachusetts Ghostbusters toy-package backdrop." loading="lazy" /><span class="guest-photo-caption">Toy-box photo opportunity<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="community-builds/massachusetts/toy-box-full.jpg" data-caption="Full-length view of a blue Ghostbusters costume and pink wand at the toy-package photo backdrop." aria-label="Enlarge event photo: The complete costume"><img src="community-builds/massachusetts/toy-box-full-thumb.jpg" alt="Full-length view of a blue Ghostbusters costume and pink wand at the toy-package photo backdrop." loading="lazy" /><span class="guest-photo-caption">The complete costume<span aria-hidden="true">View larger ↗</span></span></a>
+
+        <a class="guest-photo" href="community-builds/massachusetts/spook-central-night.jpg" data-caption="Stay Puft towers over the Spook Central display amid pink lighting and fog at an evening event." aria-label="Enlarge event photo: Spook Central after dark"><img src="community-builds/massachusetts/spook-central-night-thumb.jpg" alt="Stay Puft towers over the Spook Central display amid pink lighting and fog at an evening event." loading="lazy" /><span class="guest-photo-caption">Spook Central after dark<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="community-builds/massachusetts/firehouse-display.jpg" data-caption="Hook &amp; Ladder 8 firehouse facade with Stay Puft above the roof and proton packs displayed below." aria-label="Enlarge event photo: The firehouse comes to life"><img src="community-builds/massachusetts/firehouse-display-thumb.jpg" alt="Hook &amp; Ladder 8 firehouse facade with Stay Puft above the roof and proton packs displayed below." loading="lazy" /><span class="guest-photo-caption">The firehouse comes to life<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="community-builds/massachusetts/slime-lab.jpg" data-caption="A large Slimer figure above the Slime Lab table, with ghost traps, Ecto goggles, and an Ecto-1 model." aria-label="Enlarge event photo: Slimer at the Slime Lab"><img src="community-builds/massachusetts/slime-lab-thumb.jpg" alt="A large Slimer figure above the Slime Lab table, with ghost traps, Ecto goggles, and an Ecto-1 model." loading="lazy" /><span class="guest-photo-caption">Slimer at the Slime Lab<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="community-builds/massachusetts/spook-central-float.jpg" data-caption="Stay Puft and the Spook Central building mounted on a Massachusetts Ghostbusters event trailer." aria-label="Enlarge event photo: Spook Central on the move"><img src="community-builds/massachusetts/spook-central-float-thumb.jpg" alt="Stay Puft and the Spook Central building mounted on a Massachusetts Ghostbusters event trailer." loading="lazy" /><span class="guest-photo-caption">Spook Central on the move<span aria-hidden="true">View larger ↗</span></span></a>
+          </div></div>
+    </section>
+
 
     <section class="section" id="about">
       <div class="wrap about-grid">
