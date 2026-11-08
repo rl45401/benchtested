@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bench Tested | A Ghostbusters Podcast</title>
-  <meta name="description" content="Bench Tested is a Ghostbusters podcast for builders, collectors, and fans who care how the gear gets made. Out now: D.C. and the NYC Ghostbusters. Explore community photos, D.C.’s proton pack build, and a Ghostbusters in Concert promo. Podcast server service notice remains in effect." />
+  <meta name="description" content="Bench Tested is a Ghostbusters podcast for builders, collectors, and fans who care how the gear gets made. Out now: D.C. and the NYC Ghostbusters. Explore community photos, D.C.’s proton pack build, and a Ghostbusters in Concert promo. Service restored. Updated release schedule: Noah Lewis and the Maine Ghostbusters on November 18; A Very Merry GPStar Roundtable on December 2." />
   <meta name="theme-color" content="#08090a" />
   <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2" />
@@ -499,15 +499,16 @@
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition: none !important; }
     }
-    /* Temporary server outage notice — remove when service is restored. */
-    .server-notice { margin-top: 28px; padding: clamp(24px, 4vw, 42px); border: 1px solid var(--yellow); border-radius: var(--radius); background: linear-gradient(120deg, #242012, #111315 65%); display: flex; align-items: center; gap: 32px; position: relative; overflow: hidden; }
-    .server-notice::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 7px; background: repeating-linear-gradient(135deg, var(--yellow) 0 14px, #17191c 14px 28px); }
-    .server-notice img { height: auto; width: 150px; flex: 0 0 150px; }
-    .server-notice .eyebrow { color: var(--yellow); margin: 0 0 10px; }
-    .server-notice h2 { font-size: clamp(1.6rem, 3vw, 2.5rem); margin: 0 0 12px; }
-    .server-notice p { max-width: 760px; line-height: 1.65; margin: 0; }
-    .server-notice .notice-thanks { color: var(--muted); margin-top: 10px; }
-    @media (max-width: 600px) { .server-notice { flex-direction: column; align-items: flex-start; gap: 18px; } .server-notice img { width: 88px; flex-basis: auto; } }
+    /* Service restoration and revised release schedule. */
+    .service-update { margin-top: 28px; padding: clamp(24px, 4vw, 40px); border: 1px solid #55c988; border-radius: var(--radius); background: linear-gradient(120deg, #12271b, #111315 65%); }
+    .service-update .eyebrow { color: #80e2a7; margin: 0 0 10px; }
+    .service-update h2 { font-size: clamp(1.6rem, 3vw, 2.5rem); margin: 0 0 12px; }
+    .service-update p { line-height: 1.65; max-width: 960px; }
+    .service-update a { color: #a0edbd; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+    .release-schedule { border-top: 1px solid var(--line); margin-top: 24px; padding-top: 22px; }
+    .release-schedule h3 { font-size: 1.1rem; margin-bottom: 10px; }
+    .release-schedule ul { padding-left: 22px; margin-bottom: 0; }
+    .release-schedule li { margin-top: 12px; line-height: 1.6; }
     .dc-promo .promo-info { display: block; }
     .concert-feature { padding: 30px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 28px; align-items: center; }
     .concert-feature h2 { font-size: clamp(1.7rem, 3vw, 2.6rem); }
@@ -525,7 +526,7 @@
     <div class="wrap nav">
       <a class="nav-brand" href="#top" aria-label="Bench Tested home">
         <img src="bench-tested-logo.png" alt="Bench Tested: A Ghostbusters Podcast" />
-        <span class="nav-status"><span aria-hidden="true">⚠</span> Server issues / See update</span>
+        <span class="nav-status"><span class="status-dot" aria-hidden="true"></span> Service restored</span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
         <a href="#featured">D.C. / Out now</a>
@@ -538,13 +539,18 @@
   </header>
 
   <main id="top">
-    <section class="wrap server-notice" id="server-status" aria-labelledby="server-status-title">
-      <img src="server-status.svg" alt="" width="240" height="200" aria-hidden="true" />
-      <div>
-        <p class="eyebrow">Bench Tested / Service update</p>
-        <h2 id="server-status-title">We’re having technical difficulties.</h2>
-        <p>Our podcast server is experiencing technical difficulties, which may affect episode playback and downloads. We hope to have service restored soon.</p>
-        <p class="notice-thanks">We apologize for the inconvenience. Thanks for your patience and for sticking with Bench Tested.</p>
+    <section class="wrap service-update" id="server-status" aria-labelledby="server-status-title">
+      <p class="eyebrow">Bench Tested / Service update</p>
+      <h2 id="server-status-title">Service restored.</h2>
+      <p>Thanks for your patience while our podcast server was offline. Service has been restored.</p>
+      <p>Still having trouble listening? Please email <a href="mailto:charlie@benchtestedpod.com">charlie@benchtestedpod.com</a> with the app or website you’re using, what happens when you try to play an episode, and any error messages you see. Including your device and the episode title will help us troubleshoot.</p>
+      <div class="release-schedule">
+        <h3>A quick update to our release schedule</h3>
+        <p>To account for the downtime, we’re moving the next episode back one week. Here’s what we’re aiming for:</p>
+        <ul>
+          <li><strong>Noah Lewis &amp; the Maine Ghostbusters</strong> — <time datetime="2026-11-18T09:00:00-07:00">November 18, 2026 at 9:00 a.m. MST</time>.</li>
+          <li><strong>A Very Merry GPStar Roundtable</strong> — our year-end discussion, planned for <time datetime="2026-12-02">December 2, 2026</time>.</li>
+        </ul>
       </div>
     </section>
 
@@ -556,7 +562,6 @@
           <h1>D.C. is<br><span>at the bench.</span></h1>
           <p class="lede">David “D.C.” Callari and the NYC Ghostbusters take the spotlight. Meet the maker behind the yellow-accented proton pack and explore the community that brings the gear to life.</p>
           <div class="actions"><a class="btn btn-primary" href="#listen">Listen to Bench Tested →</a><a class="btn btn-secondary" href="#dc-nyc-gallery">See the NYC photos</a><a class="btn btn-secondary" href="#dc-callari-build">Explore D.C.’s build</a></div>
-          <p class="launch-note">Episode playback may be affected by the server outage. See the service notice above.</p>
         </div>
         <aside class="episode-promo-card surface dc-promo" aria-label="D.C. and the NYC Ghostbusters — latest episode">
           <div class="promo-art"><img src="dc-nyc/out-now.jpg" alt="Bench Tested — out now featuring D.C. and the NYC Ghostbusters" /></div>
@@ -632,7 +637,7 @@
           <div>
             <p class="eyebrow">Listen everywhere</p>
             <h2>Pick your frequency.</h2>
-            <p>D.C. and the NYC Ghostbusters are featured in our latest episode. Choose a podcast app below or use the player when server service is available. Playback and downloads may be affected by the current outage.</p>
+            <p>D.C. and the NYC Ghostbusters are featured in our latest episode. Listen with the player or choose your favorite podcast app below.</p>
           </div>
           <div class="platforms">
             <a class="platform-link" href="https://podcasts.apple.com/us/podcast/bench-tested-a-ghostbusters-podcast/id1886335915" target="_blank" rel="noreferrer"><span class="platform-icon"></span><span>Apple Podcasts</span></a>
@@ -648,7 +653,7 @@
 
     <div class="caution-wrap slim" aria-hidden="true"></div>
 
-    <section class="section section-tight" id="guests"><div class="wrap past-compact surface"><p class="eyebrow">Previously at the bench</p><h2>More from the archive.</h2><div class="past-links"><a href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-beyond-the-blueprint-with-the-massachusetts-ghostbusters" target="_blank" rel="noopener noreferrer">Jeff Keenan / Massachusetts Ghostbusters ↗</a><a href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-your-first-ghostbusters-gear-with-stantz-industries" target="_blank" rel="noopener noreferrer">Rhett J. Martin / Stantz Industries ↗</a><a href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-ghostbusters-gear-that-lasts-with-gspropsmith" target="_blank" rel="noopener noreferrer">Grant Smith / GSPropsmith ↗</a><a href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-the-next-generation-of-ghostbusters-gear" target="_blank" rel="noopener noreferrer">Nan Robinson &amp; Phil Goulet ↗</a><a href="https://podcast.benchtestedpod.com/@benchtestedpod" target="_blank" rel="noopener noreferrer">Capital Ghostbusters &amp; all past episodes ↗</a></div><p class="launch-note">Archive playback may be affected by the server outage.</p></div></section>
+    <section class="section section-tight" id="guests"><div class="wrap past-compact surface"><p class="eyebrow">Previously at the bench</p><h2>More from the archive.</h2><div class="past-links"><a href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-beyond-the-blueprint-with-the-massachusetts-ghostbusters" target="_blank" rel="noopener noreferrer">Jeff Keenan / Massachusetts Ghostbusters ↗</a><a href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-your-first-ghostbusters-gear-with-stantz-industries" target="_blank" rel="noopener noreferrer">Rhett J. Martin / Stantz Industries ↗</a><a href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-ghostbusters-gear-that-lasts-with-gspropsmith" target="_blank" rel="noopener noreferrer">Grant Smith / GSPropsmith ↗</a><a href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-the-next-generation-of-ghostbusters-gear" target="_blank" rel="noopener noreferrer">Nan Robinson &amp; Phil Goulet ↗</a><a href="https://podcast.benchtestedpod.com/@benchtestedpod" target="_blank" rel="noopener noreferrer">Capital Ghostbusters &amp; all past episodes ↗</a></div></div></section>
 
     <!-- Permanent community build archive: preserve this section during episode rotations. -->
     <div class="caution-wrap slim" aria-hidden="true"></div>
