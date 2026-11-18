@@ -1,0 +1,1 @@
+Noah Lewis and the Maine Ghostbusters episode assets, supplied by the user for November 18, 2026. Optimized copies preserve the complete images. Seven gallery items; logo used in the feature and release graphic used in the hero after 09:00 MST. Preserve this gallery during future episode rotations.

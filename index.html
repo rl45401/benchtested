@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bench Tested | A Ghostbusters Podcast</title>
-  <meta name="description" content="Bench Tested is a Ghostbusters podcast for builders, collectors, and fans who care how the gear gets made. Out now: D.C. and the NYC Ghostbusters. Explore community photos, D.C.’s proton pack build, and a Ghostbusters in Concert promo. Service restored. Updated release schedule: Noah Lewis and the Maine Ghostbusters on November 18; A Very Merry GPStar Roundtable on December 2." />
+  <meta name="description" content="Noah Lewis and the Maine Ghostbusters join Bench Tested on November 18, 2026 at 9 a.m. MST. Explore Noah’s props, team photos, and trading cards, listen on Spotify, and catch up on past episodes. Coming December 2: A Very Merry GPStar Roundtable." />
   <meta name="theme-color" content="#08090a" />
   <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2" />
@@ -438,7 +438,9 @@
     .release-schedule h3 { font-size: 1.1rem; margin-bottom: 10px; }
     .release-schedule ul { padding-left: 22px; margin-bottom: 0; }
     .release-schedule li { margin-top: 12px; line-height: 1.6; }
-    .dc-promo .promo-info { display: block; }
+    .dc-promo .promo-info, .maine-promo .promo-info { display: block; }
+    .episode-release { margin-top: 18px; color: var(--yellow); font-weight: 700; }
+    .maine-photos img { object-fit: contain; background: #090a0b; }
     .concert-feature { padding: 30px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 28px; align-items: center; }
     .concert-feature h2 { font-size: clamp(1.7rem, 3vw, 2.6rem); }
     .concert-feature p { line-height: 1.7; color: var(--muted); }
@@ -458,8 +460,8 @@
         <span class="nav-status"><span class="status-dot" aria-hidden="true"></span> Service restored</span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#featured">D.C. / Out now</a>
-        <a href="#dc-nyc-gallery">NYC photos</a>
+        <a href="#featured">Noah / Maine Ghostbusters</a>
+        <a href="#maine-gallery">Maine photos</a>
         <a href="#community-builds">Community builds</a>
         <a href="#listen">Listen</a>
         <a href="#guest-form">Request a guest</a>
@@ -468,34 +470,22 @@
   </header>
 
   <main id="top">
-    <section class="wrap service-update" id="server-status" aria-labelledby="server-status-title">
-      <p class="eyebrow">Bench Tested / Service update</p>
-      <h2 id="server-status-title">Service restored.</h2>
-      <p>Thanks for your patience while our podcast server was offline. Service has been restored.</p>
-      <p>Still having trouble listening? Please email <a href="mailto:charlie@benchtestedpod.com">charlie@benchtestedpod.com</a> with the app or website you’re using, what happens when you try to play an episode, and any error messages you see. Including your device and the episode title will help us troubleshoot.</p>
-      <div class="release-schedule">
-        <h3>A quick update to our release schedule</h3>
-        <p>To account for the downtime, we’re moving the next episode back one week. Here’s what we’re aiming for:</p>
-        <ul>
-          <li><strong>Noah Lewis &amp; the Maine Ghostbusters</strong> — <time datetime="2026-11-18T09:00:00-07:00">November 18, 2026 at 9:00 a.m. MST</time>.</li>
-          <li><strong>A Very Merry GPStar Roundtable</strong> — our year-end discussion, planned for <time datetime="2026-12-02">December 2, 2026</time>.</li>
-        </ul>
-      </div>
-    </section>
+
 
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <img class="hero-logo" src="bench-tested-logo.png" alt="Bench Tested: A Ghostbusters Podcast" />
-          <div class="launch-line">Latest episode / NYC Ghostbusters</div>
-          <h1>D.C. is<br><span>at the bench.</span></h1>
-          <p class="lede">David “D.C.” Callari and the NYC Ghostbusters take the spotlight. Meet the maker behind the yellow-accented proton pack and explore the community that brings the gear to life.</p>
-          <div class="actions"><a class="btn btn-primary" href="#listen">Listen to Bench Tested →</a><a class="btn btn-secondary" href="#dc-nyc-gallery">See the NYC photos</a><a class="btn btn-secondary" href="#dc-callari-build">Explore D.C.’s build</a></div>
+          <div class="launch-line" data-release-before="Premieres November 18 / 9 a.m. MST" data-release-after="Latest episode / Out now">Premieres November 18 / 9 a.m. MST</div>
+          <h1>Noah Lewis.<br><span>Maine at the bench.</span></h1>
+          <p class="lede">Noah Lewis and the Maine Ghostbusters join Bench Tested. Get a closer look at the props, the people, and the fun that brings this corner of the Ghostbusters community together.</p>
+          <p class="episode-release">Episode release: <time datetime="2026-11-18T09:00:00-07:00">November 18, 2026 · 9 a.m. MST</time></p>
+          <div class="actions"><a class="btn btn-primary" href="#listen" data-release-before="Listening options →" data-release-after="Listen to the episode →">Listening options →</a><a class="btn btn-secondary" href="#maine-gallery">Explore the Maine gallery</a></div>
         </div>
-        <aside class="episode-promo-card surface dc-promo" aria-label="D.C. and the NYC Ghostbusters — latest episode">
-          <div class="promo-art"><img src="dc-nyc/out-now.jpg" alt="Bench Tested — out now featuring D.C. and the NYC Ghostbusters" /></div>
-          <div class="promo-info"><div class="promo-copy"><p class="eyebrow">Latest episode / Out now</p><h3>D.C. &amp; the NYC Ghostbusters</h3><p>From the workbench to the city that started it all.</p></div></div>
-          <div class="actions"><a class="btn btn-primary" href="#listen">Listening options →</a></div>
+        <aside class="episode-promo-card surface maine-promo" aria-label="Noah Lewis and the Maine Ghostbusters episode">
+          <div class="promo-art"><img id="maine-promo-art" src="maine-ghostbusters/lights-on.jpg" data-release-src="maine-ghostbusters/out-now.jpg" alt="Noah Lewis with illuminated Ghostbusters equipment" data-release-alt="Bench Tested — out now featuring Noah Lewis and the Maine Ghostbusters" /></div>
+          <div class="promo-info"><div class="promo-copy"><p class="eyebrow" data-release-before="Coming November 18 / 9 a.m. MST" data-release-after="Latest episode / Out now">Coming November 18 / 9 a.m. MST</p><h3>Noah Lewis &amp; the Maine Ghostbusters</h3><p>From the workbench to a night out with the team.</p></div></div>
+          <div class="actions"><a class="btn btn-primary" href="#listen">Listen on Spotify →</a></div>
         </aside>
       </div>
     </section>
@@ -503,26 +493,27 @@
     <section class="section feature" id="featured">
       <div class="wrap"><div class="feature-grid surface">
         <div class="feature-copy">
-          <p class="eyebrow">Now at the bench / D.C. &amp; NYC Ghostbusters</p>
-          <h2>Built with care.<br>Shared with the city.</h2>
-          <p class="lede">The latest Bench Tested episode puts D.C. and the NYC Ghostbusters front and center.</p>
-          <p>Explore D.C.’s detailed proton pack build below, from early assembly to the finished gear, alongside photos shared for this episode.</p>
-          <p>The NYC Ghostbusters bring their love of the franchise to charitable appearances, creative activities, and community events. Visit their website to learn more about the group and its work.</p>
-          <div class="actions"><a class="btn btn-primary" href="https://call.nycghostbusters.com/home" target="_blank" rel="noopener noreferrer">Meet the NYC Ghostbusters ↗</a><a class="btn btn-secondary" href="#dc-callari-build">D.C.’s build gallery →</a></div>
+          <p class="eyebrow">At the bench / Noah Lewis &amp; Maine Ghostbusters</p>
+          <h2>Made with care.<br>Ready for a call.</h2>
+          <p class="lede">Meet Noah Lewis and the Maine Ghostbusters in this week’s Bench Tested episode.</p>
+          <p>Noah shared a look at his gear and the team in action. Explore the close-up prop details, illuminated equipment, community appearances, and Ghostbusters trading cards in the gallery below.</p>
+          <p>His trading card picks? Ray Stantz, a PKE meter, and Ghostbusters II. Select the card in the gallery to take a closer look.</p>
+          <div class="actions"><a class="btn btn-primary" href="#listen">Listen to Bench Tested →</a><a class="btn btn-secondary" href="#maine-gallery">Noah’s photos &amp; gear →</a></div>
         </div>
-        <div class="massachusetts-profile"><img src="dc-nyc/nyc-badge.jpg" alt="NYC Ghostbusters red apple ghost logo" loading="lazy" /><p>NYC Ghostbusters</p></div>
+        <div class="massachusetts-profile"><img src="maine-ghostbusters/logo.jpg" alt="Maine Ghostbusters logo with a lighthouse, waves, and a ghost holding equipment" loading="lazy" /><p>Maine Ghostbusters</p></div>
       </div></div>
     </section>
-    <section class="section section-tight" id="dc-nyc-gallery">
-      <div class="wrap"><div class="section-head"><p class="eyebrow">D.C. / NYC Ghostbusters photo collection</p><h2>Out in the city.</h2><p class="lede">From the firehouse to the theater: photos shared for D.C.’s episode. Select a photo for a closer look.</p></div>
-      <div class="guest-photo-grid" data-photo-gallery="dc-nyc" data-gallery-label="D.C. and NYC Ghostbusters community photos">
-        <a class="guest-photo" href="dc-nyc/firehouse.jpg" data-caption="Ghostbusters group in holiday attire outside the decorated Hook &amp; Ladder 8 firehouse." aria-label="Enlarge NYC photo: Back at the firehouse"><img src="dc-nyc/firehouse-thumb.jpg" alt="Ghostbusters group in holiday attire outside the decorated Hook &amp; Ladder 8 firehouse." loading="lazy" /><span class="guest-photo-caption">Back at the firehouse<span aria-hidden="true">View larger ↗</span></span></a>
-        <a class="guest-photo" href="dc-nyc/on-stage.jpg" data-caption="Six Ghostbusters in uniform with proton packs, standing in front of red stage curtains." aria-label="Enlarge NYC photo: Suited up together"><img src="dc-nyc/on-stage-thumb.jpg" alt="Six Ghostbusters in uniform with proton packs, standing in front of red stage curtains." loading="lazy" /><span class="guest-photo-caption">Suited up together<span aria-hidden="true">View larger ↗</span></span></a>
-        <a class="guest-photo" href="dc-nyc/theater.jpg" data-caption="Ghostbusters group with props and costumes on an ornate theater staircase." aria-label="Enlarge NYC photo: A full house"><img src="dc-nyc/theater-thumb.jpg" alt="Ghostbusters group with props and costumes on an ornate theater staircase." loading="lazy" /><span class="guest-photo-caption">A full house<span aria-hidden="true">View larger ↗</span></span></a>
+    <section class="section section-tight" id="maine-gallery">
+      <div class="wrap"><div class="section-head"><p class="eyebrow">Noah Lewis / Maine Ghostbusters photo collection</p><h2>From the bench to the community.</h2><p class="lede">Seven photos and trading cards shared for Noah’s episode. Select any image to see it in full.</p></div>
+      <div class="guest-photo-grid maine-photos" data-photo-gallery="maine" data-gallery-label="Noah Lewis and Maine Ghostbusters photos">
+        <a class="guest-photo" href="maine-ghostbusters/lights-on.jpg" data-caption="Noah Lewis with illuminated Ghostbusters equipment." aria-label="Enlarge Maine photo: Lights on"><img src="maine-ghostbusters/lights-on-thumb.jpg" alt="Noah Lewis with illuminated Ghostbusters equipment." loading="lazy" /><span class="guest-photo-caption">Lights on<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="maine-ghostbusters/headless-horseman.jpg" data-caption="Ghostbusters group posing beside a horse and a Headless Horseman display at night." aria-label="Enlarge Maine photo: The team after dark"><img src="maine-ghostbusters/headless-horseman-thumb.jpg" alt="Ghostbusters group posing beside a horse and a Headless Horseman display at night." loading="lazy" /><span class="guest-photo-caption">The team after dark<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="maine-ghostbusters/on-call.jpg" data-caption="Noah Lewis in Ghostbusters gear posing with a costumed character in a store." aria-label="Enlarge Maine photo: Answering the call"><img src="maine-ghostbusters/on-call-thumb.jpg" alt="Noah Lewis in Ghostbusters gear posing with a costumed character in a store." loading="lazy" /><span class="guest-photo-caption">Answering the call<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="maine-ghostbusters/prop-detail.jpg" data-caption="Close-up of a handheld prop with a rounded dark lens and protective cage." aria-label="Enlarge Maine photo: A closer look"><img src="maine-ghostbusters/prop-detail-thumb.jpg" alt="Close-up of a handheld prop with a rounded dark lens and protective cage." loading="lazy" /><span class="guest-photo-caption">A closer look<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="maine-ghostbusters/wand-detail.jpg" data-caption="Close-up of a Ghostbusters wand showing switches, handles, and fittings." aria-label="Enlarge Maine photo: Wand details"><img src="maine-ghostbusters/wand-detail-thumb.jpg" alt="Close-up of a Ghostbusters wand showing switches, handles, and fittings." loading="lazy" /><span class="guest-photo-caption">Wand details<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="maine-ghostbusters/lewis-card.jpg" data-caption="Noah Lewis’s trading card: favorite Ghostbuster Ray Stantz, favorite equipment PKE meter, favorite movie GB2." aria-label="Enlarge Maine photo: Meet Lewis"><img src="maine-ghostbusters/lewis-card-thumb.jpg" alt="Noah Lewis’s trading card: favorite Ghostbuster Ray Stantz, favorite equipment PKE meter, favorite movie GB2." loading="lazy" /><span class="guest-photo-caption">Meet Lewis<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="maine-ghostbusters/group-card.jpg" data-caption="Maine Ghostbusters trading card featuring the group’s lighthouse and ghost emblem." aria-label="Enlarge Maine photo: Maine’s trading card"><img src="maine-ghostbusters/group-card-thumb.jpg" alt="Maine Ghostbusters trading card featuring the group’s lighthouse and ghost emblem." loading="lazy" /><span class="guest-photo-caption">Maine’s trading card<span aria-hidden="true">View larger ↗</span></span></a>
       </div></div>
-    </section>
-    <section class="section section-tight" id="nyc-concert">
-      <div class="wrap concert-feature surface"><div><p class="eyebrow">NYC Ghostbusters / Related video</p><h2>Ghostbusters in Concert.</h2><p>A look back at the concert promotion featuring Dan Aykroyd, shared by the NYC Ghostbusters. Watch United Palace’s promo below.</p><a class="trade-link" href="https://www.youtube.com/watch?v=_l83LFAo6AI" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div><iframe class="concert-video" src="https://www.youtube-nocookie.com/embed/_l83LFAo6AI" title="Ghostbusters in Concert on October 17 — United Palace promo" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
     </section>
     <dialog class="photo-viewer" id="episode-photo-viewer" aria-label="Photo gallery" aria-describedby="photo-caption">
       <div class="photo-toolbar">
@@ -548,7 +539,7 @@
           <div>
             <p class="eyebrow">Listen everywhere</p>
             <h2>Pick your frequency.</h2>
-            <p>D.C. and the NYC Ghostbusters are featured in our latest episode. Listen with the player or choose your favorite podcast app below.</p>
+            <p>Find Noah Lewis and the Maine Ghostbusters in the player from November 18 at 9 a.m. MST, or choose your favorite podcast app below.</p>
           </div>
           <div class="platforms">
             <a class="platform-link" href="https://podcasts.apple.com/us/podcast/bench-tested-a-ghostbusters-podcast/id1886335915" target="_blank" rel="noreferrer"><span class="platform-icon"></span><span>Apple Podcasts</span></a>
@@ -564,7 +555,46 @@
 
     <div class="caution-wrap slim" aria-hidden="true"></div>
 
-    <section class="section section-tight" id="guests"><div class="wrap past-compact surface"><p class="eyebrow">Previously at the bench</p><h2>More from the archive.</h2><div class="past-links"><a href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-beyond-the-blueprint-with-the-massachusetts-ghostbusters" target="_blank" rel="noopener noreferrer">Jeff Keenan / Massachusetts Ghostbusters ↗</a><a href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-your-first-ghostbusters-gear-with-stantz-industries" target="_blank" rel="noopener noreferrer">Rhett J. Martin / Stantz Industries ↗</a><a href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-ghostbusters-gear-that-lasts-with-gspropsmith" target="_blank" rel="noopener noreferrer">Grant Smith / GSPropsmith ↗</a><a href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-the-next-generation-of-ghostbusters-gear" target="_blank" rel="noopener noreferrer">Nan Robinson &amp; Phil Goulet ↗</a><a href="https://podcast.benchtestedpod.com/@benchtestedpod" target="_blank" rel="noopener noreferrer">Capital Ghostbusters &amp; all past episodes ↗</a></div></div></section>
+    <section class="wrap service-update" id="server-status" aria-labelledby="server-status-title">
+      <p class="eyebrow">Bench Tested / Service update</p>
+      <h2 id="server-status-title">Service restored.</h2>
+      <p>Thanks for your patience while our podcast server was offline. Service has been restored.</p>
+      <p>Still having trouble listening? Please email <a href="mailto:charlie@benchtestedpod.com">charlie@benchtestedpod.com</a> with the app or website you’re using, what happens when you try to play an episode, and any error messages you see. Including your device and the episode title will help us troubleshoot.</p>
+      <div class="release-schedule">
+        <h3>At the bench this month</h3>
+        <ul>
+          <li><strong>Noah Lewis &amp; the Maine Ghostbusters</strong> — <span data-release-after="Out now." data-release-before="Releases November 18 at 9:00 a.m. MST.">Releases November 18 at 9:00 a.m. MST.</span> <a href="#featured">Explore the episode →</a></li>
+          <li><strong>A Very Merry GPStar Roundtable</strong> — our year-end discussion, planned for <time datetime="2026-12-02">December 2, 2026</time>.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-tight" id="guests"><div class="wrap past-compact surface"><p class="eyebrow">Previously at the bench</p><h2>More from the archive.</h2><div class="past-links"><a href="#dc-nyc-feature">D.C. / NYC Ghostbusters →</a><a href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-beyond-the-blueprint-with-the-massachusetts-ghostbusters" target="_blank" rel="noopener noreferrer">Jeff Keenan / Massachusetts Ghostbusters ↗</a><a href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-your-first-ghostbusters-gear-with-stantz-industries" target="_blank" rel="noopener noreferrer">Rhett J. Martin / Stantz Industries ↗</a><a href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-ghostbusters-gear-that-lasts-with-gspropsmith" target="_blank" rel="noopener noreferrer">Grant Smith / GSPropsmith ↗</a><a href="https://podcast.benchtestedpod.com/@benchtestedpod/episodes/building-the-next-generation-of-ghostbusters-gear" target="_blank" rel="noopener noreferrer">Nan Robinson &amp; Phil Goulet ↗</a><a href="https://podcast.benchtestedpod.com/@benchtestedpod" target="_blank" rel="noopener noreferrer">Capital Ghostbusters &amp; all past episodes ↗</a></div></div></section>
+
+    <section class="section feature" id="dc-nyc-feature">
+      <div class="wrap"><div class="feature-grid surface">
+        <div class="feature-copy">
+          <p class="eyebrow">Previously at the bench / D.C. &amp; NYC Ghostbusters</p>
+          <h2>Built with care.<br>Shared with the city.</h2>
+          <p class="lede">Catch up with D.C. and the NYC Ghostbusters in the Bench Tested archive.</p>
+          <p>Explore D.C.’s detailed proton pack build below, from early assembly to the finished gear, alongside photos shared for this episode.</p>
+          <p>The NYC Ghostbusters bring their love of the franchise to charitable appearances, creative activities, and community events. Visit their website to learn more about the group and its work.</p>
+          <div class="actions"><a class="btn btn-primary" href="https://call.nycghostbusters.com/home" target="_blank" rel="noopener noreferrer">Meet the NYC Ghostbusters ↗</a><a class="btn btn-secondary" href="#dc-callari-build">D.C.’s build gallery →</a></div>
+        </div>
+        <div class="massachusetts-profile"><img src="dc-nyc/nyc-badge.jpg" alt="NYC Ghostbusters red apple ghost logo" loading="lazy" /><p>NYC Ghostbusters</p></div>
+      </div></div>
+    </section>
+    <section class="section section-tight" id="dc-nyc-gallery">
+      <div class="wrap"><div class="section-head"><p class="eyebrow">D.C. / NYC Ghostbusters photo collection</p><h2>Out in the city.</h2><p class="lede">From the firehouse to the theater: photos shared for D.C.’s episode. Select a photo for a closer look.</p></div>
+      <div class="guest-photo-grid" data-photo-gallery="dc-nyc" data-gallery-label="D.C. and NYC Ghostbusters community photos">
+        <a class="guest-photo" href="dc-nyc/firehouse.jpg" data-caption="Ghostbusters group in holiday attire outside the decorated Hook &amp; Ladder 8 firehouse." aria-label="Enlarge NYC photo: Back at the firehouse"><img src="dc-nyc/firehouse-thumb.jpg" alt="Ghostbusters group in holiday attire outside the decorated Hook &amp; Ladder 8 firehouse." loading="lazy" /><span class="guest-photo-caption">Back at the firehouse<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="dc-nyc/on-stage.jpg" data-caption="Six Ghostbusters in uniform with proton packs, standing in front of red stage curtains." aria-label="Enlarge NYC photo: Suited up together"><img src="dc-nyc/on-stage-thumb.jpg" alt="Six Ghostbusters in uniform with proton packs, standing in front of red stage curtains." loading="lazy" /><span class="guest-photo-caption">Suited up together<span aria-hidden="true">View larger ↗</span></span></a>
+        <a class="guest-photo" href="dc-nyc/theater.jpg" data-caption="Ghostbusters group with props and costumes on an ornate theater staircase." aria-label="Enlarge NYC photo: A full house"><img src="dc-nyc/theater-thumb.jpg" alt="Ghostbusters group with props and costumes on an ornate theater staircase." loading="lazy" /><span class="guest-photo-caption">A full house<span aria-hidden="true">View larger ↗</span></span></a>
+      </div></div>
+    </section>
+    <section class="section section-tight" id="nyc-concert">
+      <div class="wrap concert-feature surface"><div><p class="eyebrow">NYC Ghostbusters / Related video</p><h2>Ghostbusters in Concert.</h2><p>A look back at the concert promotion featuring Dan Aykroyd, shared by the NYC Ghostbusters. Watch United Palace’s promo below.</p><a class="trade-link" href="https://www.youtube.com/watch?v=_l83LFAo6AI" target="_blank" rel="noopener noreferrer">Watch on YouTube ↗</a></div><iframe class="concert-video" src="https://www.youtube-nocookie.com/embed/_l83LFAo6AI" title="Ghostbusters in Concert on October 17 — United Palace promo" loading="lazy" allow="encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    </section>
 
     <!-- Permanent community build archive: preserve this section during episode rotations. -->
     <div class="caution-wrap slim" aria-hidden="true"></div>
@@ -727,6 +757,24 @@
   </footer>
 
   <script>
+    (() => {
+      const releaseAt = Date.parse('2026-11-18T09:00:00-07:00');
+      function updateRelease() {
+        const released = Date.now() >= releaseAt;
+        document.querySelectorAll('[data-release-before]').forEach(el => {
+          el.textContent = released ? el.dataset.releaseAfter : el.dataset.releaseBefore;
+        });
+        if (released) {
+          const art = document.getElementById('maine-promo-art');
+          art.src = art.dataset.releaseSrc;
+          art.alt = art.dataset.releaseAlt;
+        }
+        return released;
+      }
+      if (!updateRelease()) {
+        const timer = setInterval(() => { if (updateRelease()) clearInterval(timer); }, 1000);
+      }
+    })();
     (() => {
       const allLinks = [...document.querySelectorAll('.guest-photo')];
       let links = [];
