@@ -483,7 +483,7 @@
           <div class="actions"><a class="btn btn-primary" href="#listen" data-release-before="Listening options →" data-release-after="Listen to the episode →">Listening options →</a><a class="btn btn-secondary" href="#maine-gallery">Explore the Maine gallery</a></div>
         </div>
         <aside class="episode-promo-card surface maine-promo" aria-label="Noah Lewis and the Maine Ghostbusters episode">
-          <div class="promo-art"><img id="maine-promo-art" src="maine-ghostbusters/lights-on.jpg" data-release-src="maine-ghostbusters/out-now.jpg" alt="Noah Lewis with illuminated Ghostbusters equipment" data-release-alt="Bench Tested — out now featuring Noah Lewis and the Maine Ghostbusters" /></div>
+          <div class="promo-art"><img id="maine-promo-art" src="maine-ghostbusters/out-now-fixed.jpg" alt="Bench Tested — out now featuring Noah Lewis and the Maine Ghostbusters" /></div>
           <div class="promo-info"><div class="promo-copy"><p class="eyebrow" data-release-before="Coming November 18 / 9 a.m. MST" data-release-after="Latest episode / Out now">Coming November 18 / 9 a.m. MST</p><h3>Noah Lewis &amp; the Maine Ghostbusters</h3><p>From the workbench to a night out with the team.</p></div></div>
           <div class="actions"><a class="btn btn-primary" href="#listen">Listen on Spotify →</a></div>
         </aside>
@@ -504,9 +504,8 @@
       </div></div>
     </section>
     <section class="section section-tight" id="maine-gallery">
-      <div class="wrap"><div class="section-head"><p class="eyebrow">Noah Lewis / Maine Ghostbusters photo collection</p><h2>From the bench to the community.</h2><p class="lede">Seven photos and trading cards shared for Noah’s episode. Select any image to see it in full.</p></div>
+      <div class="wrap"><div class="section-head"><p class="eyebrow">Noah Lewis / Maine Ghostbusters photo collection</p><h2>From the bench to the community.</h2><p class="lede">Six photos and trading cards shared for Noah’s episode. Select any image to see it in full.</p></div>
       <div class="guest-photo-grid maine-photos" data-photo-gallery="maine" data-gallery-label="Noah Lewis and Maine Ghostbusters photos">
-        <a class="guest-photo" href="maine-ghostbusters/lights-on.jpg" data-caption="Noah Lewis with illuminated Ghostbusters equipment." aria-label="Enlarge Maine photo: Lights on"><img src="maine-ghostbusters/lights-on-thumb.jpg" alt="Noah Lewis with illuminated Ghostbusters equipment." loading="lazy" /><span class="guest-photo-caption">Lights on<span aria-hidden="true">View larger ↗</span></span></a>
         <a class="guest-photo" href="maine-ghostbusters/headless-horseman.jpg" data-caption="Ghostbusters group posing beside a horse and a Headless Horseman display at night." aria-label="Enlarge Maine photo: The team after dark"><img src="maine-ghostbusters/headless-horseman-thumb.jpg" alt="Ghostbusters group posing beside a horse and a Headless Horseman display at night." loading="lazy" /><span class="guest-photo-caption">The team after dark<span aria-hidden="true">View larger ↗</span></span></a>
         <a class="guest-photo" href="maine-ghostbusters/on-call.jpg" data-caption="Noah Lewis in Ghostbusters gear posing with a costumed character in a store." aria-label="Enlarge Maine photo: Answering the call"><img src="maine-ghostbusters/on-call-thumb.jpg" alt="Noah Lewis in Ghostbusters gear posing with a costumed character in a store." loading="lazy" /><span class="guest-photo-caption">Answering the call<span aria-hidden="true">View larger ↗</span></span></a>
         <a class="guest-photo" href="maine-ghostbusters/prop-detail.jpg" data-caption="Close-up of a handheld prop with a rounded dark lens and protective cage." aria-label="Enlarge Maine photo: A closer look"><img src="maine-ghostbusters/prop-detail-thumb.jpg" alt="Close-up of a handheld prop with a rounded dark lens and protective cage." loading="lazy" /><span class="guest-photo-caption">A closer look<span aria-hidden="true">View larger ↗</span></span></a>
@@ -764,11 +763,7 @@
         document.querySelectorAll('[data-release-before]').forEach(el => {
           el.textContent = released ? el.dataset.releaseAfter : el.dataset.releaseBefore;
         });
-        if (released) {
-          const art = document.getElementById('maine-promo-art');
-          art.src = art.dataset.releaseSrc;
-          art.alt = art.dataset.releaseAlt;
-        }
+
         return released;
       }
       if (!updateRelease()) {
