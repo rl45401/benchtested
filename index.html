@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bench Tested | A Ghostbusters Podcast</title>
-  <meta name="description" content="Noah Lewis and the Maine Ghostbusters join Bench Tested on November 18, 2026 at 9 a.m. MST. Explore Noah’s props, team photos, and trading cards, listen on Spotify, and catch up on past episodes. Coming December 2: A Very Merry GPStar Roundtable." />
+  <meta name="description" content="One star. No limits. A Very Merry GPStar Roundtable comes to Bench Tested December 2, 2026. Celebrate the season and listen to Noah Lewis and the Maine Ghostbusters now." />
   <meta name="theme-color" content="#08090a" />
   <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2" />
@@ -450,6 +450,30 @@
     .past-links { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-top: 18px; }
     .past-links a { color: var(--text); font-size: .9rem; text-decoration: underline; text-underline-offset: 4px; }
     @media (max-width: 700px) { .concert-feature { grid-template-columns: 1fr; padding: 22px; } }
+
+    /* Holiday season / GPStar year-end special */
+    body { background: radial-gradient(ellipse at 5% 8%, #103c2c80, transparent 40rem), radial-gradient(ellipse at 95% 12%, #70251d60, transparent 36rem), #080d0b; }
+    .site-header { background: #08120fe8; border-bottom: 1px solid #d8b76a55; }
+    .status-dot { background: #81d7a3; box-shadow: 0 0 14px #81d7a3; }
+    .holiday-special { position: relative; overflow: hidden; padding: 84px 0 68px; border-bottom: 1px solid #d8b76a60; background: radial-gradient(circle at 8% 16%, #fff8db44 1px, transparent 2px) 0 0 / 97px 113px, radial-gradient(circle at 70% 45%, #fff8db30 1px, transparent 2px) 0 0 / 173px 151px, linear-gradient(125deg,#0c281e,#0b100e 55%,#291211); }
+    .holiday-special::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 22px; border-top: 3px solid #294e36; background: radial-gradient(ellipse at 12px 5px,#ff746a 0 4px,transparent 6px) 0 0 / 120px 22px,radial-gradient(ellipse at 12px 5px,#ffe2a2 0 4px,transparent 6px) 40px 0 / 120px 22px,radial-gradient(ellipse at 12px 5px,#93dfb0 0 4px,transparent 6px) 80px 0 / 120px 22px; filter: drop-shadow(0 2px 7px #efd69c88); }
+    .holiday-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+    .holiday-special .eyebrow { color: #e7ca88; }
+    .holiday-special h1 { font-size: clamp(3rem,5.6vw,5.4rem); line-height: .98; letter-spacing: -.05em; }
+    .holiday-special h1 span { color: #e7ca88; }
+    .holiday-special .lede { color: #d4ded5; }
+    .holiday-date { display: inline-flex; gap: 12px; align-items: center; margin: 24px 0 0; padding: 11px 18px; border: 1px solid #d5b76b80; border-radius: 50px; color: #f6e5be; background: #21392b; font-weight: 800; }
+    .holiday-art { margin: 0; border: 1px solid #e7ca8877; padding: 10px; border-radius: 24px; background: linear-gradient(135deg,#b34135,#173d2c 45%,#d3b777); box-shadow: 0 24px 70px #0008; }
+    .holiday-art img { width: 100%; height: auto; border-radius: 15px; }
+    .holiday-signoff { margin-top: 28px; color: #e7ca88; font-size: .85rem; letter-spacing: .04em; }
+    .holiday-special .btn-primary { background: #b63832; }
+    .holiday-special .btn-secondary { border-color: #d5b76b88; }
+    .hero { min-height: auto; }
+    .hero h2 { font-size: clamp(2.45rem,5.25vw,4.85rem); }
+    .hero h2 span { color: var(--red); }
+    .caution-wrap { background: repeating-linear-gradient(135deg,#154532 0 22px,#e7ca88 22px 25px,#ad302c 25px 47px,#e7ca88 47px 50px); }
+    @media(max-width: 900px) { .holiday-grid { grid-template-columns: 1fr; gap: 34px; } .holiday-art { max-width: 600px; width: 100%; margin: 0 auto; } .holiday-special { padding-top: 62px; } }
+    @media(max-width: 540px) { .holiday-special h1 { font-size: 2.85rem; } .holiday-date { font-size: .9rem; } .holiday-special { padding-bottom: 44px; } }
   </style>
 </head>
 <body>
@@ -460,7 +484,8 @@
         <span class="nav-status"><span class="status-dot" aria-hidden="true"></span> Service restored</span>
       </a>
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#featured">Noah / Maine Ghostbusters</a>
+        <a href="#holiday-special">Holiday special</a>
+        <a href="#featured">Noah / Maine</a>
         <a href="#maine-gallery">Maine photos</a>
         <a href="#community-builds">Community builds</a>
         <a href="#listen">Listen</a>
@@ -471,13 +496,28 @@
 
   <main id="top">
 
+    <section class="holiday-special" id="holiday-special" aria-labelledby="holiday-title">
+      <div class="wrap holiday-grid">
+        <div>
+          <p class="eyebrow">Bench Tested × GPStar / The year-end special</p>
+          <h1 id="holiday-title">A Very Merry<br><span>GPStar<br>Roundtable.</span></h1>
+          <p class="lede">One star. No limits. A little holiday spirit.<br>Pull up a chair at the bench for our year-end roundtable discussion with GPStar.</p>
+          <p class="holiday-date"><span aria-hidden="true">✦</span> Coming <time datetime="2026-12-02">December 2, 2026</time></p>
+          <div class="actions"><a class="btn btn-primary" href="#listen">Catch up before the special →</a><a class="btn btn-secondary" href="https://open.spotify.com/show/7xth7akhzUCkKaY6e5sexj" target="_blank" rel="noopener noreferrer">Follow on Spotify ↗</a></div>
+          <p class="holiday-signoff">Season’s greetings from the Bench Tested crew.</p>
+        </div>
+        <figure class="holiday-art"><img src="gpstar-roundtable/holiday-teaser.jpg" width="1280" height="1280" fetchpriority="high" alt="GPStar × Bench Tested. One star. No limits. December 2, 2026." /></figure>
+      </div>
+    </section>
+
+
 
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <img class="hero-logo" src="bench-tested-logo.png" alt="Bench Tested: A Ghostbusters Podcast" />
           <div class="launch-line" data-release-before="Premieres November 18 / 9 a.m. MST" data-release-after="Latest episode / Out now">Premieres November 18 / 9 a.m. MST</div>
-          <h1>Noah Lewis.<br><span>Maine at the bench.</span></h1>
+          <h2>Noah Lewis.<br><span>Maine at the bench.</span></h2>
           <p class="lede">Noah Lewis and the Maine Ghostbusters join Bench Tested. Get a closer look at the props, the people, and the fun that brings this corner of the Ghostbusters community together.</p>
           <p class="episode-release">Episode release: <time datetime="2026-11-18T09:00:00-07:00">November 18, 2026 · 9 a.m. MST</time></p>
           <div class="actions"><a class="btn btn-primary" href="#listen" data-release-before="Listening options →" data-release-after="Listen to the episode →">Listening options →</a><a class="btn btn-secondary" href="#maine-gallery">Explore the Maine gallery</a></div>
