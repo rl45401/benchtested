@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bench Tested | A Ghostbusters Podcast</title>
-  <meta name="description" content="One star. No limits. A Very Merry GPStar Roundtable comes to Bench Tested December 2, 2026. Celebrate the season and listen to Noah Lewis and the Maine Ghostbusters now." />
+  <meta name="description" content="A Very Merry GPStar Roundtable comes to Bench Tested December 2, 2026, with a GPStar × Bench Tested giveaway during the episode. See the giveaway teaser and catch up on the latest episode." />
   <meta name="theme-color" content="#08090a" />
   <link rel="icon" type="image/x-icon" href="favicon.ico?v=2" />
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2" />
@@ -474,6 +474,13 @@
     .caution-wrap { background: repeating-linear-gradient(135deg,#154532 0 22px,#e7ca88 22px 25px,#ad302c 25px 47px,#e7ca88 47px 50px); }
     @media(max-width: 900px) { .holiday-grid { grid-template-columns: 1fr; gap: 34px; } .holiday-art { max-width: 600px; width: 100%; margin: 0 auto; } .holiday-special { padding-top: 62px; } }
     @media(max-width: 540px) { .holiday-special h1 { font-size: 2.85rem; } .holiday-date { font-size: .9rem; } .holiday-special { padding-bottom: 44px; } }
+    .roundtable-announcement h1 { max-width: 1000px; }
+    .roundtable-announcement { padding: 64px 0 52px; }
+    .giveaway-section { padding: 64px 0; background: linear-gradient(120deg,#210f10,#0a1510); border-bottom: 1px solid #d8b76a60; }
+    .giveaway-section .eyebrow, .giveaway-section h2 span { color: #e7ca88; }
+    .giveaway-section .holiday-date { flex-wrap: wrap; gap: 6px; border-radius: 14px; }
+    .giveaway-section figcaption { padding: 14px 8px 6px; color: #fff4da; text-align: center; font-size: .82rem; }
+    @media(max-width: 540px) { .giveaway-section { padding: 42px 0; } }
   </style>
 </head>
 <body>
@@ -496,21 +503,28 @@
 
   <main id="top">
 
-    <section class="holiday-special" id="holiday-special" aria-labelledby="holiday-title">
-      <div class="wrap holiday-grid">
-        <div>
-          <p class="eyebrow">Bench Tested × GPStar / The year-end special</p>
-          <h1 id="holiday-title">A Very Merry<br><span>GPStar<br>Roundtable.</span></h1>
-          <p class="lede">One star. No limits. A little holiday spirit.<br>Pull up a chair at the bench for our year-end roundtable discussion with GPStar.</p>
-          <p class="holiday-date"><span aria-hidden="true">✦</span> Coming <time datetime="2026-12-02">December 2, 2026</time></p>
-          <div class="actions"><a class="btn btn-primary" href="#listen">Catch up before the special →</a><a class="btn btn-secondary" href="https://open.spotify.com/show/7xth7akhzUCkKaY6e5sexj" target="_blank" rel="noopener noreferrer">Follow on Spotify ↗</a></div>
-          <p class="holiday-signoff">Season’s greetings from the Bench Tested crew.</p>
-        </div>
-        <figure class="holiday-art"><img src="gpstar-roundtable/holiday-teaser.jpg" width="1280" height="1280" fetchpriority="high" alt="GPStar × Bench Tested. One star. No limits. December 2, 2026." /></figure>
+    <section class="holiday-special roundtable-announcement" id="holiday-special" aria-labelledby="holiday-title">
+      <div class="wrap">
+        <p class="eyebrow">The episode / December 2, 2026</p>
+        <h1 id="holiday-title">A Very Merry<br><span>GPStar Roundtable.</span></h1>
+        <p class="lede">Pull up a chair at the bench for our year-end roundtable discussion with GPStar. A little shop talk, a little holiday spirit, and a giveaway during the episode.</p>
+        <div class="actions"><a class="btn btn-primary" href="#listen">Catch up before the special →</a><a class="btn btn-secondary" href="#holiday-giveaway">See the giveaway teaser ↓</a></div>
       </div>
     </section>
 
-
+    <section class="giveaway-section" id="holiday-giveaway" aria-labelledby="giveaway-title">
+      <div class="wrap holiday-grid">
+        <div>
+          <p class="eyebrow">The giveaway / GPStar × Bench Tested</p>
+          <h2 id="giveaway-title">One star.<br><span>No limits.</span></h2>
+          <p class="lede">Something extra for the holidays. This is your first tease of the giveaway we’ll be doing during <strong>A Very Merry GPStar Roundtable</strong>.</p>
+          <p class="holiday-date"><span aria-hidden="true">✦</span> During the <time datetime="2026-12-02">December 2, 2026</time> episode</p>
+          <p class="holiday-signoff">More giveaway details to come. Stay tuned.</p>
+          <div class="actions"><a class="btn btn-secondary" href="https://open.spotify.com/show/7xth7akhzUCkKaY6e5sexj" target="_blank" rel="noopener noreferrer">Follow Bench Tested on Spotify ↗</a></div>
+        </div>
+        <figure class="holiday-art"><img src="gpstar-roundtable/holiday-teaser.jpg" width="1280" height="1280" alt="Giveaway teaser: GPStar × Bench Tested. One star. No limits. December 2, 2026." /><figcaption>Giveaway teaser · During the December 2 episode</figcaption></figure>
+      </div>
+    </section>
 
     <section class="hero">
       <div class="wrap hero-grid">
